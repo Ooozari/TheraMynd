@@ -62,7 +62,7 @@ function ResetPassword() {
 
 
                             {/* Form */}
-                            <form onSubmit={handlereset} className='flex flex-col ap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                            <form onSubmit={handlereset} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
                                 {/* Input Feilds */}
                                 <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
 
