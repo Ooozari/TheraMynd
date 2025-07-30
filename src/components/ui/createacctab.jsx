@@ -1,5 +1,5 @@
-"use client";
-import React, { useState } from "react";
+'use client';
+import React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Paragraph } from "@/components/ui/typography";
@@ -10,11 +10,10 @@ const steps = [
   { id: 3, label: "Payment" },
 ];
 
-export default function CreateAccTab({ children }) {
-  const [currentStep, setCurrentStep] = useState(1);
-
+export default function CreateAccTab({ children, currentStep, setCurrentStep, onConfirm }) {
   return (
     <div className="w-full flex flex-col gap-[22px] sm:gap-[24px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]">
+      
       {/* Stepper Header */}
       <div className="flex items-center justify-center w-full">
         {steps.map((step, index) => {
@@ -28,7 +27,6 @@ export default function CreateAccTab({ children }) {
 
           return (
             <React.Fragment key={step.id}>
-              {/* Step with Circle + Label */}
               <div className="flex flex-col items-center">
                 <div
                   className={cn(
@@ -38,24 +36,20 @@ export default function CreateAccTab({ children }) {
                 >
                   <Paragraph size="md">{step.id}</Paragraph>
                 </div>
-
                 <span
                   className={cn(
                     "mt-2 text-center font-urbanist font-[800]",
-                    isActive || isCompleted
-                      ? "text-Secondary"
-                      : "text-[#979797]"
+                    isActive || isCompleted ? "text-Secondary" : "text-[#979797]"
                   )}
                 >
                   <Paragraph size="normal">{step.label}</Paragraph>
                 </span>
               </div>
 
-              {/* Line (skip after last step) */}
               {index < steps.length - 1 && (
                 <div
                   className={cn(
-                    "h-[2px] md:h-[4px] lg:h-[6px] flex-1  w-full rounded-full",
+                    "h-[2px] md:h-[4px] lg:h-[6px] flex-1 w-full rounded-full",
                     isCompleted ? "bg-MindfulBrown80" : "bg-[#0000001A]"
                   )}
                 />
@@ -71,16 +65,18 @@ export default function CreateAccTab({ children }) {
       {/* Stepper Controls */}
       <div className="flex justify-center">
         <Button
-          onClick={
-            currentStep === 3 ? undefined : () => setCurrentStep((s) => s + 1)
-          }
+          onClick={() => {
+            if (currentStep === steps.length) {
+              onConfirm(); // final step: trigger parent to switch view
+            } else {
+              setCurrentStep((s) => s + 1); // go to next step
+            }
+          }}
           variant="secondary"
           className="w-full bg-[#00738A] font-satoshi font-[900]"
         >
           <Paragraph size="normal">
-            {currentStep === 1 && "Continue"}
-            {currentStep === 2 && "Continue"}
-            {currentStep === 3 && "Confirm"}
+            {currentStep === 3 ? "Confirm" : "Continue"}
           </Paragraph>
         </Button>
       </div>

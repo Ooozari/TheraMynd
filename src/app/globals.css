@@ -11,10 +11,17 @@
   --color-White: #FFFFFF;
   --color-Gray0: #DEDFE3;
   --color-Neutral: #F4F4F6;
+  --color-MindfulBrown90: #005F72;
   --color-MindfulBrown80: #00738A;
+  --color-MindfulBrown20: #DFF6FB;
+  --color-MindfulBrown60: #0088A4;
+  --color-Black: #000000;
+  --color-Gray600: #6C757D;
+  --color-Gray800: #343A40;
+  --color-Gray100: #F8F9FA;
+  --color-Red500: #E56161;
+  --color-SerenityGreen40: #FB8728;
 
-  --color-lightGrey: #D6D6D6; 
-  --color-Icon: #3ab7bf;
   --color-Middle: #FFAE00;
   --color-Negative: #C60F13;
   --color-Positive: #1AA903;
@@ -132,6 +139,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -165,7 +173,6 @@
   font-display: swap;
 }
 
-
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
 }
@@ -175,5 +182,3 @@
     font-family: var(--font-urbanist);
   }
 }
-
-
