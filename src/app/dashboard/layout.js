@@ -33,7 +33,7 @@ export default function DashboardLayout({ children }) {
         <TopBar onMenuClick={() => setIsSidebarOpen(true)} />
 
         {/* Page-specific content */}
-        <div className="flex-1 px-6 py-4 border-2 border-Black">
+        <div className="flex-1 px-[10px] sm:px-[14px] md:px-[18px] lg:px-[23px] xl:px-[26px] 2xl:px-[29px] pt-1 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px]">
           {children}
         </div>
       </main>

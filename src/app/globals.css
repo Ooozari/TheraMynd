@@ -21,8 +21,11 @@
   --color-Gray100: #F8F9FA;
   --color-Red500: #E56161;
   --color-SerenityGreen40: #FB8728;
+--color-InputDisabled: #F0F0F0;
+--color-TextDisabled: #949494;
 
-  --color-Middle: #FFAE00;
+
+
   --color-Negative: #C60F13;
   --color-Positive: #1AA903;
   --color-strokeLight: #EFEFEF;

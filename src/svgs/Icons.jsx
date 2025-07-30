@@ -34,9 +34,51 @@ export const Bell = () => (
     </svg>
 
 )
-export const Edit = () => (
-    <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.15 7.55C0.05 7.6 0 7.75 0 7.9V10C0 10.3 0.2 10.5 0.5 10.5H2.6C2.75 10.5 2.85 10.45 2.95 10.35L7.7 5.6L4.85 2.75L0.15 7.55ZM9.85 2.75L7.75 0.65C7.55 0.45 7.25 0.45 7.05 0.65L5.65 2.05L8.5 4.9L9.9 3.5C10.05 3.3 10.05 2.95 9.85 2.75Z" fill="#005F72" />
+export const Edit = ({ color = "#005F72" }) => (
+    <svg
+        width="10"
+        height="11"
+        viewBox="0 0 10 11"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ color }}
+    >
+        <path
+            d="M0.15 7.55C0.05 7.6 0 7.75 0 7.9V10C0 10.3 0.2 10.5 0.5 10.5H2.6C2.75 10.5 2.85 10.45 2.95 10.35L7.7 5.6L4.85 2.75L0.15 7.55ZM9.85 2.75L7.75 0.65C7.55 0.45 7.25 0.45 7.05 0.65L5.65 2.05L8.5 4.9L9.9 3.5C10.05 3.3 10.05 2.95 9.85 2.75Z"
+            fill="currentColor"
+        />
+    </svg>
+);
+
+
+export const Head = () => (
+    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="11" cy="11.5" rx="11" ry="11.5" fill="white" />
     </svg>
 )
+export const Body = () => (
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="24" fill="white" />
+    </svg>
+
+)
+
+export const PersonIcon = ({ className = "text-gray-500" }) => (
+    <svg
+        className={className}
+        viewBox="0 0 48 71"  // 48 (width), 23 + 48 = 71 (height)
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        {/* Head (22x23) centered horizontally */}
+        <ellipse cx="24" cy="11.5" rx="11" ry="11.5" fill="currentColor" />
+
+        {/* Body (48x48) placed below head */}
+        <circle cx="24" cy="55" r="28" fill="currentColor" />
+    </svg>
+);
+
+
+
+
 
