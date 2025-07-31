@@ -7,5 +7,6 @@ export { default as Password } from './Password';
 export { default as Notification } from './Notification';
 export { default as Biling } from './Biling';
 export { default as Membership } from './Membership';
+export { default as Plan } from './Plan';
 
 
