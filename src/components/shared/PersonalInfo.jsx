@@ -5,7 +5,6 @@ import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { User, Pencil } from "lucide-react";
 import { useState } from 'react';
 import {
     Select,
@@ -21,7 +20,7 @@ function PersonalInfo() {
     const handleEdit = () => {
         setStatus(false)
         setisEditable(true)
-    } 
+    }
     const handleSaveChanges = () => {
         setStatus(true)
         setisEditable(false)
@@ -42,8 +41,12 @@ function PersonalInfo() {
 
 
                             {/* Bottom-right Edit Icon */}
-                            <div className="absolute -bottom-0.5 -right-0.5 bg-Secondary p-1.5 rounded-full">
-                                <Edit color="white" />
+                            <div className="absolute -bottom-0 -right-0 bg-Secondary p-0.5 md:p-[4px] xl:p-[5px] 2xl:p-[6px] rounded-full cursor-pointer">
+                                <div className='w-[6px] h-[7px] sm:w-[7px] sm:h-[8px] md:w-[8px] md:h-[9px] lg:w-[9px] lg:h-[10px] xl:w-[9.5px] xl:h-[10.5px] 2xl:w-[10px] 2xl:h-[11px]
+'>
+                                    <Edit color="white" />
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -57,7 +60,12 @@ function PersonalInfo() {
                             <button className='cursor-pointer' onClick={handleEdit}>
                                 <Paragraph size="md" className="text-MindfulBrown60 font-[700] font-urbanist flex gap-1 items-center">
                                     <span>Edit</span>
-                                    <span><Edit /></span>
+                                    <div className='w-[6px] h-[7px] sm:w-[7px] sm:h-[8px] md:w-[8px] md:h-[9px] lg:w-[9px] lg:h-[10px] xl:w-[9.5px] xl:h-[10.5px] 2xl:w-[10px] 2xl:h-[11px]
+                                '><span>
+                                    <Edit />
+                                    </span>
+                                    </div>
+
                                 </Paragraph>
                             </button>
                         </div>
