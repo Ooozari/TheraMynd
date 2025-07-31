@@ -33,7 +33,7 @@ export default function VerificationLogin() {
     };
 
     const handleContinue = () => {
-        router.push('/patients')
+        router.push('/dashboard/providers')
     }
     
     return (
@@ -94,20 +94,14 @@ export default function VerificationLogin() {
                             <Paragraph size='md' className='text-Gray700 font-medium font-satoshi'>
                                 Remember device for 30 days</Paragraph>
                         </div>
-
-                        {/* Button */}
-                        <div className=''>
+                    </form>
+                     {/* Button */}
                             <div className=''>
-                                <Button variant="secondary" className='w-full' type='submit' onClick={handleContinue}>
+                                <Button variant="secondary" className='w-full' onClick={handleContinue}>
                                     <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue
                                     </Paragraph>
                                 </Button>
                             </div>
-                        </div>
-
-                    </form>
-
-
                 </div>
 
             </div>

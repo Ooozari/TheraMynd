@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { PersonalInfo,Password,Notification,Biling } from '@/components/shared'
+import { PersonalInfo,Password,Notification,Biling,Membership } from '@/components/shared'
 import { Heading, Paragraph } from "@/components/ui/typography";
 
 function Settings() {
@@ -25,7 +25,7 @@ function Settings() {
                         </TabsList>
                         <TabsContent value="Billing"><Biling/></TabsContent>
                         <TabsContent value="Personal">< PersonalInfo /></TabsContent>
-                        <TabsContent value="Membership">Make changes to your account here.</TabsContent>
+                        <TabsContent value="Membership"><Membership /></TabsContent>
                         <TabsContent value="password"><Password /></TabsContent>
                         <TabsContent value="Notification"><Notification /></TabsContent>
                     </Tabs>

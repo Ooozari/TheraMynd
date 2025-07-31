@@ -16,7 +16,7 @@ const headingVariants = cva(
         h2: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl",
         // Card Headings
         h3: "text- sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl",
-        // Review
+        // using
         h4: "text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl",
         // small tour card
         h5: "text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl",
