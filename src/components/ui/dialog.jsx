@@ -120,7 +120,7 @@ function DialogDescription({
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
-      className={cn("text-[#4D4D4D]  text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px] font-urbanist font-medium", className)}
+      className={cn("text-[#4D4D4D] text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px] font-urbanist font-medium", className)}
       {...props} />
   );
 }

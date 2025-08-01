@@ -4,7 +4,8 @@ import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Plan  from './Plan'
+import Plan from './Plan'
+import { Back } from '@/svgs/Icons'
 
 import {
     Dialog,
@@ -63,6 +64,13 @@ function Membership() {
             ],
         },
     ]
+    const handlePlanSelect = (planType) => {
+        setSelectedPlanType(planType); // save selected plan type
+  setOpenCurrentDialog(false);   // close Dialog 1
+  setOpenEditDialog(true);        // open password edit dialog
+    };
+    const [selectedPlanType, setSelectedPlanType] = useState('');
+
     return (
         <>
             {/* MAIN Password Card with Trigger */}
@@ -99,6 +107,7 @@ function Membership() {
                                     status={plan.status}
                                     price={plan.price}
                                     specs={plan.specs}
+                                    onSelect={() => handlePlanSelect(plan.type)}
                                 />
                             ))}
                         </div>
@@ -110,11 +119,23 @@ function Membership() {
             <Dialog open={openEditDialog} onOpenChange={setOpenEditDialog}>
                 <DialogContent >
                     <DialogHeader>
-                        <DialogTitle>Edit Password</DialogTitle>
+                        <DialogTitle className='flex flex-col gap-[8px] sm:gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[15px] 2xl:gap-[16px]'>
+
+                            {/* Back button */}
+                            
+                                <div onClick={() => setOpenCurrentDialog(true)} className='inline-flex items-center justify-center text-center bg-Secondary rounded-full w-[20px] h-[20px] sm:w-[25px] sm:h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[38px] xl:h-[38px] 2xl:w-[40.13px] 2xl:h-[40.13px] hover:cursor-pointer'>
+                                    <Back />
+                                </div>
+                            
+
+                            <div>Confirm upgrade to: <span className='text-Secondary'>{selectedPlanType}</span></div>
+
+                        </DialogTitle>
+                        <DialogDescription className='font-urbanist'>By clicking confirm below, you confirm to updating your current plan and changes that come with it.</DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4">
-                        <Label htmlFor="newpassword">New password</Label>
-                        <Input id="newpassword" name="newpassword" />
+                        <Heading level='mdSubText' className='font-[700] font-urbanist text-[#424242]'>Due today: $6.56</Heading>
+                        <Paragraph size='md'className='font-[600] font-urbanist text-[#424242]'>Due 12/23/24: <span className='font-[800]'>$20.99</span></Paragraph>
                     </div>
                     <DialogFooter>
                         <Button
@@ -125,7 +146,7 @@ function Membership() {
                                 setOpenEditDialog(false);
                                 setOpenSuccessDialog(true);
                             }}
-                        >   <Paragraph size="btnText" className="text-White font-black font-satoshi">Update password</Paragraph>
+                        >   <Paragraph size="btnText" className="text-White font-black font-satoshi">Upgrade</Paragraph>
 
                         </Button>
                     </DialogFooter>
@@ -136,8 +157,8 @@ function Membership() {
             <Dialog open={openSuccessDialog} onOpenChange={setOpenSuccessDialog}>
                 <DialogContent>
                     <DialogHeader>
-                        <DialogTitle>Password updated! 🎉</DialogTitle>
-                        <DialogDescription>Your new password has been set.</DialogDescription>
+                        <DialogTitle>Plan successfully upgraded! 🎉</DialogTitle>
+                        <DialogDescription className='font-urbanist'>Your plan has now been upgraded, you may now continue to use as normal. </DialogDescription>
                     </DialogHeader>
                     <DialogFooter>
                         <Button

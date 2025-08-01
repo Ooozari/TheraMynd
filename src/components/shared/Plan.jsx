@@ -3,7 +3,7 @@ import { TickSelected, TickUnSelected } from '@/svgs/Icons'
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button"
 
-function Plan({ type, userNo, status, price, specs }) {
+function Plan({ type, userNo, status, price, specs,onSelect }) {
     return (
         <>
             <div className='flex flex-col bg-White rounded-[8px] box-shadow-[0px_4px_30px_0px_#0000001A] max-w-[384px] gap-2 border-1 border-MindfulBrown80 p-[10px] sm:p-[11px] md:p-[12px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px]'>
@@ -66,7 +66,7 @@ function Plan({ type, userNo, status, price, specs }) {
 
                 {/* Button */}
                 <div>
-                    <Button variant="secondaryOutline" className='w-full'>
+                    <Button variant="secondaryOutline" className='w-full' onClick={onSelect}>
                         <Paragraph size="normal" className="font-[900] font-satoshi">Select
                         </Paragraph>
                     </Button>
