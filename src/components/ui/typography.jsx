@@ -59,6 +59,8 @@ const paragraphVariants = cva("", {
       xs: "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]",
       xxs: "text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
       icontext: "text-[10px] sm:text-[11.5px] md:text-[13px] lg:text-[14.2px] xl:text-[15px] 2xl:text-[15.33px]",
+      tabletext: "text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
+      tabletextsm: "text-[6px] sm:text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px] 2xl:text-[12px]",
     },
   },
   defaultVariants: { size: "normal" },
