@@ -1,6 +1,6 @@
 'use client';
-import React from 'react'
-import { Dots, Forward,NewEdit,See,Generate,User,Bin } from '@/svgs/Icons'
+import React, { useState } from 'react'
+import { Dots, Forward, NewEdit, See, Generate, User, Bin } from '@/svgs/Icons'
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -31,6 +31,17 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+
 
 function PatientProvider() {
     const statusColorMap = {
@@ -38,6 +49,15 @@ function PatientProvider() {
         Pending: "bg-[#FFC700]",
         Inactive: "bg-[#FF0100]",
     }
+
+    const handleAddPatient = (e) => {
+        e.preventDefault();
+        setopenAddPatientDialog(false);
+    };
+
+
+    // Add new patinet dialog box
+    const [openAddPatientDialog, setopenAddPatientDialog] = useState(false)
 
     return (
         <>
@@ -72,6 +92,7 @@ function PatientProvider() {
                         <Button
                             type="button"
                             variant='secondaryLightSmall'
+                            onClick={() => setopenAddPatientDialog(true)}
                         >
                             <Paragraph size="smallBtntext" className="text-MindfulBrown90 font-[600] font-inter">+ Add new paitent</Paragraph>
 
@@ -133,12 +154,12 @@ function PatientProvider() {
                                         <div className='flex gap-[10px] justify-end'>
                                             <DropdownMenu>
                                                 <DropdownMenuTrigger> <div className='w-[24px] h-[24px] bg-[#ECECEC] flex justify-center items-center rounded-full cursor-pointer'>
-                                                <Dots />
-                                            </div>
-                                            </DropdownMenuTrigger>
+                                                    <Dots />
+                                                </div>
+                                                </DropdownMenuTrigger>
 
                                                 <DropdownMenuContent>
-                                                    
+
                                                     <DropdownMenuItem>
                                                         <NewEdit />
                                                         Edit details
@@ -155,14 +176,14 @@ function PatientProvider() {
 
                                                     <DropdownMenuItem>
                                                         <Generate />
-                                                    Generate new code
+                                                        Generate new code
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
                                                     <DropdownMenuItem>
                                                         <User />
-                                                    Make Inactive
+                                                        Make Inactive
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
@@ -173,7 +194,7 @@ function PatientProvider() {
                                                     </DropdownMenuItem>
                                                 </DropdownMenuContent>
                                             </DropdownMenu>
-                                           
+
                                             <div className='w-[24px] h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'>
                                                 <Forward />
                                             </div>
@@ -188,6 +209,103 @@ function PatientProvider() {
                 </div>
 
             </div>
+
+            {/* DIALOG 1: Add patinet */}
+            <Dialog open={openAddPatientDialog} onOpenChange={setopenAddPatientDialog}>
+                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px]
+">
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>
+                            <Heading level='lgSubText' className='text-MindfulBrown90 font-[800] font-urbanist'>Add New Patient</Heading>
+
+                        </DialogTitle>
+                        <DialogDescription className='font-urbanist text-[#4D4D4D] text-start text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]'>
+                            Please enter patient details, once submitted, we will send your patient a link to access the app.
+                        </DialogDescription>
+                    </DialogHeader>
+
+                    {/* input details */}
+                    <form onSubmit={handleAddPatient}>
+                        <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px]'>
+
+                            {/* Patient Name */}
+                            <div className='w-full'>
+                                <Label htmlFor="name" className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-Gray900 font-bold">Patient Name</Paragraph>
+                                </Label>
+                                <Input
+                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
+'
+                                    id="name"
+                                    type="text"
+                                    required
+                                />
+                            </div>
+
+                            {/* Patients email */}
+                            <div>
+                                <Label htmlFor="email" className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-Gray900 font-bold">Patients email</Paragraph>
+                                </Label>
+                                <Input
+                                    id="email"
+                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
+'
+                                    type="email"
+                                    required
+                                />
+                            </div>
+
+
+                            {/*Patients phone*/}
+                            <div>
+                                <Label htmlFor="phone" className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-Gray900 font-bold">Patients phone</Paragraph>
+                                </Label>
+                                <Input
+                                    type="tel"
+                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
+'
+                                    id="phone"
+                                    name="phone"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required
+                                />
+                            </div>
+
+
+                            {/* Notify patient by */}
+                            <div>
+                                <Label htmlFor="Notify" className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-Gray900 font-bold">Notify patient by</Paragraph>
+                                </Label>
+                                <Select id='Notify' required >
+                                    <SelectTrigger className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px] w-full'>
+                                        <SelectValue placeholder="Select" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="Email">Email</SelectItem>
+                                        <SelectItem value="Phone">Phone</SelectItem>
+                                        <SelectItem value="Sms">Sms</SelectItem>
+                                        <SelectItem value="Neither">Neither</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                        </div>
+
+                        <DialogFooter className='w-full mt-[12px] sm:mt-[16px] md:mt-[20px] lg:mt-[24px] xl:mt-[28px] 2xl:mt-[32px]'>
+                            <Button
+                                variant='secondary'
+                                className='w-full'
+                                type='submit'
+                            >
+                                <Paragraph size="btnText" className="text-White font-black font-satoshi">Add Patient</Paragraph>
+                            </Button>
+                        </DialogFooter>
+                    </form>
+                </DialogContent>
+            </Dialog>
         </>
     )
 }
