@@ -129,19 +129,20 @@ function Membership() {
                             </Heading>
                         </DialogTitle>
                     </DialogHeader>
-                    <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,1fr))] gap-4 justify-center items-center">
-                        {plans.map((plan, index) => (
-                            <Plan
-                                key={index}
-                                type={plan.type}
-                                userNo={plan.userNo}
-                                status={plan.status}
-                                price={plan.price}
-                                specs={plan.specs}
-                                onSelect={() => handlePlanSelect(plan.type)}
-                            />
-                        ))}
-                    </div>
+                    
+                        <div className="grid 2xl:grid-cols-[repeat(auto-fit,_minmax(300px,1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(280px,1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(250px,1fr))] md:grid-cols-[repeat(auto-fit,_minmax(240px,1fr))] grid-cols-[repeat(auto-fit,_minmax(280px,1fr))] gap-4 place-items-center lg:place-items-start">
+                            {plans.map((plan, index) => (
+                                <Plan
+                                    key={index}
+                                    type={plan.type}
+                                    userNo={plan.userNo}
+                                    status={plan.status}
+                                    price={plan.price}
+                                    specs={plan.specs}
+                                    onSelect={() => handlePlanSelect(plan.type)}
+                                />
+                            ))}
+                        </div>
                 </DialogContent>
             </Dialog>
             {/* DIALOG 1.2: Confrim Upgrade Plan */}
