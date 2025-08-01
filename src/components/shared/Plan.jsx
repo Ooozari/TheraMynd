@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 function Plan({ type, userNo, status, price, specs,onSelect }) {
     return (
         <>
-            <div className='flex flex-col bg-White rounded-[8px] box-shadow-[0px_4px_30px_0px_#0000001A] max-w-[384px] gap-2 border-1 border-MindfulBrown80 p-[10px] sm:p-[11px] md:p-[12px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px]'>
+            <div className='flex flex-col bg-White rounded-[8px] shadow-[0px_4px_30px_0px_#0000001A] max-w-[384px] gap-2  p-[10px] sm:p-[11px] md:p-[12px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px]'>
                 {/* Top */}
                 <div className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
                     <div className='flex justify-between items-baseline'>

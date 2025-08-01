@@ -231,7 +231,7 @@ function Biling() {
 
                     <div className='flex flex-col gap-[7px] sm:gap-[8px] md:gap-[9px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]'>
                         <div className='flex flex-col gap-[6px] sm:gap-[7px] md:gap-[9px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]'>
-                            <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[53px] md:h-[64px] lg:h-[74px] xl:h-[80px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[15px] md:px-[18px] lg:px-[21px] xl:px-[23px] 2xl:px-[25px]">
+                            <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[75px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
 
                                 <Label htmlFor="card">
                                     <div className='w-[30px] h-[20px] sm:w-[34px] sm:h-[22px] md:w-[37px] md:h-[24px] lg:w-[41px] lg:h-[27px] xl:w-[43px] xl:h-[28.5px] 2xl:w-[45px] 2xl:h-[30px]'>
@@ -266,7 +266,7 @@ function Biling() {
                         </div>
 
                         <div className='flex flex-col gap-[6px] sm:gap-[7px] md:gap-[9px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]'>
-                            <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[53px] md:h-[64px] lg:h-[75px] xl:h-[80px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[15px] md:px-[18px] lg:px-[21px] xl:px-[23px] 2xl:px-[25px]">
+                            <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[75px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
 
                                 <Label htmlFor="card">
                                     <div className='w-[30px] h-[20px] sm:w-[34px] sm:h-[22px] md:w-[37px] md:h-[24px] lg:w-[41px] lg:h-[27px] xl:w-[43px] xl:h-[28.5px] 2xl:w-[45px] 2xl:h-[30px]'>

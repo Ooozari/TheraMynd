@@ -25,6 +25,7 @@ const buttonVariants = cva(
         sidebarButton:
         "bg-[#2E2E2E] text-White hover:bg-[#2E2E2E]/80 rounded-[5px] h-[32px] sm:h-[38px] md:h-[44px] lg:h-[48px] xl:h-[52px] 2xl:h-[56px] py-[16px] px-[24px]",
         negative: "bg-[#FFBBBB] text-[#292929] hover:bg-[#FFBBBB]/80 rounded-[5px] h-[18px] sm:h-[25px] md:h-[32px] lg:h-[40px] xl:h-[46px] 2xl:h-[51px]",
+        cancel: "bg-[#FFBBBB] text-Red hover:bg-[#FFBBBB]/80 rounded-[15px] h-[32px] sm:h-[38px] md:h-[44px] lg:h-[48px] xl:h-[52px] 2xl:h-[56px] py-[16px] px-[24px]"
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
