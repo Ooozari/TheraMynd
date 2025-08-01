@@ -3,6 +3,7 @@ import {
   Geist_Mono,
   Plus_Jakarta_Sans,
    Urbanist,
+   Inter,
 } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +12,13 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"], // Add more if needed
+  variable: "--font-inter",
+  display: "swap",
+});
+
 const urbanist = Urbanist({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -38,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${plusJakarta.variable}`}>
       <body
-        className={`${geistSans.variable} ${urbanist.variable} ${geistMono.variable}   antialiased font-sans`}
+        className={`${geistSans.variable} ${inter.variable} ${urbanist.variable} ${geistMono.variable}   antialiased font-sans`}
         style={{ fontFamily: "var(--font-plus-jakarta)" }} // globally apply Plus Jakarta Sans
       >
         {children}

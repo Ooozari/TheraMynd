@@ -28,6 +28,7 @@
 
 
 
+
  
   --color-Positive: #1AA903;
   --color-strokeLight: #EFEFEF;
@@ -180,10 +181,15 @@
 
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
+  
 }
 
 @layer utilities {
   .font-urbanist {
     font-family: var(--font-urbanist);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
   }
 }

@@ -19,6 +19,8 @@ const buttonVariants = cva(
           "bg-Secondary text-White hover:bg-Secondary/80 rounded-[15px] h-[32px] sm:h-[38px] md:h-[44px] lg:h-[48px] xl:h-[52px] 2xl:h-[56px] py-[16px] px-[24px]",
         secondaryLight:
         "bg-MindfulBrown20 text-Secondary hover:bg-MindfulBrown20/80 rounded-[8px] h-[30px] sm:h-[36px] md:h-[42px] lg:h-[48px] xl:h-[53px] 2xl:h-[58px] py-[17px] px-[16px]",
+        secondaryLightSmall: "bg-[#005F721A] font-inter text-MindfulBrown90 hover:bg-[[#005F721A]]/80 rounded-[6.7px] h-[25px] sm:h-[27px] md:h-[30px] lg:h-[32px] xl:h-[33.5px] 2xl:h-[35px]",
+        
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
