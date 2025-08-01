@@ -8,9 +8,9 @@ export default function DashboardLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block h-full">
         <SideBar />
       </div>
 
@@ -28,15 +28,16 @@ export default function DashboardLayout({ children }) {
         </div>
       )}
 
-      {/* Main Content Area */}
-      <main className="flex-1 flex flex-col bg-[#F0F0F0] w-full">
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col h-full">
+        {/* TopBar (non-scrollable) */}
         <TopBar onMenuClick={() => setIsSidebarOpen(true)} />
 
-        {/* Page-specific content */}
-        <div className="flex-1 px-[10px] sm:px-[14px] md:px-[18px] lg:px-[23px] xl:px-[26px] 2xl:px-[29px] pt-1 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px]">
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto px-[10px] sm:px-[14px] md:px-[18px] lg:px-[23px] xl:px-[26px] 2xl:px-[29px] pt-1 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px] bg-[#F0F0F0]">
           {children}
         </div>
-      </main>
+      </div>
     </div>
   );
 }
