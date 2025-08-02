@@ -17,7 +17,7 @@ function SideBar() {
     ];
 
     return (
-        <aside className="bg-white w-[170px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[28px] flex flex-col justify-between h-screen">
+        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[28px] flex flex-col justify-between h-screen">
             <div>
                 {/* Logo and Name */}
                 <div className="flex items-center justify-center gap-[6px] sm:gap-[7px] md:gap-[8px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]">
