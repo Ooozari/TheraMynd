@@ -50,7 +50,7 @@ export function Heading({ className, level = "h1", children }) {
 const paragraphVariants = cva("", {
   variants: {
     size: {
-      subText: "text-[14px] md:text-[15px] lg:text-[16px] xl:text-[20px] 2xl:text-[24px]",
+      subText: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]",
       normal: "text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]",
       md: "text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]",
       label: "text-[12px] md:text-[12px]",
@@ -63,6 +63,7 @@ const paragraphVariants = cva("", {
       icontext: "text-[10px] sm:text-[11.5px] md:text-[13px] lg:text-[14.2px] xl:text-[15px] 2xl:text-[15.33px]",
       tabletext: "text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
       tabletextsm: "text-[6px] sm:text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px] 2xl:text-[12px]",
+      code: "text-[40px] sm:text-[45px] md:text-[50px] lg:text-[55px] xl:text-[58px] 2xl:text-[60px]",
     },
   },
   defaultVariants: { size: "normal" },

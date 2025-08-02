@@ -59,6 +59,20 @@ function PatientProvider() {
     // Add new patinet dialog box
     const [openAddPatientDialog, setopenAddPatientDialog] = useState(false)
 
+    // verfication code 
+    const [seeVarificationCode, setSeeVarificationCode] = useState(false)
+
+    // new verfication code
+    const [openNewVerifacationCode, setopenNewVerifacationCode] = useState(false)
+
+    // new code success message
+    const [openNewSuccessDialog, setopenNewSuccessDialog] = useState(false)
+
+    // delete patinet
+     const [deletePatient, setdeletePatient] = useState(false)
+      const [deletePatientSuccessMsg, setdeletePatientSuccessMsg] = useState(false)
+    
+
     return (
         <>
             <div className='flex flex-col gap-[12px] sm:gap-[14px] md:gap-[17px] lg:gap-[20px] xl:gap-[21.5px] 2xl:gap-[23px]'>
@@ -100,8 +114,8 @@ function PatientProvider() {
                     </div>
                 </div>
                 {/* Table */}
-                <div className="min-w-[400px] overflow-x-auto overflow-y-auto">
-                    <Table className='min-w-max'>
+                <div className="">
+                    <Table className=''>
                         <TableHeader>
                             <TableRow>
                                 <TableHead>Name</TableHead>
@@ -169,37 +183,39 @@ function PatientProvider() {
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
-                                                        <See />
-
-                                                        <Paragraph size='dialogtext' className='text-[#000000]'>See verification code</Paragraph>
+                                                    <DropdownMenuItem >
+                                                        <button className='flex items-center gap-[7px]' onClick={() => setSeeVarificationCode(true)}>
+                                                            <See />
+                                                            <Paragraph size='dialogtext' className='text-[#000000]'>See verification code</Paragraph>
+                                                        </button>
 
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
                                                     <DropdownMenuItem className='flex items-center gap-[7px]'>
-                                                        <Generate />
-
+                                                        <button className='flex items-center gap-[7px]' onClick={() => setopenNewVerifacationCode(true)}>                                                                        <Generate />
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
-
+                                                        </button>
                                                     </DropdownMenuItem>
-
                                                     <DropdownMenuSeparator />
 
                                                     <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <User />
 
-                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Make Inactive</Paragraph>
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>
+                                                            {item.status === 'Inactive' ? 'Reactivate' : 'Make Inactive'}
+                                                        </Paragraph>
 
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
                                                     <DropdownMenuItem className='flex items-center gap-[7px]'>
+                                                        <button className='flex items-center gap-[7px]' onClick={() => setdeletePatient(true)}>
                                                         <Bin />
-
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
+                                                        </button>
 
                                                     </DropdownMenuItem>
                                                 </DropdownMenuContent>
@@ -209,8 +225,6 @@ function PatientProvider() {
                                                 <Forward />
                                             </div>
                                         </div>
-
-
                                     </TableCell>
                                 </TableRow>
                             ))}
@@ -315,6 +329,140 @@ function PatientProvider() {
                             </Button>
                         </DialogFooter>
                     </form>
+                </DialogContent>
+            </Dialog>
+
+            {/* See Varification Code*/}
+            <Dialog open={seeVarificationCode} onOpenChange={setSeeVarificationCode}>
+                <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'>
+                    <DialogHeader>
+                        <DialogTitle className='text-center'>
+                            <Paragraph size='subText' className='text-MindfulBrown90 font-urbanist font-[800]'>Current verification code:</Paragraph>
+                        </DialogTitle>
+                    </DialogHeader>
+                    <div>
+                        <Paragraph size='code' className='text-[#353535] font-urbanist font-[700] text-center'>
+                            1234
+                        </Paragraph>
+                    </div>
+                    <DialogFooter className='w-full'>
+                        <div className='w-full'>
+                            <Button
+                                variant='secondary'
+                                className='w-full'
+                                onClick={() => {
+                                    setopenNewVerifacationCode(true)
+                                    setSeeVarificationCode(false)
+                                }}
+                            >
+                                <Paragraph size="btnText" className="text-White font-black font-satoshi">Generate new code</Paragraph>
+                            </Button>
+                        </div>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* Generate New Varification Code*/}
+            <Dialog open={openNewVerifacationCode} onOpenChange={setopenNewVerifacationCode}>
+                <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'>
+                    <DialogHeader>
+                        <DialogTitle className='text-center'>
+                            <Paragraph size='subText' className='text-MindfulBrown90 font-urbanist font-[800]'>Your new verification code is:</Paragraph></DialogTitle>
+                    </DialogHeader>
+                    <div>
+                        <Paragraph size='code' className='text-[#353535] font-urbanist font-[700] text-center'>
+                            1435
+                        </Paragraph>
+                    </div>
+                    <DialogFooter className='w-full'>
+                        <div className='w-full'>
+                            <Button
+                                variant='secondary'
+                                className='w-full'
+                                onClick={() => {
+                                    setopenNewVerifacationCode(false)
+                                    setopenNewSuccessDialog(true)
+                                }}
+                            >
+                                <Paragraph size="btnText" className="text-White font-black font-satoshi">Send new code to patient</Paragraph>
+                            </Button>
+                        </div>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+
+            {/* Success Message (New Varification Code)*/}
+            <Dialog open={openNewSuccessDialog} onOpenChange={setopenNewSuccessDialog}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>
+                            New code successfully sent! 🎉</DialogTitle>
+                        <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>A new unique code and  link to access the app has been sent to your desired destination.</DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <Button
+                            variant='secondary'
+                            className='w-full' onClick={() => setopenNewSuccessDialog(false)}>
+                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Done</Paragraph>
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+
+            {/* Are you sure (delete patients) */}
+            <Dialog open={deletePatient} onOpenChange={setdeletePatient}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>Are you sure you want to deactivate patient? </DialogTitle>
+                        <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
+                            Once a patient is deleted, there information will be non recoverable.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter className='w-full'>
+                        <div className='w-full'>
+                            <Button
+                                variant='secondaryOutline'
+                                className='w-full rounded-[15px] hover:bg-Secondary  group'
+                                onClick={() => {setdeletePatient(false)}}
+                            >
+                                <Paragraph size="btnText" className="text-Secondary font-[700] font-satoshi group-hover:text-White">I changed my mind</Paragraph>
+                            </Button>
+                        </div>
+                        <div className='w-full'>
+                            <Button
+                                variant='cancel'
+                                className='w-full bg-[#CD1110] hover:bg-[#CD1110]/80'
+                                onClick={() => {
+                                    setdeletePatient(false);
+                                    setdeletePatientSuccessMsg(true);
+                                }}
+                            >
+                                <Paragraph size="btnText" className=" font-black font-satoshi text-White">Yes, delete forever</Paragraph>
+                            </Button>
+                        </div>
+
+
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* Patient deleted */}
+            <Dialog open={deletePatientSuccessMsg} onOpenChange={setdeletePatientSuccessMsg}>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>Patient successfully deleted </DialogTitle>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <Button
+                            variant='secondary'
+                            className='w-full'
+                            onClick={() => setdeletePatientSuccessMsg(false)}
+                        >
+                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Close</Paragraph>
+                        </Button>
+                    </DialogFooter>
                 </DialogContent>
             </Dialog>
         </>
