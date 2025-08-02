@@ -193,25 +193,23 @@ function PatientProvider() {
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
-                                                        <button className='flex items-center gap-[7px]' onClick={() => setopenNewVerifacationCode(true)}>                                                                        <Generate />
+                                                    <DropdownMenuItem>
+                                                        <button className='flex items-center gap-[7px]' onClick={() => setopenNewVerifacationCode(true)}>                                    <Generate />
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
                                                         </button>
                                                     </DropdownMenuItem>
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
+                                                    <DropdownMenuItem >
                                                         <User />
-
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>
                                                             {item.status === 'Inactive' ? 'Reactivate' : 'Make Inactive'}
                                                         </Paragraph>
-
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
+                                                    <DropdownMenuItem>
                                                         <button className='flex items-center gap-[7px]' onClick={() => setdeletePatient(true)}>
                                                         <Bin />
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
