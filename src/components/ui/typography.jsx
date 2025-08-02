@@ -33,6 +33,8 @@ const headingVariants = cva(
         minih:"text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px]",
 
         cardmd: "text-[20px] sm:text-[24px] md:text-[28px] lg:text-[31px] xl:text-[34px] 2xl:text-[36px]",
+
+        dialogtext: "text-[10px] sm:text-[10.5px] md:text-[11px] lg:text-[11.5px] xl:text-[11.7px] 2xl:text-[12px]",
       },
     },
     defaultVariants: { level: "h1" },
@@ -55,7 +57,7 @@ const paragraphVariants = cva("", {
       // using
       sm: "text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
       btnText: "text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[17.5px] 2xl:text-[18px]",
-      smallBtntext: "text-[8.25px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15.25px] 2xl:text-[16.25px]",
+      smallBtntext: "text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15.25px] 2xl:text-[16.25px]",
       xs: "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]",
       xxs: "text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
       icontext: "text-[10px] sm:text-[11.5px] md:text-[13px] lg:text-[14.2px] xl:text-[15px] 2xl:text-[15.33px]",

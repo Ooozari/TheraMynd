@@ -99,16 +99,16 @@ function PatientProvider() {
                         </Button>
                     </div>
                 </div>
-
                 {/* Table */}
-                <div>
-                    <Table>
+                <div className="min-w-[400px] overflow-x-auto overflow-y-auto">
+                    <Table className='min-w-max'>
                         <TableHeader>
                             <TableRow>
                                 <TableHead>Name</TableHead>
                                 <TableHead>Days Active</TableHead>
                                 <TableHead>Status</TableHead>
                                 <TableHead>Start date</TableHead>
+                                <TableHead></TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -153,49 +153,59 @@ function PatientProvider() {
                                     <TableCell className='text-right'>
                                         <div className='flex gap-[10px] justify-end'>
                                             <DropdownMenu>
-                                                <DropdownMenuTrigger> <div className='w-[24px] h-[24px] bg-[#ECECEC] flex justify-center items-center rounded-full cursor-pointer'>
+                                                <DropdownMenuTrigger> <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#ECECEC] flex justify-center items-center rounded-full cursor-pointer'>
                                                     <Dots />
                                                 </div>
                                                 </DropdownMenuTrigger>
 
                                                 <DropdownMenuContent>
 
-                                                    <DropdownMenuItem>
+                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <NewEdit />
-                                                        Edit details
+
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Edit details</Paragraph>
+
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem>
+                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <See />
-                                                        See verification code
+
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>See verification code</Paragraph>
+
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem>
+                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <Generate />
-                                                        Generate new code
+
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
+
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem>
+                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <User />
-                                                        Make Inactive
+
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Make Inactive</Paragraph>
+
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem>
+                                                    <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <Bin />
-                                                        Delete patient
+
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
+
                                                     </DropdownMenuItem>
                                                 </DropdownMenuContent>
                                             </DropdownMenu>
 
-                                            <div className='w-[24px] h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'>
+                                            <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'>
                                                 <Forward />
                                             </div>
                                         </div>
@@ -207,8 +217,9 @@ function PatientProvider() {
                         </TableBody>
                     </Table>
                 </div>
-
             </div>
+
+
 
             {/* DIALOG 1: Add patinet */}
             <Dialog open={openAddPatientDialog} onOpenChange={setopenAddPatientDialog}>
@@ -219,7 +230,7 @@ function PatientProvider() {
                             <Heading level='lgSubText' className='text-MindfulBrown90 font-[800] font-urbanist'>Add New Patient</Heading>
 
                         </DialogTitle>
-                        <DialogDescription className='font-urbanist text-[#4D4D4D] text-start text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]'>
+                        <DialogDescription className='font-urbanist text-[#4D4D4D] text-start text-[11.5px] sm:text-[12px] md:text-[12.5px] lg:text-[13px] xl:text-[13.5px] 2xl:text-[14px]'>
                             Please enter patient details, once submitted, we will send your patient a link to access the app.
                         </DialogDescription>
                     </DialogHeader>

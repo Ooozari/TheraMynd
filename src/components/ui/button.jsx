@@ -19,18 +19,17 @@ const buttonVariants = cva(
           "bg-Secondary text-White hover:bg-Secondary/80 rounded-[15px] h-[32px] sm:h-[38px] md:h-[44px] lg:h-[48px] xl:h-[52px] 2xl:h-[56px] py-[16px] px-[24px]",
         secondaryLight:
         "bg-MindfulBrown20 text-Secondary hover:bg-MindfulBrown20/80 rounded-[8px] h-[30px] sm:h-[36px] md:h-[42px] lg:h-[48px] xl:h-[53px] 2xl:h-[58px] py-[17px] px-[16px]",
-        secondaryLightSmall: "bg-[#005F721A] font-inter text-MindfulBrown90 hover:bg-[[#005F721A]]/80 rounded-[6.7px] h-[25px] sm:h-[27px] md:h-[30px] lg:h-[32px] xl:h-[33.5px] 2xl:h-[35px]",
-        
+        secondaryLightSmall: "bg-[#005F721A] font-inter text-MindfulBrown90 hover:bg-[[#005F721A]]/80 rounded-[6.7px] h-[25px] sm:h-[27px] md:h-[29px] lg:h-[31px] xl:h-[33px] 2xl:h-[35px]",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         sidebarButton:
         "bg-[#2E2E2E] text-White hover:bg-[#2E2E2E]/80 rounded-[5px] h-[32px] sm:h-[38px] md:h-[44px] lg:h-[48px] xl:h-[52px] 2xl:h-[56px] py-[16px] px-[24px]",
-        negative: "bg-[#FFBBBB] text-[#292929] hover:bg-[#FFBBBB]/80 rounded-[5px] h-[18px] sm:h-[25px] md:h-[32px] lg:h-[40px] xl:h-[46px] 2xl:h-[51px]",
+        negative: "bg-[#FFBBBB] text-[#292929] hover:bg-[#FFBBBB]/80 rounded-[5px] h-[30px] sm:h-[36px] md:h-[41px] lg:h-[46px] xl:h-[49px] 2xl:h-[51px]",
         cancel: "bg-[#FFBBBB] text-Red hover:bg-[#FFBBBB]/80 rounded-[15px] h-[32px] sm:h-[38px] md:h-[44px] lg:h-[48px] xl:h-[52px] 2xl:h-[56px] py-[16px] px-[24px]"
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
