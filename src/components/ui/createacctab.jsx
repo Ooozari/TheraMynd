@@ -10,10 +10,11 @@ const steps = [
   { id: 3, label: "Payment" },
 ];
 
-export default function CreateAccTab({ children, currentStep, setCurrentStep, onConfirm }) {
+export default function CreateAccTab({ children, currentStep, setCurrentStep, onConfirm, canProceed, }) {
+
   return (
     <div className="w-full flex flex-col gap-[22px] sm:gap-[24px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]">
-      
+
       {/* Stepper Header */}
       <div className="flex items-center justify-center w-full">
         {steps.map((step, index) => {
@@ -59,27 +60,38 @@ export default function CreateAccTab({ children, currentStep, setCurrentStep, on
         })}
       </div>
 
-      {/* Stepper Content */}
-      <div>{React.Children.toArray(children)[currentStep - 1]}</div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
 
-      {/* Stepper Controls */}
-      <div className="flex justify-center">
-        <Button
-          onClick={() => {
-            if (currentStep === steps.length) {
-              onConfirm(); // final step: trigger parent to switch view
-            } else {
-              setCurrentStep((s) => s + 1); // go to next step
-            }
-          }}
-          variant="secondary"
-          className="w-full bg-[#00738A] font-satoshi font-[900]"
-        >
-          <Paragraph size="normal">
-            {currentStep === 3 ? "Confirm" : "Continue"}
-          </Paragraph>
-        </Button>
-      </div>
+          if (currentStep === 3 && typeof canProceed === 'function' && !canProceed(currentStep)) {
+            alert("Please select a plan before confirming.");
+            return;
+          }
+
+          if (currentStep === 3) {
+            onConfirm();
+          } else {
+            setCurrentStep((s) => s + 1);
+          }
+        }}
+        className="flex flex-col gap-[22px] sm:gap-[24px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]"
+      >
+        <div>{React.Children.toArray(children)[currentStep - 1]}</div>
+
+        <div className="flex justify-center">
+          <Button
+            type="submit"
+            variant="secondary"
+            className="w-full bg-[#00738A] font-satoshi font-[900]"
+          >
+            <Paragraph size="normal">
+              {currentStep === 3 ? "Confirm" : "Continue"}
+            </Paragraph>
+          </Button>
+        </div>
+      </form>
+
     </div>
   );
 }

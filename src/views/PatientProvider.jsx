@@ -364,7 +364,8 @@ function PatientProvider() {
 
             {/* Generate New Varification Code*/}
             <Dialog open={openNewVerifacationCode} onOpenChange={setopenNewVerifacationCode}>
-                <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'>
+                <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'
+                onInteractOutside={(e) => e.preventDefault()}>
                     <DialogHeader>
                         <DialogTitle className='text-center'>
                             <Paragraph size='subText' className='text-MindfulBrown90 font-urbanist font-[800]'>Your new verification code is:</Paragraph></DialogTitle>

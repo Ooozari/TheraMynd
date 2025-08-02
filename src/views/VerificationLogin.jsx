@@ -32,10 +32,18 @@ export default function VerificationLogin() {
         }
     };
 
-    const handleContinue = () => {
-        router.push('/dashboard/providers')
-    }
-    
+    const handleContinue = (e) => {
+        e.preventDefault(); // prevent form submission reload
+
+        const isCodeComplete = codes.every(code => code.trim() !== "");
+        if (!isCodeComplete) {
+            return;
+        }
+
+        router.push('/dashboard/providers');
+    };
+
+
     return (
         <>
             <div className='min-h-screen w-full flex items-center justify-center px-4 '>
@@ -76,6 +84,7 @@ export default function VerificationLogin() {
                                         type="text"
                                         inputMode="numeric"
                                         maxLength={1}
+                                        required
                                         value={value}
                                         onChange={(e) => handleChange(e, index)}
                                         onKeyDown={(e) => handleKeyDown(e, index)}
@@ -89,19 +98,20 @@ export default function VerificationLogin() {
                         {/* CheckBox */}
                         <div className='flex gap-2 justify-center items-center'>
                             <div className='flex items-center'>
-                                <Checkbox className='w-[14px] h-[14px] sm:w-[17px] sm:h-[17px] md:w-[19px] md:h-[19px] lg:w-[21px] lg:h-[21px] xl:w-[22px] xl:h-[22px] 2xl:w-[25px] 2xl:h-[25px]'/>
+                                <Checkbox className='w-[14px] h-[14px] sm:w-[17px] sm:h-[17px] md:w-[19px] md:h-[19px] lg:w-[21px] lg:h-[21px] xl:w-[22px] xl:h-[22px] 2xl:w-[25px] 2xl:h-[25px]' />
                             </div>
                             <Paragraph size='md' className='text-Gray700 font-medium font-satoshi'>
                                 Remember device for 30 days</Paragraph>
                         </div>
                     </form>
-                     {/* Button */}
-                            <div className=''>
-                                <Button variant="secondary" className='w-full' onClick={handleContinue}>
-                                    <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue
-                                    </Paragraph>
-                                </Button>
-                            </div>
+
+                    {/* Button */}
+                    <div className=''>
+                        <Button variant="secondary" type='submit' className='w-full' onClick={handleContinue}>
+                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue
+                            </Paragraph>
+                        </Button>
+                    </div>
                 </div>
             </div>
 

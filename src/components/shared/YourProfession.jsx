@@ -30,7 +30,7 @@ function YourProfession() {
                             <Paragraph size="label" className="text-Gray900 font-bold">What are your credentials?</Paragraph>
                         </Label>
 
-                        <Select>
+                        <Select required>
                             <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Select credential" />
                             </SelectTrigger>
@@ -63,15 +63,17 @@ function YourProfession() {
                         </Label>
                         <Input
                             id="License"
-                            type="text"
+                            type="number"
                             required
+                            inputMode="numeric"
+                            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                     </div>
-                    
+
                     {/* License (Board & state) + Button  */}
                     <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px] justify-center'>
                         {/* License Board & state */}
-                        <div className='flex flex-col lg:flex-row gap-4'>      
+                        <div className='flex flex-col lg:flex-row gap-4'>
                             {/* Board */}
                             <div className='w-full'>
                                 <Label htmlFor="board" className='mb-[8px]'>
@@ -83,12 +85,12 @@ function YourProfession() {
                                     required
                                 />
                             </div>
-                             {/* State */}
+                            {/* State */}
                             <div className='w-full'>
                                 <Label htmlFor="state" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">License State</Paragraph>
                                 </Label>
-                                <Select>
+                                <Select required>
                                     <SelectTrigger className="w-full">
                                         <SelectValue placeholder="Select state" />
                                     </SelectTrigger>
@@ -107,14 +109,14 @@ function YourProfession() {
                         {/* + Add Another Professional License Button */}
                         <div className='text-center'>
                             <Button variant="secondaryLight">
-                                        <Paragraph size="md" className="font-medium font-satoshi">+ Add Another Professional License
-                                        </Paragraph>
-                                </Button>
+                                <Paragraph size="md" className="font-medium font-satoshi">+ Add Another Professional License
+                                </Paragraph>
+                            </Button>
                         </div>
                     </div>
-                    
 
-                    
+
+
                     {/* NPI Number */}
                     <div>
                         <Label htmlFor="npi" className='mb-[8px]'>
@@ -122,11 +124,13 @@ function YourProfession() {
                         </Label>
                         <Input
                             id="npi"
-                            type="text"
+                            type="number"
+                            inputMode="numeric"
+                            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             required
                         />
                     </div>
-                    
+
                 </div>
             </div>
         </>

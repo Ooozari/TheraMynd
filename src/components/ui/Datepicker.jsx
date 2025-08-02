@@ -44,6 +44,7 @@ export default function Datepicker() {
         <Input
           id="date"
           value={value}
+          required
           placeholder="Select a date"
           className="pr-10"
           onChange={(e) => {

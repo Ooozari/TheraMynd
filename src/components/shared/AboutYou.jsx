@@ -97,7 +97,7 @@ function AboutYou() {
                             id="phone"
                             name="phone"
                             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                            required
+                            
                         />
                     </div>
 
@@ -107,7 +107,7 @@ function AboutYou() {
                         <Label htmlFor="phone" className='mb-[8px]'>
                             <Paragraph size="label" className="text-Gray900 font-bold">Practice phone number</Paragraph>
                         </Label>
-                        <Select>
+                        <Select required>
                             <SelectTrigger className="w-[169px]">
                                 <SelectValue placeholder="Select permission" />
                             </SelectTrigger>
@@ -172,7 +172,7 @@ function AboutYou() {
                                 <Label htmlFor="state" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">State</Paragraph>
                                 </Label>
-                                <Select>
+                                <Select required>
                                     <SelectTrigger className="w-full">
                                         <SelectValue placeholder="Select state" />
                                     </SelectTrigger>
