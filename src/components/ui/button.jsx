@@ -22,6 +22,8 @@ const buttonVariants = cva(
         secondaryLightSmall: "bg-[#005F721A] font-inter text-MindfulBrown90 hover:bg-[[#005F721A]]/80 rounded-[6.7px] h-[25px] sm:h-[27px] md:h-[29px] lg:h-[31px] xl:h-[33px] 2xl:h-[35px]",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        newghost:
+          "bg-[#F4F4F4] rounded-[6.7px] h-[28.78px] sm:h-[30.2px] md:h-[31.6px] lg:h-[33.1px] xl:h-[34.1px] 2xl:h-[34.78px]",
         link: "text-primary underline-offset-4 hover:underline",
         sidebarButton:
         "bg-[#2E2E2E] text-White hover:bg-[#2E2E2E]/80 rounded-[5px] h-[40px] sm:h-[45px] md:h-[48px] lg:h-[52px] xl:h-[54px] 2xl:h-[56px] py-[16px] px-[24px]",

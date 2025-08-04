@@ -52,6 +52,8 @@ const paragraphVariants = cva("", {
     size: {
       subText: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]",
       normal: "text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]",
+      tablecell: "text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[17px] 2xl:text-[18.88px]",
+      cellsubTitle: "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16.18px]",
       md: "text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]",
       label: "text-[12px] md:text-[12px]",
       // using
@@ -64,6 +66,8 @@ const paragraphVariants = cva("", {
       tabletext: "text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
       tabletextsm: "text-[6px] sm:text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px] 2xl:text-[12px]",
       code: "text-[40px] sm:text-[45px] md:text-[50px] lg:text-[55px] xl:text-[58px] 2xl:text-[60px]",
+      head: "text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[17.5px] 2xl:text-[18px]",
+      uid: "text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] xl:text-[11.5px] 2xl:text-[12px]",
     },
   },
   defaultVariants: { size: "normal" },

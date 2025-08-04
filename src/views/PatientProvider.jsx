@@ -5,6 +5,7 @@ import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import tableData from "@/data/tableData"
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button"
 import {
     Select,
@@ -44,6 +45,8 @@ import {
 
 
 function PatientProvider() {
+    const router = useRouter();
+
     const statusColorMap = {
         Active: "bg-[#00FF1A]",
         Pending: "bg-[#FFC700]",
@@ -219,7 +222,8 @@ function PatientProvider() {
                                                 </DropdownMenuContent>
                                             </DropdownMenu>
 
-                                            <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'>
+                                            <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'
+                                            onClick={() => router.push(`/dashboard/providers/patient/${item.id}`)}>
                                                 <Forward />
                                             </div>
                                         </div>

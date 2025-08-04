@@ -5,6 +5,7 @@
 
 @theme {
   --color-Gray900: #131316;
+  --color-Gray500: #6B7094;
   --color-Gray700: #383942;
   --color-Gray0: #DEDFE3;
   --color-Secondary: #00738A;
@@ -17,15 +18,17 @@
   --color-MindfulBrown60: #0088A4;
   --color-Black: #000000;
   --color-Gray600: #6C757D;
+  --color-OptimisticGray60: #736B66;
+  --color-Calender: #292929;
   --color-Gray800: #343A40;
   --color-Gray100: #F8F9FA;
   --color-Red500: #E56161;
   --color-SerenityGreen40: #FB8728;
---color-InputDisabled: #F0F0F0;
---color-TextDisabled: #949494;
- --color-PresentRed80: #9F1239;
- --color-Red: #DD0000;
- 
+  --color-InputDisabled: #F0F0F0;
+  --color-TextDisabled: #949494;
+  --color-PresentRed80: #9F1239;
+  --color-Red: #DD0000;
+
   --color-Positive: #1AA903;
   --color-strokeLight: #EFEFEF;
 }
@@ -177,7 +180,7 @@
 
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
-  
+
 }
 
 @layer utilities {

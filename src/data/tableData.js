@@ -5,6 +5,7 @@ import { GuestIcon } from '@/svgs/Icons';
 const tableData = [
   {
     id: 1,
+    uid: "NS12345",
     icon: <GuestIcon />,
     name: "Emily Johnson",
     days: 15,
@@ -13,6 +14,7 @@ const tableData = [
   },
   {
     id: 2,
+    uid: "NS12341",
     icon: <GuestIcon />,
     name: "Michael Smith",
     days: 7,
@@ -21,6 +23,7 @@ const tableData = [
   },
   {
     id: 3,
+    uid: "NS12342",
     icon: <GuestIcon />,
     name: "Olivia Brown",
     days: 30,
@@ -29,6 +32,7 @@ const tableData = [
   },
   {
     id: 4,
+    uid: "NS12343",
     icon: <GuestIcon />,
     name: "James Davis",
     days: 12,
@@ -37,6 +41,7 @@ const tableData = [
   },
   {
     id: 5,
+    uid: "NS12344",
     icon: <GuestIcon />,
     name: "Sophia Wilson",
     days: 5,
@@ -45,6 +50,7 @@ const tableData = [
   },
   {
     id: 6,
+    uid: "NS14346",
     icon: <GuestIcon />,
     name: "Benjamin Moore",
     days: 18,
@@ -53,6 +59,7 @@ const tableData = [
   },
   {
     id: 7,
+    uid: "NS02347",
     icon: <GuestIcon />,
     name: "Charlotte Taylor",
     days: 10,
@@ -61,6 +68,7 @@ const tableData = [
   },
   {
     id: 8,
+    uid: "NS12149",
     icon: <GuestIcon />,
     name: "William Anderson",
     days: 22,
@@ -69,6 +77,7 @@ const tableData = [
   },
   {
     id: 9,
+    uid: "NS10348",
     icon: <GuestIcon />,
     name: "Amelia Thomas",
     days: 17,
@@ -77,6 +86,7 @@ const tableData = [
   },
   {
     id: 10,
+    uid: "NS12346",
     icon: <GuestIcon />,
     name: "Daniel Jackson",
     days: 9,
