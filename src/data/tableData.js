@@ -11,6 +11,56 @@ const tableData = [
     days: 15,
     status: "Active",
     startDate: "08/01/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ]
   },
   {
     id: 2,
@@ -20,6 +70,56 @@ const tableData = [
     days: 7,
     status: "Pending",
     startDate: "07/20/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 3,
@@ -29,6 +129,56 @@ const tableData = [
     days: 30,
     status: "Inactive",
     startDate: "06/10/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 4,
@@ -38,6 +188,56 @@ const tableData = [
     days: 12,
     status: "Active",
     startDate: "07/29/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 5,
@@ -47,6 +247,56 @@ const tableData = [
     days: 5,
     status: "Pending",
     startDate: "07/25/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 6,
@@ -56,6 +306,56 @@ const tableData = [
     days: 18,
     status: "Inactive",
     startDate: "06/30/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 7,
@@ -65,6 +365,56 @@ const tableData = [
     days: 10,
     status: "Active",
     startDate: "07/15/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 8,
@@ -74,6 +424,56 @@ const tableData = [
     days: 22,
     status: "Pending",
     startDate: "07/10/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 9,
@@ -83,6 +483,56 @@ const tableData = [
     days: 17,
     status: "Active",
     startDate: "07/18/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
   {
     id: 10,
@@ -92,6 +542,56 @@ const tableData = [
     days: 9,
     status: "Inactive",
     startDate: "06/28/25",
+    checkinData: [
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+      {
+        entryName: "Feeling good",
+        date: "08/01/25",
+        emotion: "Sad",
+        stressor: "Loneliness"
+      },
+    ],
   },
 ];
 

@@ -6,6 +6,7 @@ export {default as AccountDetails} from './AccountDetails'
 export {default as Settings} from './Settings'
 export {default as PatientProvider} from './PatientProvider'
 export {default as Patient} from './Patient'
+export {default as Checkins} from './Checkins'
 
 
 

@@ -22,6 +22,22 @@ export default function Patient({ id }) {
     const patient = tableData.find(p => p.id === patientId);
     const [currentTab, setCurrentTab] = useState("Details");
 
+    const [tab, setTab] = useState("daily");
+
+    const getTabPath = (tab) => {
+        switch (tab) {
+            case "daily":
+                return "check-ins";
+            case "journal":
+                return "journals";
+            case "coping":
+                return "coping";
+            default:
+                return "";
+        }
+    };
+
+
     if (!patient) {
         return <div className="p-6 text-red-500">Patient not found.</div>;
     }
@@ -73,7 +89,7 @@ export default function Patient({ id }) {
                     </div>
 
                     <div className="flex-1 min-w-0 px-[12px] md:px-0">
-                        <Userinfotabs defaultValue="daily">
+                        <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)}>
                             {/* Tab Buttons */}
                             <div className="flex flex-col md:flex-row md:justify-between items-start w-full gap-[12px] md:gap-0 md:items-center px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] overflow-x-hidden">
                                 <div className="w-full flex justify-center md:justify-start overflow-x-auto">
@@ -101,10 +117,13 @@ export default function Patient({ id }) {
                                 </div>
 
                                 <div className="w-full md:w-auto flex justify-end md:justify-start">
-                                    <Button variant="newghost">
-                                        <Paragraph size="md" className="text-MindfulBrown90 font-inter">View all</Paragraph>
+                                    <Button variant="newghost" asChild>
+                                        <Link href={`/dashboard/providers/patient/${patient.id}/${getTabPath(tab)}`}>
+                                            <Paragraph size="md" className="text-MindfulBrown90 font-inter">View all</Paragraph>
+                                        </Link>
                                     </Button>
                                 </div>
+
                             </div>
 
                             {/* Tab Contents */}
