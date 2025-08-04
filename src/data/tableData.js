@@ -11,6 +11,48 @@ const tableData = [
     days: 15,
     status: "Active",
     startDate: "08/01/25",
+    journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
+      },
+    ],
     checkinData: [
       {
         entryName: "Feeling good",
@@ -60,7 +102,7 @@ const tableData = [
         emotion: "Sad",
         stressor: "Loneliness"
       },
-    ]
+    ],
   },
   {
     id: 2,
@@ -118,6 +160,48 @@ const tableData = [
         date: "08/01/25",
         emotion: "Sad",
         stressor: "Loneliness"
+      },
+    ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
       },
     ],
   },
@@ -179,6 +263,48 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
+      },
+    ],
   },
   {
     id: 4,
@@ -236,6 +362,48 @@ const tableData = [
         date: "08/01/25",
         emotion: "Sad",
         stressor: "Loneliness"
+      },
+    ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
       },
     ],
   },
@@ -297,6 +465,48 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
+      },
+    ],
   },
   {
     id: 6,
@@ -354,6 +564,48 @@ const tableData = [
         date: "08/01/25",
         emotion: "Sad",
         stressor: "Loneliness"
+      },
+    ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
       },
     ],
   },
@@ -415,6 +667,48 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
+      },
+    ],
   },
   {
     id: 8,
@@ -472,6 +766,48 @@ const tableData = [
         date: "08/01/25",
         emotion: "Sad",
         stressor: "Loneliness"
+      },
+    ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
       },
     ],
   },
@@ -533,6 +869,48 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
+      },
+    ],
   },
   {
     id: 10,
@@ -590,6 +968,48 @@ const tableData = [
         date: "08/01/25",
         emotion: "Sad",
         stressor: "Loneliness"
+      },
+    ],
+     journalsData: [
+      {
+        entryName: "Feeling good",
+        date: "10/12/24",
+        timeAdded: "08:15 AM",
+      },
+      {
+        entryName: "Anxious thoughts",
+        date: "10/12/24",
+        timeAdded: "09:45 AM",
+      },
+      {
+        entryName: "Productive day",
+        date: "10/12/24",
+        timeAdded: "12:30 PM",
+      },
+      {
+        entryName: "Feeling low",
+        date: "10/12/24",
+        timeAdded: "03:10 PM",
+      },
+      {
+        entryName: "Family time",
+        date: "10/12/24",
+        timeAdded: "06:20 PM",
+      },
+      {
+        entryName: "Evening walk",
+        date: "10/12/24",
+        timeAdded: "07:50 PM",
+      },
+      {
+        entryName: "Reflective thoughts",
+        date: "10/12/24",
+        timeAdded: "09:00 PM",
+      },
+      {
+        entryName: "Calm night",
+        date: "10/12/24",
+        timeAdded: "10:25 PM",
       },
     ],
   },

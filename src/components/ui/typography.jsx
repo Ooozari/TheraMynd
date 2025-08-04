@@ -35,6 +35,7 @@ const headingVariants = cva(
         cardmd: "text-[20px] sm:text-[24px] md:text-[28px] lg:text-[31px] xl:text-[34px] 2xl:text-[36px]",
 
         dialogtext: "text-[10px] sm:text-[10.5px] md:text-[11px] lg:text-[11.5px] xl:text-[11.7px] 2xl:text-[12px]",
+        detailsheading: "text-[14px] sm:text-[15.5px] md:text-[17px] lg:text-[19px] xl:text-[20px] 2xl:text-[21px]",
       },
     },
     defaultVariants: { level: "h1" },

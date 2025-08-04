@@ -44,7 +44,7 @@ import {
 
 
 
-function Checkins({ id }) {
+function Journals({ id }) {
     const [range, setRange] = useState({
         from: new Date(),
         to: new Date(),
@@ -55,7 +55,7 @@ function Checkins({ id }) {
     console.log(patientId)
 
 
-    const [openDailyCheckInDialog, setopenDailyCheckInDialog] = useState(false)
+    const [openJournalsDialog, setopenJournalsDialog] = useState(false)
 
     return (
         <>
@@ -68,7 +68,7 @@ function Checkins({ id }) {
                         <Paragraph size="md" className='font-[500] text-OptimisticGray60 flex'>
                             Patients
                             <span className="px-2 flex justify-center items-center"><Greaterthan /></span>
-                            <span className="text-[#292929]">Daily Check-ins</span>
+                            <span className="text-[#292929]">Journals</span>
                         </Paragraph>
 
                         <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ function Checkins({ id }) {
                                 </Link>
                             </div>
                             <div className="">
-                                <Paragraph size="subText" className='font-[700] text-[#292929]'>Check-Ins</Paragraph>
+                                <Paragraph size="subText" className='font-[700] text-[#292929]'>Journal Entries</Paragraph>
                             </div>
                         </div>
                     </div>
@@ -156,13 +156,12 @@ function Checkins({ id }) {
                                 <TableRow>
                                     <TableHead>Entry name</TableHead>
                                     <TableHead>Date</TableHead>
-                                    <TableHead>Emotion</TableHead>
-                                    <TableHead>Stressor</TableHead>
+                                    <TableHead>Time added</TableHead>
                                     <TableHead></TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {patient.checkinData.map((item, index) => (
+                                {patient.journalsData.map((item, index) => (
                                     <TableRow key={index}>
                                         <TableCell className="font-medium flex items-center gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[18px] xl:gap-[20px] 2xl:gap-[22px]">
                                             <Paragraph size="tabletext" className="text-[#292929]">
@@ -176,24 +175,13 @@ function Checkins({ id }) {
                                             </Paragraph>
                                         </TableCell>
                                         <TableCell>
-                                            <div className="flex gap-[7px] items-center">
-                                                <span className="w-[12px] h-[12px] sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px] lg:w-[16px] lg:h-[16px] xl:w-[17px] xl:h-[17px] 2xl:w-[18px] 2xl:h-[18px]">
-                                                    <Sad />
-                                                </span>
-                                                <Paragraph size="tabletext" className="text-[#292929]">
-                                                    {item.emotion}
-                                                </Paragraph>
-                                            </div>
-                                        </TableCell>
-
-                                        <TableCell>
                                             <Paragraph size="tabletext" className="text-[##292929] ">
-                                                {item.stressor}
+                                                {item.timeAdded}
                                             </Paragraph>
                                         </TableCell>
 
                                         <TableCell className='text-right'>
-                                            <button onClick={() => { setopenDailyCheckInDialog(true) }}>
+                                            <button onClick={() => { setopenJournalsDialog(true) }}>
                                                 <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'
                                                 >
                                                     <Forward />
@@ -208,11 +196,11 @@ function Checkins({ id }) {
                 </div>
             </div>
 
-            <Dialog open={openDailyCheckInDialog} onOpenChange={setopenDailyCheckInDialog}>
+            <Dialog open={openJournalsDialog} onOpenChange={setopenJournalsDialog}>
                 <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px]">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
-                            <Heading level='detailsheading' className='text-[#292929] font-[700]'>Daily Check-In</Heading>
+                            <Heading level='detailsheading' className='text-[#292929] font-[700]'>Journal</Heading>
 
                         </DialogTitle>
                     </DialogHeader>
@@ -230,61 +218,26 @@ function Checkins({ id }) {
 
                             </div>
 
-                            <div className="grid grid-cols-[repeat(auto-fit,minmax(98px,1fr))] gap-[12px] sm:gap-[13px] md:gap-[14px] lg:gap-[15px] xl:gap-[15.5px] 2xl:gap-[16px] w-full">
-                                {/* Mood */}
-                                <div className="min-w-[98px]">
-                                    <Label htmlFor="Mood" className="mb-[8px]">
-                                        <Paragraph size="label" className="text-Gray900 font-bold">Mood</Paragraph>
-                                    </Label>
-                                    <Readonly value="3/10" textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px]" />
-                                </div>
+                            {/* Emotion  */}
+                            <div className='w-full'>
+                                <Label htmlFor="Emotion " className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-Gray900 font-bold">Emotion</Paragraph>
+                                </Label>
+                                <Readonly value={
+                                    <>
+                                        <span className="w-[12px] h-[12px] sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px] lg:w-[16px] lg:h-[16px] xl:w-[17px] xl:h-[17px] 2xl:w-[18px] 2xl:h-[18px]">
+                                            <Sad />
+                                        </span>
+                                        <span>Sad</span>
+                                    </>
+                                } textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px]" />
 
-                                {/* Stress level */}
-                                <div className="min-w-[98px]">
-                                    <Label htmlFor="Stresslevel" className="mb-[8px]">
-                                        <Paragraph size="label" className="text-Gray900 font-bold">Stress level</Paragraph>
-                                    </Label>
-                                    <Readonly value="3/10" textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px]" />
-                                </div>
-
-                                {/* Stressor */}
-                                <div className="min-w-[98px]">
-                                    <Label htmlFor="Stressor" className="mb-[8px]">
-                                        <Paragraph size="label" className="text-Gray900 font-bold">Stressor</Paragraph>
-                                    </Label>
-                                    <Readonly value="3/Family" textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px]" />
-                                </div>
-
-                                {/* Stess Level */}
-                                <div className="min-w-[98px]">
-                                    <Label htmlFor="StessLevel" className="mb-[8px]">
-                                        <Paragraph size="label" className="text-Gray900 font-bold">Stess Level</Paragraph>
-                                    </Label>
-                                    <Readonly value="7/10" textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px]" />
-                                </div>
-
-                                {/* Sleep */}
-                                <div className="min-w-[98px]">
-                                    <Label htmlFor="Sleep" className="mb-[8px]">
-                                        <Paragraph size="label" className="text-Gray900 font-bold">Sleep</Paragraph>
-                                    </Label>
-                                    <Readonly value="3/3-4hrs" textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px] whitespace-nowrap" />
-                                </div>
-
-                                {/* Sleep Qlt. */}
-                                <div className="min-w-[98px]">
-                                    <Label htmlFor="SleepQlt" className="mb-[8px]">
-                                        <Paragraph size="label" className="text-Gray900 font-bold">Sleep Qlt.</Paragraph>
-                                    </Label>
-                                    <Readonly value="Fair" textClassNames="font-[600] text-[#2A2A2A] text-[12px] sm:text-[12.5px] md:text-[13px] lg:text-[13.5px] xl:text-[13.8px] 2xl:text-[14px]" />
-                                </div>
                             </div>
 
-
-                            {/* About stressor */}
+                            {/* Journal entry */}
                             <div>
-                                <Label htmlFor="stressor" className='mb-[8px]'>
-                                    <Paragraph size="label" className="text-Gray900 font-bold">About stressor</Paragraph>
+                                <Label htmlFor="entry" className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-Gray900 font-bold">Journal entry</Paragraph>
                                 </Label>
                                 <Readonly value="Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes." textClassNames="font-medium text-[#3F3C36]" />
                             </div>
@@ -296,4 +249,4 @@ function Checkins({ id }) {
     )
 }
 
-export default Checkins
+export default Journals
