@@ -5,4 +5,4 @@ export { Input } from './input';
 export {  Label } from './label';
 export { Heading, Paragraph } from './typography';
 export {Datepicker} from './Datepicker'
-export {Readonly} from './Readonly'
+export {Readonly} from './readonly'

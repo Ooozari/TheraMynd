@@ -103,6 +103,49 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 2,
@@ -204,6 +247,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 3,
@@ -305,6 +391,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 4,
@@ -406,6 +535,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 5,
@@ -507,6 +679,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 6,
@@ -608,6 +823,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 7,
@@ -709,6 +967,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 8,
@@ -810,6 +1111,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 9,
@@ -911,6 +1255,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
   {
     id: 10,
@@ -1012,6 +1399,49 @@ const tableData = [
         timeAdded: "10:25 PM",
       },
     ],
+    copyMechanismData: [
+  {
+    activity: "Deep breathing",
+    date: "10/12/24",
+    timeAdded: "08:30 AM",
+  },
+  {
+    activity: "Meditation",
+    date: "10/12/24",
+    timeAdded: "09:15 AM",
+  },
+  {
+    activity: "Going for a walk",
+    date: "10/12/24",
+    timeAdded: "10:45 AM",
+  },
+  {
+    activity: "Talking to a friend",
+    date: "10/12/24",
+    timeAdded: "01:00 PM",
+  },
+  {
+    activity: "Writing journal",
+    date: "10/12/24",
+    timeAdded: "03:20 PM",
+  },
+  {
+    activity: "Listening to music",
+    date: "10/12/24",
+    timeAdded: "05:00 PM",
+  },
+  {
+    activity: "Watching a movie",
+    date: "10/12/24",
+    timeAdded: "07:30 PM",
+  },
+  {
+    activity: "Reading a book",
+    date: "10/12/24",
+    timeAdded: "09:45 PM",
+  },
+]
+
   },
 ];
 

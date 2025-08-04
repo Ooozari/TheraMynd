@@ -8,6 +8,7 @@ export {default as PatientProvider} from './PatientProvider'
 export {default as Patient} from './Patient'
 export {default as Checkins} from './Checkins'
 export {default as Journals} from './Journals'
+export {default as Copying} from './Copying'
 
 
 
