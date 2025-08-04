@@ -48,9 +48,9 @@ function Checkins({ id }) {
         {/*  */}
             <div className='flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] md:flex-row flex-col'>
                 {/* Calender  and navigation*/}
-                <div className="flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] bg-amber-900">
+                <div className="flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] ">
                     {/* Header */}
-                    <div className="flex flex-col gap-[16px] sm:gap-[18px] md:gap-[20px] lg:gap-[21px] xl:gap-[24px] 2xl:gap-[28px] bg-green-600">
+                    <div className="flex flex-col gap-[16px] sm:gap-[18px] md:gap-[20px] lg:gap-[21px] xl:gap-[24px] 2xl:gap-[28px] ">
                         <Paragraph size="md" className='font-[500] text-OptimisticGray60 flex'>
                             Patients
                             <span className="px-2 flex justify-center items-center"><Greaterthan /></span>
@@ -84,12 +84,12 @@ function Checkins({ id }) {
                 </div>
 
                 {/* Table and tabs */}
-                <div className="flex flex-col self-start gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full bg-sky-900">
+                <div className="flex flex-col self-start gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
 
                     {/* tabs */}
-                    <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] bg-blue-300">
+                    <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px]">
                         {/* select */}
-                        <div className="bg-orange-400 p-0 m-0">
+                        <div className=" p-0 m-0">
                             <Label htmlFor="mood" className="pb-[8px]">
                                 <Paragraph size="label" className="text-Gray900 font-bold">
                                     Mood type
@@ -108,7 +108,7 @@ function Checkins({ id }) {
                         </div>
 
                         {/* filter */}
-                        <div className="bg-red-500 m-0 p-0">
+                        <div className=" m-0 p-0">
                             <Label htmlFor="Sort" className="pb-[8px]">
                                 <Paragraph size="label" className="text-Gray900 font-bold">
                                     Sort by
@@ -136,7 +136,7 @@ function Checkins({ id }) {
                     </div>
 
                     {/* table */}
-                    <div className="w-full bg-Gray500">
+                    <div className="w-full ">
                         <Table className='w-full'>
                             <TableHeader>
                                 <TableRow>

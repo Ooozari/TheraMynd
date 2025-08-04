@@ -92,10 +92,10 @@ export default function Patient({ id }) {
                         <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)}>
                             {/* Tab Buttons */}
                             <div className="flex flex-col md:flex-row md:justify-between items-start w-full gap-[12px] md:gap-0 md:items-center px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] overflow-x-hidden">
-                                <div className="w-full flex justify-center md:justify-start overflow-x-auto">
+                                <div className="flex justify-center md:justify-start overflow-x-auto">
                                     <TabsList
                                         className="
-                                    w-fit md:w-fit
+                                    w-[90%] md:w-fit
                                     flex
                                     overflow-x-auto
                                     overflow-y-hidden
