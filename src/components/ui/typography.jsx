@@ -30,7 +30,7 @@ const headingVariants = cva(
         mdSubText: "text-[18px] sm:text-[21px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]",
 
         // Using
-        minih:"text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px]",
+        minih:"text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]",
 
         cardmd: "text-[20px] sm:text-[24px] md:text-[28px] lg:text-[31px] xl:text-[34px] 2xl:text-[36px]",
         cardmd2: "text-[18px] sm:text-[21px] md:text-[25px] lg:text-[30px] xl:text-[33px] 2xl:text-[35.31px]",

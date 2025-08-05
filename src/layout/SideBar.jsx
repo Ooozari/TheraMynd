@@ -17,7 +17,7 @@ function SideBar() {
     ];
 
     return (
-        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[28px] flex flex-col justify-between h-screen">
+        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[28px] flex flex-col justify-between h-[100vh]">
             <div>
                 {/* Logo and Name */}
                 <div className="flex items-center justify-center gap-[6px] sm:gap-[7px] md:gap-[8px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]">
@@ -41,14 +41,15 @@ function SideBar() {
                                 key={item.href}
                                 href={item.href}
                                 className={clsx(
-                                    "flex items-center gap-2 px-[8px] sm:px-[12px] md:px-[16px] lg:px-[20px] xl:px-[22px] 2xl:px-[23px] py-[6px] sm:py-[7px] md:py-[8px] lg:py-[10px] xl:py-[11px] 2xl:py-[12px] rounded-[5px] font-semibold text-sm transition-all h-[24px] sm:h-[30px] md:h-[36px] lg:h-[42px] xl:h-[46px] 2xl:h-[50px]",
+                                    "flex items-center gap-2 px-[8px] sm:px-[12px] md:px-[16px] lg:px-[20px] xl:px-[22px] 2xl:px-[23px] py-[6px] sm:py-[7px] md:py-[8px] lg:py-[10px] xl:py-[11px] 2xl:py-[12px] rounded-[5px] font-semibold text-sm transition-all h-[40px] sm:h-[43px] md:h-[45px] lg:h-[47px] xl:h-[49px] 2xl:h-[50px]",
                                     isActive
                                         ? "bg-[#2E2E2E] text-White"
                                         : "text-[#2E2E2E] hover:bg-gray-100"
                                 )}
                             >
-                                <Paragraph size="xs" className="flex items-center gap-2 m-0 p-0 font-[600]">
-                                    <div className='w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] md:w-[20px] md:h-[20px] lg:w-[22px] lg:h-[22px] xl:w-[24px] xl:h-[24px] 2xl:w-[25px] 2xl:h-[25px]'>
+                                <Paragraph size="md" className="flex items-center gap-2 m-0 p-0 font-[600]">
+                                    <div className='w-[18px] h-[18px] sm:w-[19.5px] sm:h-[19.5px] md:w-[21px] md:h-[21px] lg:w-[23px] lg:h-[23px] xl:w-[24px] xl:h-[24px] 2xl:w-[25px] 2xl:h-[25px]
+'>
                                         {item.icon}
                                     </div>
 
@@ -61,9 +62,10 @@ function SideBar() {
                     })}
                 </nav>
             </div>
+
             {/* Logout Button */}
             <Button variant="negative" className='w-full'>
-                <Paragraph size="xs" className="font-[600]">Log out
+                <Paragraph size="md" className="font-[600]">Log out
                 </Paragraph>
             </Button>
         </aside>
