@@ -32,13 +32,13 @@ export function TabsTrigger({ className, ...props }) {
   return (
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
-     className={cn(
-  "inline-flex h-full items-center rounded-[1480.1px] justify-center px-2 md:px-4 font-[800] font-urbanist transition " +
-  "data-[state=active]:bg-[#005F72] data-[state=active]:text-White text-[#3F3C36]" +
-  "hover:bg-[#1E365C1A] hover:text-[#005F72] " +
-  "disabled:pointer-events-none cursor-pointer disabled:opacity-50 ",
-  className
-)}
+      className={cn(
+        "inline-flex h-full items-center rounded-[1480.1px] justify-center px-2 md:px-4 font-[800] font-urbanist transition " +
+        "data-[state=active]:bg-[#005F72] data-[state=active]:text-White text-[#3F3C36]" +
+        "hover:bg-[#1E365C1A] hover:text-[#005F72] " +
+        "disabled:pointer-events-none cursor-pointer disabled:opacity-50 ",
+        className
+      )}
       {...props}
     />
   )

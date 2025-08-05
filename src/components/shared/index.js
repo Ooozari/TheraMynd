@@ -9,5 +9,6 @@ export { default as Biling } from './Biling';
 export { default as Membership } from './Membership';
 export { default as Plan } from './Plan';
 export { default as DailyCheckIns } from './DailyCheckIns';
+export { default as CustomAreaChart } from './AreaChart';
 
 

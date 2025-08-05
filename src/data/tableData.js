@@ -1,6 +1,4 @@
-// data/TableData.js
-
-import { GuestIcon } from '@/svgs/Icons';
+import { GuestIcon,Fair,SadEmoji } from '@/svgs/Icons';
 
 const tableData = [
   {
@@ -104,49 +102,116 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
-  },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+  chartData: {
 
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
+  },
+
   {
     id: 2,
     uid: "NS12341",
@@ -205,7 +270,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -248,49 +313,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 3,
     uid: "NS12342",
@@ -349,7 +482,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -392,49 +525,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 4,
     uid: "NS12343",
@@ -493,7 +694,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -536,49 +737,116 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
-  },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
 
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
+  },
+
   {
     id: 5,
     uid: "NS12344",
@@ -637,7 +905,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -680,49 +948,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 6,
     uid: "NS14346",
@@ -781,7 +1117,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -824,49 +1160,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 7,
     uid: "NS02347",
@@ -925,7 +1329,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -968,49 +1372,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 8,
     uid: "NS12149",
@@ -1069,7 +1541,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -1112,49 +1584,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 9,
     uid: "NS10348",
@@ -1213,7 +1753,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -1256,49 +1796,117 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
+
   {
     id: 10,
     uid: "NS12346",
@@ -1357,7 +1965,7 @@ const tableData = [
         stressor: "Loneliness"
       },
     ],
-     journalsData: [
+    journalsData: [
       {
         entryName: "Feeling good",
         date: "10/12/24",
@@ -1400,47 +2008,114 @@ const tableData = [
       },
     ],
     copyMechanismData: [
-  {
-    activity: "Deep breathing",
-    date: "10/12/24",
-    timeAdded: "08:30 AM",
+      {
+        activity: "Deep breathing",
+        date: "10/12/24",
+        timeAdded: "08:30 AM",
+      },
+      {
+        activity: "Meditation",
+        date: "10/12/24",
+        timeAdded: "09:15 AM",
+      },
+      {
+        activity: "Going for a walk",
+        date: "10/12/24",
+        timeAdded: "10:45 AM",
+      },
+      {
+        activity: "Talking to a friend",
+        date: "10/12/24",
+        timeAdded: "01:00 PM",
+      },
+      {
+        activity: "Writing journal",
+        date: "10/12/24",
+        timeAdded: "03:20 PM",
+      },
+      {
+        activity: "Listening to music",
+        date: "10/12/24",
+        timeAdded: "05:00 PM",
+      },
+      {
+        activity: "Watching a movie",
+        date: "10/12/24",
+        timeAdded: "07:30 PM",
+      },
+      {
+        activity: "Reading a book",
+        date: "10/12/24",
+        timeAdded: "09:45 PM",
+      },
+    ],
+    chartData: {
+
+    stress: {
+      color: "#F97010",
+      avg:'4',
+      feedback: "Loneliness",
+      data: [
+        { name: 'A', uv: 6 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    sleep: {
+      color: "#00B4D8",
+      avg:"5-6 hours",
+      feedback: "Good",
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 6 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 1 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 9 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    mood: {
+      color: "#7F45E2",
+      avg:"5-6 hours",
+      feedback: <SadEmoji />,
+      data: [
+        { name: 'A', uv: 3 },
+        { name: 'B', uv: 5 },
+        { name: 'C', uv: 8 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 3 },
+        { name: 'E', uv: 8 },
+        { name: 'E', uv: 2 },
+        { name: 'E', uv: 10 },
+      ],
+    },
+    appetite: {
+      color: "#E11D48",
+      avg:'Fair',
+      feedback: <Fair />,
+      data: [
+        { name: 'A', uv: 2 },
+        { name: 'B', uv: 3 },
+        { name: 'C', uv: 4 },
+        { name: 'D', uv: 6 },
+        { name: 'E', uv: 4 },
+        { name: 'E', uv: 6 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 5 },
+        { name: 'E', uv: 10 },
+      ],
+    },
   },
-  {
-    activity: "Meditation",
-    date: "10/12/24",
-    timeAdded: "09:15 AM",
-  },
-  {
-    activity: "Going for a walk",
-    date: "10/12/24",
-    timeAdded: "10:45 AM",
-  },
-  {
-    activity: "Talking to a friend",
-    date: "10/12/24",
-    timeAdded: "01:00 PM",
-  },
-  {
-    activity: "Writing journal",
-    date: "10/12/24",
-    timeAdded: "03:20 PM",
-  },
-  {
-    activity: "Listening to music",
-    date: "10/12/24",
-    timeAdded: "05:00 PM",
-  },
-  {
-    activity: "Watching a movie",
-    date: "10/12/24",
-    timeAdded: "07:30 PM",
-  },
-  {
-    activity: "Reading a book",
-    date: "10/12/24",
-    timeAdded: "09:45 PM",
-  },
-]
 
   },
 ];
