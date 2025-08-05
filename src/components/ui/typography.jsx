@@ -33,6 +33,7 @@ const headingVariants = cva(
         minih:"text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px]",
 
         cardmd: "text-[20px] sm:text-[24px] md:text-[28px] lg:text-[31px] xl:text-[34px] 2xl:text-[36px]",
+        cardmd2: "text-[18px] sm:text-[21px] md:text-[25px] lg:text-[30px] xl:text-[33px] 2xl:text-[35.31px]",
         dialogtext: "text-[10px] sm:text-[10.5px] md:text-[11px] lg:text-[11.5px] xl:text-[11.7px] 2xl:text-[12px]",
         detailsheading: "text-[14px] sm:text-[15.5px] md:text-[17px] lg:text-[19px] xl:text-[20px] 2xl:text-[21px]",
       },
@@ -68,6 +69,7 @@ const paragraphVariants = cva("", {
       code: "text-[40px] sm:text-[45px] md:text-[50px] lg:text-[55px] xl:text-[58px] 2xl:text-[60px]",
       head: "text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[17.5px] 2xl:text-[18px]",
       uid: "text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] xl:text-[11.5px] 2xl:text-[12px]",
+      subhead: "text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px]",
     },
   },
   defaultVariants: { size: "normal" },
