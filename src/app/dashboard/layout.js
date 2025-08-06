@@ -34,8 +34,10 @@ export default function DashboardLayout({ children }) {
         <TopBar onMenuClick={() => setIsSidebarOpen(true)} />
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto px-[10px] sm:px-[14px] md:px-[18px] lg:px-[20px] xl:px-[24px] 2xl:px-[29px] pt-[10px] md:pt-0 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px] bg-[#F0F0F0]">
-          {children}
+        <div className=" overflow-y-auto px-[10px] sm:px-[14px] md:px-[18px] lg:px-[20px] xl:px-[24px] 2xl:px-[29px] pt-[10px] md:pt-0 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px] bg-[#F0F0F0] flex-1">
+          <div className='container mx-auto'>
+            {children}
+          </div>
         </div>
       </div>
     </div>
