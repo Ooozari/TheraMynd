@@ -1,4 +1,6 @@
 'use client';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import React from 'react'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
@@ -10,18 +12,23 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/button"
 
 function SignUp() {
-    const [email, setEmail] = useState('')
-        const [password, setPassword] = useState('')
-    
-        const router = useRouter()
-    
-        const handleSubmit = (e) => {
-            e.preventDefault()
-    
-            if (email.trim() && password.trim()) {
-                router.push('/create-account/account-details')
-            } 
-        }
+    const router = useRouter();
+
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().email('Invalid email').required('Email is required'),
+            password: Yup.string()
+                .min(6, 'Password must be at least 6 characters')
+                .required('Password is required'),
+        }),
+        onSubmit: (values) => {
+            router.push('/create-account/account-details');
+        },
+    });
     return (
         <>
             <div className='min-h-screen w-full flex items-center justify-center px-4 '>
@@ -40,14 +47,14 @@ function SignUp() {
                             </div>
                         </div>
                         <Heading level="Subh1" className="font-bold text-Gray900">
-                           Create Account
+                            Create Account
                         </Heading>
                         <Paragraph size="md" className="text-Gray700 font-medium font-satoshi">Create account to access TheraMynd</Paragraph>
                     </div>
 
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                    <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
 
                         {/* Input Feilds */}
                         <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
@@ -57,11 +64,15 @@ function SignUp() {
                                 </Label>
                                 <Input
                                     id="email"
+                                    name="email"
                                     type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
                                 />
+                                {formik.touched.email && formik.errors.email && (
+                                    <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                                )}
                             </div>
                             <div>
                                 <div>
@@ -70,10 +81,15 @@ function SignUp() {
                                     </Label>
                                     <Input
                                         id="password"
+                                        name="password"
                                         type="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        required />
+                                        value={formik.values.password}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                    />
+                                    {formik.touched.password && formik.errors.password && (
+                                        <p className="text-red-500 text-sm mt-1">{formik.errors.password}</p>
+                                    )}
                                 </div>
 
                                 <div className='mt-[14px]'>
@@ -86,12 +102,13 @@ function SignUp() {
                         {/* Button */}
                         <div className=''>
                             <div className=''>
-                                <Button variant="secondary" className='w-full' type='submit'>
+                                <Button variant="secondary" className='w-full' type='submit'
+                                disabled={!formik.isValid || formik.isSubmitting}>
                                     <Paragraph size="btnText" className="text-White font-black font-satoshi">Create account
                                     </Paragraph>
                                 </Button>
                             </div>
-                            
+
                         </div>
                     </form>
 

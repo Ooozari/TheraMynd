@@ -27,11 +27,13 @@ function isValidDate(date) {
   return date instanceof Date && !isNaN(date.getTime())
 }
 
-export default function Datepicker() {
+export default function Datepicker({ formik }) {
   const [open, setOpen] = useState(false)
-  const [date, setDate] = useState(null)
   const [month, setMonth] = useState(null)
-  const [value, setValue] = useState("")
+
+  const selectedDate = formik.values.dateOfBirth
+    ? new Date(formik.values.dateOfBirth)
+    : null
 
   return (
     <div className="flex flex-col gap-2">
@@ -43,15 +45,14 @@ export default function Datepicker() {
       <div className="relative">
         <Input
           id="date"
-          value={value}
-          required
+          name="dateOfBirth"
+          value={formik.values.dateOfBirth || ""}
           placeholder="Select a date"
           className="pr-10"
           onChange={(e) => {
             const inputDate = new Date(e.target.value)
-            setValue(e.target.value)
+            formik.setFieldValue("dateOfBirth", e.target.value)
             if (isValidDate(inputDate)) {
-              setDate(inputDate)
               setMonth(inputDate)
             }
           }}
@@ -62,6 +63,7 @@ export default function Datepicker() {
             }
           }}
         />
+
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -75,19 +77,25 @@ export default function Datepicker() {
           <PopoverContent className="w-auto p-0" align="end" sideOffset={8}>
             <Calendar
               mode="single"
-              selected={date}
+              selected={selectedDate}
               captionLayout="dropdown"
               month={month}
               onMonthChange={setMonth}
-              onSelect={(d) => {
-                setDate(d)
-                setValue(formatDate(d))
-                setOpen(false)
+              onSelect={(date) => {
+                if (isValidDate(date)) {
+                  const formatted = formatDate(date)
+                  formik.setFieldValue("dateOfBirth", formatted)
+                  setMonth(date)
+                  setOpen(false)
+                }
               }}
             />
           </PopoverContent>
         </Popover>
       </div>
+      {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
+        <p className="text-red-500 text-sm mt-[-4px]">{formik.errors.dateOfBirth}</p>
+      )}
     </div>
   )
 }

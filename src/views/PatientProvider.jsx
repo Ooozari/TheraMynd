@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react'
 import { Dots, Forward, NewEdit, See, Generate, User, Bin } from '@/svgs/Icons'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -52,12 +54,23 @@ function PatientProvider() {
         Pending: "bg-[#FFC700]",
         Inactive: "bg-[#FF0100]",
     }
-
-    const handleAddPatient = (e) => {
-        e.preventDefault();
-        setopenAddPatientDialog(false);
-    };
-
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            phone: '',
+            notify: '',
+        },
+        validationSchema: Yup.object({
+            name: Yup.string().required('Name is required'),
+            email: Yup.string().email('Invalid email').required('Email is required'),
+            phone: Yup.string().required('Phone is required'),
+            notify: Yup.string().required('Notification method is required'),
+        }),
+        onSubmit: values => {
+            setopenAddPatientDialog(false);
+        },
+    });
 
     // Add new patinet dialog box
     const [openAddPatientDialog, setopenAddPatientDialog] = useState(false)
@@ -72,9 +85,9 @@ function PatientProvider() {
     const [openNewSuccessDialog, setopenNewSuccessDialog] = useState(false)
 
     // delete patinet
-     const [deletePatient, setdeletePatient] = useState(false)
-      const [deletePatientSuccessMsg, setdeletePatientSuccessMsg] = useState(false)
-    
+    const [deletePatient, setdeletePatient] = useState(false)
+    const [deletePatientSuccessMsg, setdeletePatientSuccessMsg] = useState(false)
+
 
     return (
         <>
@@ -198,7 +211,7 @@ function PatientProvider() {
 
                                                     <DropdownMenuItem>
                                                         <button className='flex items-center gap-[7px]' onClick={() => setopenNewVerifacationCode(true)}>                                    <Generate />
-                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
+                                                            <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
                                                         </button>
                                                     </DropdownMenuItem>
                                                     <DropdownMenuSeparator />
@@ -214,8 +227,8 @@ function PatientProvider() {
 
                                                     <DropdownMenuItem>
                                                         <button className='flex items-center gap-[7px]' onClick={() => setdeletePatient(true)}>
-                                                        <Bin />
-                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
+                                                            <Bin />
+                                                            <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
                                                         </button>
 
                                                     </DropdownMenuItem>
@@ -223,7 +236,7 @@ function PatientProvider() {
                                             </DropdownMenu>
 
                                             <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'
-                                            onClick={() => router.push(`/dashboard/providers/patient/${item.id}`)}>
+                                                onClick={() => router.push(`/dashboard/providers/patient/${item.id}`)}>
                                                 <Forward />
                                             </div>
                                         </div>
@@ -252,7 +265,7 @@ function PatientProvider() {
                     </DialogHeader>
 
                     {/* input details */}
-                    <form onSubmit={handleAddPatient}>
+                    <form onSubmit={formik.handleSubmit}>
                         <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px]'>
 
                             {/* Patient Name */}
@@ -262,11 +275,16 @@ function PatientProvider() {
                                 </Label>
                                 <Input
                                     className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
-'
-                                    id="name"
+'                                   id="name"
+                                    name="name"
                                     type="text"
-                                    required
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.name}
                                 />
+                                {formik.touched.name && formik.errors.name && (
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.name}</p>
+                                )}
                             </div>
 
                             {/* Patients email */}
@@ -276,11 +294,16 @@ function PatientProvider() {
                                 </Label>
                                 <Input
                                     id="email"
-                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
-'
+                                    name="email"
                                     type="email"
-                                    required
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.email}
+                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
                                 />
+                                {formik.touched.email && formik.errors.email && (
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
+                                )}
                             </div>
 
 
@@ -290,14 +313,17 @@ function PatientProvider() {
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patients phone</Paragraph>
                                 </Label>
                                 <Input
-                                    type="tel"
-                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
-'
                                     id="phone"
                                     name="phone"
-                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    required
+                                    type="tel"
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.phone}
+                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
                                 />
+                                {formik.touched.phone && formik.errors.phone && (
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.phone}</p>
+                                )}
                             </div>
 
 
@@ -306,7 +332,9 @@ function PatientProvider() {
                                 <Label htmlFor="Notify" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Notify patient by</Paragraph>
                                 </Label>
-                                <Select id='Notify' required >
+                                <Select name="notify"
+                                    value={formik.values.notify}
+                                    onValueChange={(value) => formik.setFieldValue('notify', value)}>
                                     <SelectTrigger className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px] w-full'>
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>
@@ -317,6 +345,9 @@ function PatientProvider() {
                                         <SelectItem value="Neither">Neither</SelectItem>
                                     </SelectContent>
                                 </Select>
+                                {formik.touched.notify && formik.errors.notify && (
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.notify}</p>
+                                )}
                             </div>
 
                         </div>
@@ -367,7 +398,7 @@ function PatientProvider() {
             {/* Generate New Varification Code*/}
             <Dialog open={openNewVerifacationCode} onOpenChange={setopenNewVerifacationCode}>
                 <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'
-                onInteractOutside={(e) => e.preventDefault()}>
+                    onInteractOutside={(e) => e.preventDefault()}>
                     <DialogHeader>
                         <DialogTitle className='text-center'>
                             <Paragraph size='subText' className='text-MindfulBrown90 font-urbanist font-[800]'>Your new verification code is:</Paragraph></DialogTitle>
@@ -428,7 +459,7 @@ function PatientProvider() {
                             <Button
                                 variant='secondaryOutline'
                                 className='w-full rounded-[15px] hover:bg-Secondary  group'
-                                onClick={() => {setdeletePatient(false)}}
+                                onClick={() => { setdeletePatient(false) }}
                             >
                                 <Paragraph size="btnText" className="text-Secondary font-[700] font-satoshi group-hover:text-White">I changed my mind</Paragraph>
                             </Button>

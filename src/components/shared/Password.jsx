@@ -1,4 +1,6 @@
 'use client';
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import React, { useState } from 'react';
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label";
@@ -19,6 +21,30 @@ function Password() {
     const [openCurrentDialog, setOpenCurrentDialog] = useState(false);
     const [openEditDialog, setOpenEditDialog] = useState(false);
     const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
+    const currentPasswordFormik = useFormik({
+        initialValues: {
+            currentpassword: "",
+        },
+        validationSchema: Yup.object({
+            currentpassword: Yup.string().required("Current password is required"),
+        }),
+        onSubmit: (values) => {
+            setOpenCurrentDialog(false);
+            setOpenEditDialog(true);
+        },
+    });
+    const newPasswordFormik = useFormik({
+        initialValues: {
+            newpassword: "",
+        },
+        validationSchema: Yup.object({
+            newpassword: Yup.string().required("Password is required"),
+        }),
+        onSubmit: (values) => {
+            setOpenEditDialog(false);
+            setOpenSuccessDialog(true);
+        },
+    });
 
     return (
         <>
@@ -47,26 +73,33 @@ function Password() {
                                 <Heading level="mdSubText" className="font-[800] font-urbanist text-[#424242]">Enter Current Password</Heading>
                             </DialogTitle>
                         </DialogHeader>
-                        <div className="grid gap-2">
-                            <Label htmlFor="currentpassword" className='mb-[8px]'>
-                                <Paragraph size="label" className="text-[#292929] font-[600]">Current password</Paragraph>
-                            </Label>
-                            <Input id="currentpassword" name="currentpassword" />
-                        </div>
-                        <DialogFooter>
-                            <Button
-                                type="button"
-                                variant='secondary'
-                                className='w-full'
-                                onClick={() => {
-                                    setOpenCurrentDialog(false);
-                                    setOpenEditDialog(true);
-                                }}
-                            >
-                                <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue</Paragraph>
-                                
-                            </Button>
-                        </DialogFooter>
+                        <form onSubmit={currentPasswordFormik.handleSubmit} className="grid gap-4">
+                            <div className="grid gap-2">
+                                <Label htmlFor="currentpassword" className='mb-[8px]'>
+                                    <Paragraph size="label" className="text-[#292929] font-[600]">Current password</Paragraph>
+                                </Label>
+                                <Input id="currentpassword"
+                                    name="currentpassword"
+                                    type="password"
+                                    value={currentPasswordFormik.values.currentpassword}
+                                    onChange={currentPasswordFormik.handleChange}
+                                    onBlur={currentPasswordFormik.handleBlur}
+                                />
+                                {currentPasswordFormik.touched.currentpassword && currentPasswordFormik.errors.currentpassword && (
+                                    <p className="text-red-500 text-sm mt-1">{currentPasswordFormik.errors.currentpassword}</p>
+                                )}
+                            </div>
+                            <DialogFooter>
+                                <Button
+                                    type="submit"
+                                    variant='secondary'
+                                    className='w-full'
+                                >
+                                    <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue</Paragraph>
+
+                                </Button>
+                            </DialogFooter>
+                        </form>
                     </DialogContent>
                 </form>
             </Dialog>
@@ -77,23 +110,31 @@ function Password() {
                     <DialogHeader>
                         <DialogTitle>Edit Password</DialogTitle>
                     </DialogHeader>
-                    <div className="grid gap-4">
-                        <Label htmlFor="newpassword">New password</Label>
-                        <Input id="newpassword" name="newpassword" />
-                    </div>
-                    <DialogFooter>
-                        <Button
-                            type="button"
-                            variant='secondary'
-                            className='w-full'
-                            onClick={() => {
-                                setOpenEditDialog(false);
-                                setOpenSuccessDialog(true);
-                            }}
-                        >   <Paragraph size="btnText" className="text-White font-black font-satoshi">Update password</Paragraph>
-                            
-                        </Button>
-                    </DialogFooter>
+                    <form onSubmit={newPasswordFormik.handleSubmit} className="grid gap-4">
+                        <div className="grid gap-4">
+                            <Label htmlFor="newpassword">New password</Label>
+                            <Input
+                                id="newpassword"
+                                name="newpassword"
+                                type="password"
+                                value={newPasswordFormik.values.newpassword}
+                                onChange={newPasswordFormik.handleChange}
+                                onBlur={newPasswordFormik.handleBlur}
+                            />
+                            {newPasswordFormik.touched.newpassword && newPasswordFormik.errors.newpassword && (
+                                <p className="text-red-500 text-sm mt-1">{newPasswordFormik.errors.newpassword}</p>
+                            )}
+                        </div>
+                        <DialogFooter>
+                            <Button
+                                type="submit"
+                                variant='secondary'
+                                className='w-full'
+                            >   <Paragraph size="btnText" className="text-White font-black font-satoshi">Update password</Paragraph>
+
+                            </Button>
+                        </DialogFooter>
+                    </form>
                 </DialogContent>
             </Dialog>
 
@@ -105,9 +146,9 @@ function Password() {
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>Your new password has been set.</DialogDescription>
                     </DialogHeader>
                     <DialogFooter>
-                        <Button 
-                        variant='secondary' 
-                        className='w-full' onClick={() => setOpenSuccessDialog(false)}>
+                        <Button
+                            variant='secondary'
+                            className='w-full' onClick={() => setOpenSuccessDialog(false)}>
                             <Paragraph size="btnText" className="text-White font-black font-satoshi">Done</Paragraph>
                         </Button>
                     </DialogFooter>

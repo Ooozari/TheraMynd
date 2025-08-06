@@ -1,5 +1,7 @@
 'use client';
 import React from 'react'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { Union } from '@/svgs/Icons'
@@ -10,20 +12,21 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/button"
 
 export default function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
     const router = useRouter()
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        if (email.trim() && password.trim()) {
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().email('Invalid email address').required('Email is required'),
+            password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+        }),
+        onSubmit: (values) => {
             router.push('/verify-login')
-        } else {
-            alert('Please fill in both email and password.')
-        }
-    }
+        },
+    });
+
     return (
         <>
             <div className='min-h-screen w-full flex items-center justify-center px-4 '>
@@ -49,7 +52,7 @@ export default function Login() {
 
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                    <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
                         {/* Input Feilds */}
                         <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
                             <div>
@@ -59,10 +62,13 @@ export default function Login() {
                                 <Input
                                     id="email"
                                     type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
                                 />
+                                {formik.touched.email && formik.errors.email && (
+                                    <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                                )}
                             </div>
                             <div>
                                 <div>
@@ -72,9 +78,13 @@ export default function Login() {
                                     <Input
                                         id="password"
                                         type="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        required />
+                                        value={formik.values.password}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                    />
+                                    {formik.touched.password && formik.errors.password && (
+                                        <p className="text-red-500 text-sm mt-1">{formik.errors.password}</p>
+                                    )}
                                 </div>
 
                                 <div className='mt-[14px]'>
@@ -88,8 +98,8 @@ export default function Login() {
                         <div className=''>
                             <div className=''>
                                 <Button variant="secondary" className='w-full' type='submit'>
-                                        <Paragraph size="btnText" className="text-White font-black font-satoshi">Sign in
-                                        </Paragraph>
+                                    <Paragraph size="btnText" className="text-White font-black font-satoshi">Sign in
+                                    </Paragraph>
                                 </Button>
                             </div>
                             <div className='mt-[12px] sm:mt-[13px] md:mt-[14px] lg:mt-[15px] xl:mt-[15.5px] 2xl:mt-[16px]

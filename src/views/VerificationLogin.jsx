@@ -1,5 +1,7 @@
 'use client';
 import React from 'react'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useRouter } from 'next/navigation'
 import { Union } from '@/svgs/Icons'
 import { Heading, Paragraph } from "@/components/ui/typography";
@@ -10,37 +12,55 @@ import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 
 export default function VerificationLogin() {
-    const inputRefs = useRef([]);
-    console.log(inputRefs[0])
     const router = useRouter();
-    const [codes, setCodes] = useState(Array(6).fill(""));
+
+    const formik = useFormik({
+        initialValues: {
+            code0: '',
+            code1: '',
+            code2: '',
+            code3: '',
+            code4: '',
+            code5: '',
+        },
+
+
+        validationSchema: Yup.object().shape({
+            code0: Yup.string().required('Required').matches(/^\d$/, 'Only 1 digit'),
+            code1: Yup.string().required('Required').matches(/^\d$/, 'Only 1 digit'),
+            code2: Yup.string().required('Required').matches(/^\d$/, 'Only 1 digit'),
+            code3: Yup.string().required('Required').matches(/^\d$/, 'Only 1 digit'),
+            code4: Yup.string().required('Required').matches(/^\d$/, 'Only 1 digit'),
+            code5: Yup.string().required('Required').matches(/^\d$/, 'Only 1 digit'),
+        }),
+        onSubmit: (values) => {
+            const code = Object.values(values).join('');
+            router.push('/dashboard/providers');
+        }
+    });
 
     const handleChange = (e, index) => {
-        const value = e.target.value.replace(/[^0-9]/g, "").slice(0, 1); // only one digit
-        const newCodes = [...codes];
-        newCodes[index] = value;
-        setCodes(newCodes);
-
+        formik.setTouched({
+            code0: true,
+            code1: true,
+            code2: true,
+            code3: true,
+            code4: true,
+            code5: true,
+        });
+        const value = e.target.value.replace(/\D/g, '').slice(0, 1);
+        formik.setFieldValue(`code${index}`, value);
         if (value && index < 5) {
-            inputRefs.current[index + 1]?.focus();
+            const next = document.getElementById(`code${index + 1}`);
+            if (next) next.focus();
         }
     };
 
     const handleKeyDown = (e, index) => {
-        if (e.key === "Backspace" && !codes[index] && index > 0) {
-            inputRefs.current[index - 1]?.focus();
+        if (e.key === 'Backspace' && !formik.values[`code${index}`] && index > 0) {
+            const prev = document.getElementById(`code${index - 1}`);
+            if (prev) prev.focus();
         }
-    };
-
-    const handleContinue = (e) => {
-        e.preventDefault(); // prevent form submission reload
-
-        const isCodeComplete = codes.every(code => code.trim() !== "");
-        if (!isCodeComplete) {
-            return;
-        }
-
-        router.push('/dashboard/providers');
     };
 
 
@@ -72,28 +92,38 @@ export default function VerificationLogin() {
 
 
                     {/* Form */}
-                    <form className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                    <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
 
 
-                        {/* Input Feilds */}
-                        <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px] flex justify-center'>
-                            <div className="flex gap-2">
-                                {codes.map((value, index) => (
-                                    <Input
-                                        key={index}
-                                        type="text"
-                                        inputMode="numeric"
-                                        maxLength={1}
-                                        required
-                                        value={value}
-                                        onChange={(e) => handleChange(e, index)}
-                                        onKeyDown={(e) => handleKeyDown(e, index)}
-                                        ref={(el) => (inputRefs.current[index] = el)}
-                                        className="w-[40px] h-[44px] sm:w-[42px] sm:h-[46px] md:w-[44px] md:h-[48px] lg:w-[46px] lg:h-[50px] xl:w-[47.5px] xl:h-[52px] 2xl:w-[49px] 2xl:h-[54px] text-center text-lg font-semibold font-satoshi border-[#B0B0B0] border-1 rounded-[5px]"
-                                    />
-                                ))}
+
+                        <div>
+                            {/* Input Feilds */}
+                            <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px] flex justify-center'>
+                                <div className="flex gap-2">
+                                    {[...Array(6)].map((_, i) => (
+                                        <Input
+                                            key={i}
+                                            id={`code${i}`}
+                                            name={`code${i}`}
+                                            type="text"
+                                            inputMode="numeric"
+                                            maxLength={1}
+                                            value={formik.values[`code${i}`]}
+                                            onChange={(e) => handleChange(e, i)}
+                                            onKeyDown={(e) => handleKeyDown(e, i)}
+                                            className="w-[40px] h-[44px] sm:w-[42px] sm:h-[46px] md:w-[44px] md:h-[48px] lg:w-[46px] lg:h-[50px] xl:w-[47.5px] xl:h-[52px] 2xl:w-[49px] 2xl:h-[54px] text-center text-lg font-semibold font-satoshi border-[#B0B0B0] border-1 rounded-[5px]"
+                                        />
+                                    ))}
+                                </div>
                             </div>
+                            {/* Error below inputs if any */}
+                            {Object.keys(formik.errors).length > 0 && formik.submitCount > 0 && (
+                                <p className="text-red-500 text-sm text-center mt-1">All fields must contain exactly 1 digit</p>
+                            )}
                         </div>
+
+
+
 
                         {/* CheckBox */}
                         <div className='flex gap-2 justify-center items-center'>
@@ -103,15 +133,16 @@ export default function VerificationLogin() {
                             <Paragraph size='md' className='text-Gray700 font-medium font-satoshi'>
                                 Remember device for 30 days</Paragraph>
                         </div>
-                    </form>
 
-                    {/* Button */}
-                    <div className=''>
-                        <Button variant="secondary" type='submit' className='w-full' onClick={handleContinue}>
-                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue
-                            </Paragraph>
-                        </Button>
-                    </div>
+
+                        {/* Button */}
+                        <div className=''>
+                            <Button variant="secondary" type='submit' className='w-full'>
+                                <Paragraph size="btnText" className="text-White font-black font-satoshi">Continue
+                                </Paragraph>
+                            </Button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

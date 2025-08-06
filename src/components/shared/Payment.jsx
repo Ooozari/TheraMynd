@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
 import Plan from './Plan';
-
-function Payment({ selectedPlanIndex, setSelectedPlanIndex }) {
+import { Button } from "@/components/ui/button"
+import { Paragraph } from "@/components/ui/typography";
+function Payment({ selectedPlanIndex, setSelectedPlanIndex, setIsConfirmed }) {
   const plans = [
     {
       type: "Basic Plan",
@@ -41,18 +42,39 @@ function Payment({ selectedPlanIndex, setSelectedPlanIndex }) {
     },
   ];
 
-
+  const handleNext = () => {
+    setIsConfirmed(true);
+  };
   return (
-    <div className="flex flex-col items-center space-y-5">
-      {plans.map((plan, i) => (
-        <Plan
-          key={i}
-          {...plan}
-          isSelected={selectedPlanIndex === i}
-          onSelect={() => setSelectedPlanIndex(i)} 
-        />
-      ))}
-    </div>
+    <>
+      <div className='w-full flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+        <div className="flex flex-col items-center space-y-5">
+          {plans.map((plan, i) => (
+            <Plan
+              key={i}
+              {...plan}
+              isSelected={selectedPlanIndex === i}
+              onSelect={() => setSelectedPlanIndex(i)}
+            />
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-6">
+          <Button
+            type="submit"
+            variant="secondary"
+            onClick={handleNext}
+            className="w-full bg-[#00738A] font-satoshi font-[900]"
+          >
+            <Paragraph size="normal">
+              Continue
+            </Paragraph>
+          </Button>
+        </div>
+      </div>
+    </>
+
+
   );
 }
 

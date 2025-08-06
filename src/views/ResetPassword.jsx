@@ -1,5 +1,7 @@
 'use client';
 import React from 'react'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { Union } from '@/svgs/Icons'
@@ -11,26 +13,28 @@ import { Button } from "@/components/ui/button"
 import { Back } from '@/svgs/Icons'
 
 function ResetPassword() {
-    const [email, setEmail] = useState('')
-    const [emailStatus, setemailStatus] = useState(false)
-    const router = useRouter()
+    const [emailStatus, setEmailStatus] = useState(false);
+    const router = useRouter();
 
-    const handlereset = (e) => {
-        e.preventDefault()
-        if (email.trim()) {
-            setemailStatus(true)
-        }
-    }
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+        },
+        validationSchema: Yup.object({
+            email: Yup.string()
+                .email('Invalid email address')
+                .required('Email is required'),
+        }),
+        onSubmit: (values) => {
+            setEmailStatus(true);
+        },
+    });
     return (
         <>
-            {emailStatus === false ? (
+            {!emailStatus ? (
                 <div>{/* Sent Email */}
                     <div className='min-h-screen w-full flex items-center justify-center px-4 '>
-
-                        <div className='flex flex-col bg-White rounded-[10px] shadow-[0px_9px_34px_0px_#0000001A] gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[21px] xl:gap-[21.5px] 2xl:gap-[22px]
-                max-w-[432px]
-                p-[18px] sm:p-[19px] md:p-[20px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] w-full
-            '>
+                        <div className='flex flex-col bg-White rounded-[10px] shadow-[0px_9px_34px_0px_#0000001A] gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[21px] xl:gap-[21.5px] 2xl:gap-[22px] max-w-[432px] p-[18px] sm:p-[19px] md:p-[20px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] w-full'>
 
                             {/* top */}
                             <div className='flex gap-3 items-center'>
@@ -62,27 +66,34 @@ function ResetPassword() {
 
 
                             {/* Form */}
-                            <form onSubmit={handlereset} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                            <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
                                 {/* Input Feilds */}
-                                <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
+                                <div>
+                                    <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
 
-                                    <Label htmlFor="email" className='mb-[8px]'>
-                                        <Paragraph size="label" className="text-Gray900 font-bold font-satoshi">Enter Email Address</Paragraph>
-                                    </Label>
-                                    <Input
-                                        id="email"
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
-                                    />
-
+                                        <Label htmlFor="email" className='mb-[8px]'>
+                                            <Paragraph size="label" className="text-Gray900 font-bold font-satoshi">Enter Email Address</Paragraph>
+                                        </Label>
+                                        <Input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            value={formik.values.email}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                        />
+                                    </div>
+                                    {formik.touched.email && formik.errors.email && (
+                                        <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                                    )}
                                 </div>
+
 
                                 {/* Button */}
                                 <div className=''>
                                     <div className=''>
-                                        <Button variant="secondary" className='w-full' type='submit'>
+                                        <Button variant="secondary" className='w-full' type='submit'
+                                            disabled={!formik.isValid || formik.isSubmitting}>
                                             <Paragraph size="btnText" className="text-White font-black font-satoshi">Reset Password
                                             </Paragraph>
                                         </Button>
@@ -117,10 +128,10 @@ function ResetPassword() {
                             <div className=''>
                                 <Button variant="secondary" className='w-full bg-MindfulBrown80' type='submit'>
                                     <Link href='/login'>
-                                    <Paragraph size="btnText" className="text-White font-black font-satoshi">Back to log in
-                                    </Paragraph>
+                                        <Paragraph size="btnText" className="text-White font-black font-satoshi">Back to log in
+                                        </Paragraph>
                                     </Link>
-                                    
+
                                 </Button>
                             </div>
                         </div>
