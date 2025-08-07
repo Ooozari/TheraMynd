@@ -99,7 +99,7 @@ function Biling() {
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.fname && formik.errors.fname && (
-                                                <p className="text-red-500 text-sm mt-1">{formik.errors.fname}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.fname}</p>
                                             )}
                                         </div>
                                         <div className='w-full'>
@@ -112,7 +112,7 @@ function Biling() {
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.lname && formik.errors.lname && (
-                                                <p className="text-red-500 text-sm mt-1">{formik.errors.lname}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.lname}</p>
                                             )}
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@ function Biling() {
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.cardNum && formik.errors.cardNum && (
-                                                <p className="text-red-500 text-sm mt-1">{formik.errors.cardNum}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.cardNum}</p>
                                             )}
                                         </div>
                                         {/* CVV */}
@@ -145,7 +145,7 @@ function Biling() {
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.cvv && formik.errors.cvv && (
-                                                <p className="text-red-500 text-sm mt-1">{formik.errors.cvv}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.cvv}</p>
                                             )}
 
                                         </div>
@@ -164,7 +164,7 @@ function Biling() {
                                             onChange={formik.handleChange}
                                         />
                                         {formik.touched.Address && formik.errors.Address && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.Address}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.Address}</p>
                                         )}
                                     </div>
 
@@ -181,7 +181,7 @@ function Biling() {
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.city && formik.errors.city && (
-                                                <p className="text-red-500 text-sm mt-1">{formik.errors.city}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.city}</p>
                                             )}
                                         </div>
                                         {/* State */}
@@ -203,7 +203,7 @@ function Biling() {
                                                 </SelectContent>
                                             </Select>
                                             {formik.touched.state && formik.errors.state && (
-                                                <p className="text-red-500 text-sm mt-1">{formik.errors.state}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
                                             )}
 
                                         </div>
@@ -231,7 +231,7 @@ function Biling() {
                                                 </SelectContent>
                                             </Select>
                                             {formik.touched.country && formik.errors.country && (
-                                                <p className="text-red-500 text-sm">{formik.errors.country}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.country}</p>
                                             )}
                                         </div>
                                         {/* State */}
@@ -246,7 +246,7 @@ function Biling() {
 
                                             />
                                             {formik.touched.zip && formik.errors.zip && (
-                                                <p className="text-red-500 text-sm">{formik.errors.zip}</p>
+                                                <p className="text-red-500 text-xs mt-1">{formik.errors.zip}</p>
                                             )}
                                         </div>
                                     </div>

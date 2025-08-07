@@ -94,7 +94,7 @@ export default function Datepicker({ formik }) {
         </Popover>
       </div>
       {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
-        <p className="text-red-500 text-sm mt-[-4px]">{formik.errors.dateOfBirth}</p>
+        <p className="text-red-500 text-xs mt-[-4px]">{formik.errors.dateOfBirth}</p>
       )}
     </div>
   )

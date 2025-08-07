@@ -118,7 +118,7 @@ export default function VerificationLogin() {
                             </div>
                             {/* Error below inputs if any */}
                             {Object.keys(formik.errors).length > 0 && formik.submitCount > 0 && (
-                                <p className="text-red-500 text-sm text-center mt-1">All fields must contain exactly 1 digit</p>
+                                <p className="text-red-500 text-xs text-center mt-2">All fields must contain exactly 1 digit</p>
                             )}
                         </div>
 

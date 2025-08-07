@@ -77,7 +77,7 @@ function AboutYou({ setCurrentStep }) {
                                         value={formik.values.fname}
                                     />
                                     {formik.touched.fname && formik.errors.fname && (
-                                        <p className="text-red-500 text-sm mt-1">{formik.errors.fname}</p>
+                                        <p className="text-red-500 text-xs mt-1">{formik.errors.fname}</p>
                                     )}
                                 </div>
                                 <div className='w-full'>
@@ -92,7 +92,7 @@ function AboutYou({ setCurrentStep }) {
                                         value={formik.values.lname}
                                     />
                                     {formik.touched.lname && formik.errors.lname && (
-                                        <p className="text-red-500 text-sm mt-1">{formik.errors.lname}</p>
+                                        <p className="text-red-500 text-xs mt-1">{formik.errors.lname}</p>
                                     )}
                                 </div>
                             </div>
@@ -115,7 +115,7 @@ function AboutYou({ setCurrentStep }) {
                                     value={formik.values.email}
                                 />
                                 {formik.touched.email && formik.errors.email && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
                                 )}
                             </div>
 
@@ -132,7 +132,7 @@ function AboutYou({ setCurrentStep }) {
                                     value={formik.values.practicePhone}
                                 />
                                 {formik.touched.practicePhone && formik.errors.practicePhone && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.practicePhone}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.practicePhone}</p>
                                 )}
                             </div>
 
@@ -165,7 +165,7 @@ function AboutYou({ setCurrentStep }) {
                                     </SelectContent>
                                 </Select>
                                 {formik.touched.permission && formik.errors.permission && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.permission}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.permission}</p>
                                 )}
                             </div>
                         </div>
@@ -194,7 +194,7 @@ function AboutYou({ setCurrentStep }) {
                                         value={formik.values.address1}
                                     />
                                     {formik.touched.address1 && formik.errors.address1 && (
-                                        <p className="text-red-500 text-sm mt-1">{formik.errors.address1}</p>
+                                        <p className="text-red-500 text-xs mt-1">{formik.errors.address1}</p>
                                     )}
                                 </div>
                                 {/* Address 2 */}
@@ -210,7 +210,7 @@ function AboutYou({ setCurrentStep }) {
                                         value={formik.values.address2}
                                     />
                                     {formik.touched.address2 && formik.errors.address2 && (
-                                        <p className="text-red-500 text-sm mt-1">{formik.errors.address2}</p>
+                                        <p className="text-red-500 text-xs mt-1">{formik.errors.address2}</p>
                                     )}
                                 </div>
                                 {/* City */}
@@ -226,7 +226,7 @@ function AboutYou({ setCurrentStep }) {
                                         value={formik.values.city}
                                     />
                                     {formik.touched.city && formik.errors.city && (
-                                        <p className="text-red-500 text-sm mt-1">{formik.errors.city}</p>
+                                        <p className="text-red-500 text-xs mt-1">{formik.errors.city}</p>
                                     )}
                                 </div>
 
@@ -250,7 +250,7 @@ function AboutYou({ setCurrentStep }) {
                                             </SelectContent>
                                         </Select>
                                         {formik.touched.state && formik.errors.state && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.state}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
                                         )}
                                     </div>
                                     {/* Zip Code */}
@@ -266,7 +266,7 @@ function AboutYou({ setCurrentStep }) {
                                             value={formik.values.zipcode}
                                         />
                                         {formik.touched.zipcode && formik.errors.zipcode && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.zipcode}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.zipcode}</p>
                                         )}
                                     </div>
                                 </div>

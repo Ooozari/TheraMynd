@@ -70,7 +70,7 @@ function YourProfession({ setCurrentStep }) {
                                     </SelectContent>
                                 </Select>
                                 {formik.touched.credentials && formik.errors.credentials && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.credentials}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.credentials}</p>
                                 )}
 
                             </div>
@@ -89,7 +89,7 @@ function YourProfession({ setCurrentStep }) {
                                     value={formik.values.noOfPatient}
                                 />
                                 {formik.touched.noOfPatient && formik.errors.noOfPatient && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.noOfPatient}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.noOfPatient}</p>
                                 )}
                             </div>
 
@@ -106,7 +106,7 @@ function YourProfession({ setCurrentStep }) {
                                     value={formik.values.licenseNumber}
                                 />
                                 {formik.touched.licenseNumber && formik.errors.licenseNumber && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.licenseNumber}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.licenseNumber}</p>
                                 )}
                             </div>
 
@@ -128,7 +128,7 @@ function YourProfession({ setCurrentStep }) {
                                             value={formik.values.board}
                                         />
                                         {formik.touched.board && formik.errors.board && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.board}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.board}</p>
                                         )}
                                     </div>
                                     {/* State */}
@@ -149,7 +149,7 @@ function YourProfession({ setCurrentStep }) {
                                             </SelectContent>
                                         </Select>
                                         {formik.touched.state && formik.errors.state && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.state}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
                                         )}
 
                                     </div>
@@ -182,7 +182,7 @@ function YourProfession({ setCurrentStep }) {
                                     value={formik.values.npi}
                                 />
                                 {formik.touched.npi && formik.errors.npi && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.npi}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.npi}</p>
                                 )}
                             </div>
 

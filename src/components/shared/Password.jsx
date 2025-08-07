@@ -86,7 +86,7 @@ function Password() {
                                     onBlur={currentPasswordFormik.handleBlur}
                                 />
                                 {currentPasswordFormik.touched.currentpassword && currentPasswordFormik.errors.currentpassword && (
-                                    <p className="text-red-500 text-sm mt-1">{currentPasswordFormik.errors.currentpassword}</p>
+                                    <p className="text-red-500 text-xs mt-1">{currentPasswordFormik.errors.currentpassword}</p>
                                 )}
                             </div>
                             <DialogFooter>
@@ -122,7 +122,7 @@ function Password() {
                                 onBlur={newPasswordFormik.handleBlur}
                             />
                             {newPasswordFormik.touched.newpassword && newPasswordFormik.errors.newpassword && (
-                                <p className="text-red-500 text-sm mt-1">{newPasswordFormik.errors.newpassword}</p>
+                                <p className="text-red-500 text-xs mt-1">{newPasswordFormik.errors.newpassword}</p>
                             )}
                         </div>
                         <DialogFooter>

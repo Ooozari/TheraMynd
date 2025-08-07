@@ -71,7 +71,7 @@ function SignUp() {
                                     onBlur={formik.handleBlur}
                                 />
                                 {formik.touched.email && formik.errors.email && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
                                 )}
                             </div>
                             <div>
@@ -88,7 +88,7 @@ function SignUp() {
                                         onBlur={formik.handleBlur}
                                     />
                                     {formik.touched.password && formik.errors.password && (
-                                        <p className="text-red-500 text-sm mt-1">{formik.errors.password}</p>
+                                        <p className="text-red-500 text-xs mt-1">{formik.errors.password}</p>
                                     )}
                                 </div>
 

@@ -117,7 +117,7 @@ function PersonalInfo() {
                                     onChange={formik.handleChange}
                                 />
                                 {formik.touched.fname && formik.errors.fname && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.fname}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.fname}</p>
                                 )}
                             </div>
                             <div className='w-full'>
@@ -134,7 +134,7 @@ function PersonalInfo() {
                                     onChange={formik.handleChange}
                                 />
                                 {formik.touched.lname && formik.errors.lname && (
-                                    <p className="text-red-500 text-sm mt-1">{formik.errors.lname}</p>
+                                    <p className="text-red-500 text-xs mt-1">{formik.errors.lname}</p>
                                 )}
                             </div>
                         </div>
@@ -155,7 +155,7 @@ function PersonalInfo() {
                                 onChange={formik.handleChange}
                             />
                             {formik.touched.email && formik.errors.email && (
-                                <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                                <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
                             )}
                         </div>
 
@@ -174,7 +174,7 @@ function PersonalInfo() {
                                 onChange={formik.handleChange}
                             />
                             {formik.touched.phone && formik.errors.phone && (
-                                <p className="text-red-500 text-sm mt-1">{formik.errors.phone}</p>
+                                <p className="text-red-500 text-xs mt-1">{formik.errors.phone}</p>
                             )}
                         </div>
 
@@ -193,7 +193,7 @@ function PersonalInfo() {
                                 onChange={formik.handleChange}
                             />
                             {formik.touched.personalPhone && formik.errors.personalPhone && (
-                                <p className="text-red-500 text-sm mt-1">{formik.errors.personalPhone}</p>
+                                <p className="text-red-500 text-xs mt-1">{formik.errors.personalPhone}</p>
                             )}
                         </div>
 
@@ -218,7 +218,7 @@ function PersonalInfo() {
                                 </SelectContent>
                             </Select>
                             {formik.touched.allowPatient && formik.errors.allowPatient && (
-                                <p className="text-red-500 text-sm mt-1">{formik.errors.allowPatient}</p>
+                                <p className="text-red-500 text-xs mt-1">{formik.errors.allowPatient}</p>
                             )}
                         </div>
 
@@ -251,7 +251,7 @@ function PersonalInfo() {
                                             onChange={formik.handleChange}
                                         />
                                         {formik.touched.city && formik.errors.city && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.city}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.city}</p>
                                         )}
                                     </div>
                                     {/* State */}
@@ -274,7 +274,7 @@ function PersonalInfo() {
                                             </SelectContent>
                                         </Select>
                                         {formik.touched.state && formik.errors.state && (
-                                            <p className="text-red-500 text-sm mt-1">{formik.errors.state}</p>
+                                            <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
                                         )}
 
                                     </div>
