@@ -64,7 +64,7 @@ function PatientProvider() {
         validationSchema: Yup.object({
             name: Yup.string().required('Name is required'),
             email: Yup.string().email('Invalid email').required('Email is required'),
-            phone: Yup.string().required('Phone is required'),
+            phone: Yup.number().required('Phone is required').typeError('Must be a number'),
             notify: Yup.string().required('Notification method is required'),
         }),
         onSubmit: values => {
