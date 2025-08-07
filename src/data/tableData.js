@@ -1,4 +1,4 @@
-import { GuestIcon,Fair,SadEmoji } from '@/svgs/Icons';
+import { GuestIcon,Fair,SadEmoji,Sad } from '@/svgs/Icons';
 
 const tableData = [
   {
@@ -180,7 +180,7 @@ const tableData = [
     mood: {
       color: "#7F45E2",
       avg:"5-6 hours",
-      feedback: <SadEmoji />,
+      feedback: <Sad />,
       data: [
         { name: 'A', uv: 3 },
         { name: 'B', uv: 5 },
@@ -196,7 +196,7 @@ const tableData = [
     appetite: {
       color: "#E11D48",
       avg:'Fair',
-      feedback: <Fair />,
+      feedback: <Sad />,
       data: [
         { name: 'A', uv: 2 },
         { name: 'B', uv: 3 },

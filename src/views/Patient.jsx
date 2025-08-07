@@ -137,24 +137,24 @@ export default function Patient({ id }) {
                                             "
                                         >
                                             <TabsTrigger value="stress"
-                                                onClick={() => setMetricTab("stress")} className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[55px] 2xl:px-[60px]">
+                                                onClick={() => setMetricTab("stress")} className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Stress</Paragraph>
                                             </TabsTrigger>
 
                                             <TabsTrigger value="sleep"
-                                                onClick={() => setMetricTab("sleep")} className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[55px] 2xl:px-[60px]">
+                                                onClick={() => setMetricTab("sleep")} className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Sleep</Paragraph>
                                             </TabsTrigger>
 
                                             <TabsTrigger value="mood"
                                                 onClick={() => setMetricTab("mood")}
-                                                className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[55px] 2xl:px-[60px]">
+                                                className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Mood</Paragraph>
                                             </TabsTrigger>
 
                                             <TabsTrigger value="appetite"
                                                 onClick={() => setMetricTab("appetite")}
-                                                className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[55px] 2xl:px-[60px]">
+                                                className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Appetite</Paragraph>
                                             </TabsTrigger>
                                         </TabsList>
@@ -179,21 +179,21 @@ export default function Patient({ id }) {
                         </div>
                     </div>
                     {/* level */}
-                    <div className="flex flex-row md:flex-col items-center justify-center gap-[14px]">
-                        <div className="shadow-[0_8px_16px_0_#1615130D] rounded-[20px] px-[12px] sm:px-[9px] md:px-[6px] lg:px-[8px] xl:px-[11.5px] 2xl:px-[12px] py-[39.42px] w-full h-full flex-1">
+                    <div className="flex flex-col justify-center gap-[14px] h-full">
+                        <div className="shadow-[0_8px_16px_0_#1615130D] rounded-[20px] px-[12px] sm:px-[9px] md:px-[6px] lg:px-[8px] xl:px-[11.5px] 2xl:px-[12px] py-[39.42px] w-full h-full">
                             <div className="flex flex-col items-center justify-between gap-[14px] px-[13px] sm:px-[13px] md:px-[4px] lg:px-[6px] xl:px-[11.5px] 2xl:px-[13px] h-full">
                                 <Paragraph size="subhead" className='text-OptimisticGray60 font-[600] font-urbanist whitespace-nowrap'>{metricLabel}</Paragraph>
                                 <Heading level="cardmd2" className='text-MindfulBrown90 font-[800] font-urbanist whitespace-nowrap'>{chartInfo.avg}</Heading>
                             </div>
                         </div>
-                        <div className="shadow-[0_8px_16px_0_#1615130D] rounded-[20px] px-[12px] sm:px-[9px] md:px-[6px] lg:px-[8px] xl:px-[11.5px] 2xl:px-[12px] py-[39.42px] w-full h-full flex-1">
+                        <div className="shadow-[0_8px_16px_0_#1615130D] rounded-[20px] px-[12px] sm:px-[9px] md:px-[6px] lg:px-[8px] xl:px-[11.5px] 2xl:px-[12px] py-[39.42px] w-full h-full">
                             <div className="flex flex-col items-center justify-between gap-[14px] px-[13px] sm:px-[13px] md:px-[4px] lg:px-[6px] xl:px-[11.5px] 2xl:px-[13px] h-full">
                                 <Paragraph size="subhead" className='text-OptimisticGray60 font-[600] font-urbanist'>{metricFeedback}</Paragraph>
                                 <Heading level="cardmd2" className='text-MindfulBrown90 font-[800] font-urbanist'>
                                     {typeof chartInfo.feedback === "string" ? (
                                         chartInfo.feedback
                                     ) : (
-                                        <span className="inline-flex drop-shadow-md w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[55px] lg:h-[55px] xl:w-[58px] xl:h-[58px] 2xl:w-[60.32px] 2xl:h-[60.32px]">{chartInfo.feedback}</span>
+                                        <span className="inline-flex drop-shadow-md w-[30px] h-[30px] sm:w-[31px] sm:h-[31px] md:w-[40px] md:h-[40px] lg:w-[45px] lg:h-[45px] xl:w-[50px] xl:h-[50px] 2xl:w-[60.32px] 2xl:h-[60.32px]">{chartInfo.feedback}</span>
                                     )}
                                 </Heading>
                             </div>
