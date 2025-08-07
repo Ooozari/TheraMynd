@@ -20,7 +20,7 @@ import {
     TabsTrigger,
     TabsContent,
 } from "@/components/ui/userinfotabs";
-import { DailyCheckIns, CustomAreaChart } from '@/components/shared'
+import { DailyCheckIns, CustomAreaChart,JournalEntries,CopingMechanisms } from '@/components/shared'
 
 
 export default function Patient({ id }) {
@@ -127,8 +127,7 @@ export default function Patient({ id }) {
                                     <div className="flex justify-center md:justify-start overflow-x-auto w-full scrollbar-thin">
                                         <TabsList
                                             className="
-                                            w-fit
-                                            flex
+                                           
                                             overflow-x-auto
                                             overflow-y-hidden
                                             scroll-smooth
@@ -137,7 +136,7 @@ export default function Patient({ id }) {
                                             "
                                         >
                                             <TabsTrigger value="stress"
-                                                onClick={() => setMetricTab("stress")} className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
+                                                onClick={() => setMetricTab("stress")} className="flex-shrink-0 w-fit px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Stress</Paragraph>
                                             </TabsTrigger>
 
@@ -163,7 +162,7 @@ export default function Patient({ id }) {
                                     {/* select */}
                                     <div className="flex justify-end">
                                         <Select className=''>
-                                            <SelectTrigger className="w-[110px] sm:w-[120px] md:w-[130px] lg:w-[140px] xl:w-[178px] 2xl:w-[184px] bg-White border-1 border-[#E1E1E1] rounded-[8px] h-[34px] sm:h-[37px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]">
+                                            <SelectTrigger className="w-[110px] sm:w-[120px] md:w-[130px] lg:w-[140px] xl:w-[110px] 2xl:w-[184px] bg-White border-1 border-[#E1E1E1] rounded-[8px] h-[34px] sm:h-[37px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]">
                                                 <SelectValue placeholder="Select" />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -255,13 +254,13 @@ export default function Patient({ id }) {
 
                             {/* Tab Contents */}
                             <TabsContent value="daily">
-                                <DailyCheckIns />
+                                <DailyCheckIns id={id}/>
                             </TabsContent>
                             <TabsContent value="journal">
-                                <DailyCheckIns />
+                                <JournalEntries id={id}/>
                             </TabsContent>
                             <TabsContent value="coping">
-                                <DailyCheckIns />
+                                <CopingMechanisms id={id}/>
                             </TabsContent>
                         </Userinfotabs>
                     </div>

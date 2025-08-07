@@ -10,5 +10,8 @@ export { default as Membership } from './Membership';
 export { default as Plan } from './Plan';
 export { default as DailyCheckIns } from './DailyCheckIns';
 export { default as CustomAreaChart } from './AreaChart';
+export { default as JournalEntries } from './JournalEntries';
+export { default as CopingMechanisms } from './CopingMechanisms';
 
 
+ 
