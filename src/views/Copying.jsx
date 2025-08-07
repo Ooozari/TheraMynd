@@ -29,7 +29,7 @@ function Copying({ id }) {
     return (
         <>
             {/*  */}
-            <div className='flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[43px]'>
+            <div className='flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[43px] md:mb-0 mb-[40px]'>
                 {/* Header */}
                 <div className="flex flex-col gap-[18px] sm:gap-[20px] md:gap-[21px] lg:gap-[22px] xl:gap-[23px] 2xl:gap-[24px] ">
                     <Paragraph size="md" className='font-[500] text-OptimisticGray60 flex'>

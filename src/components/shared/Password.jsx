@@ -74,7 +74,9 @@ function Password() {
                             </DialogTitle>
                         </DialogHeader>
                         <form onSubmit={currentPasswordFormik.handleSubmit} className="grid gap-4">
-                            <div className="grid gap-2">
+                                    <div>
+
+                                    
                                 <Label htmlFor="currentpassword" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-[#292929] font-[600]">Current password</Paragraph>
                                 </Label>
@@ -88,7 +90,7 @@ function Password() {
                                 {currentPasswordFormik.touched.currentpassword && currentPasswordFormik.errors.currentpassword && (
                                     <p className="text-red-500 text-xs mt-1">{currentPasswordFormik.errors.currentpassword}</p>
                                 )}
-                            </div>
+                        </div>
                             <DialogFooter>
                                 <Button
                                     type="submit"
@@ -111,8 +113,10 @@ function Password() {
                         <DialogTitle>Edit Password</DialogTitle>
                     </DialogHeader>
                     <form onSubmit={newPasswordFormik.handleSubmit} className="grid gap-4">
-                        <div className="grid gap-4">
-                            <Label htmlFor="newpassword">New password</Label>
+                        <div className="">
+                            <Label htmlFor="newpassword" className='mb-[8px]'>
+                                <Paragraph size="label" className="text-[#292929] font-[600]">New password</Paragraph>
+                                </Label>
                             <Input
                                 id="newpassword"
                                 name="newpassword"

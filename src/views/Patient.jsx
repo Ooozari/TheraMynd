@@ -106,7 +106,7 @@ export default function Patient({ id }) {
             </div>
 
             {/* details */}
-            <div className="flex flex-col gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[22px] xl:gap-[23px] 2xl:gap-[24px] mt-[28px]">
+            <div className="flex flex-col gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[22px] xl:gap-[23px] 2xl:gap-[24px] mt-[28px] md:mb-0 mb-[40px]">
 
                 {/* Graph details */}
                 <div className="flex md:flex-row flex-col bg-White rounded-[15px] 

@@ -60,7 +60,7 @@ function Journals({ id }) {
     return (
         <>
             {/*  */}
-            <div className='flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] md:flex-row flex-col'>
+            <div className='flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] md:flex-row flex-col md:mb-0 mb-[40px]'>
                 {/* Calender  and navigation*/}
                 <div className="flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] ">
                     {/* Header */}

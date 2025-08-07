@@ -34,7 +34,9 @@ function SideBar() {
                 {/* Navigation */}
                 <nav className="flex flex-col gap-2 mt-[37px]">
                     {menuItems.map((item) => {
-                        const isActive = pathname === item.href;
+                        const cleanPath = pathname.replace(/\/$/, "");
+                        const isActive = cleanPath.startsWith(item.href);
+
                         return (
 
                             <Link
