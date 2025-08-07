@@ -40,6 +40,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata = {
   title: "TheraMynd",
   description: "Developed by Uzair",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
