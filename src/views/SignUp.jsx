@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import React from 'react'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import { Union } from '@/svgs/Icons'
+import { Union,Eye } from '@/svgs/Icons'
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -29,6 +29,7 @@ function SignUp() {
             router.push('/create-account/account-details');
         },
     });
+    const [showPassword, setShowPassword] = useState(false);
     return (
         <>
             <div className='min-h-screen w-full flex items-center justify-center px-4 '>
@@ -79,21 +80,37 @@ function SignUp() {
                                     <Label htmlFor="password" className='mb-[8px]'>
                                         <Paragraph size="label" className="text-Gray900 font-bold">Create Password</Paragraph>
                                     </Label>
-                                    <Input
-                                        id="password"
-                                        name="password"
-                                        type="password"
-                                        value={formik.values.password}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                    />
+                                    <div className='relative'>
+                                        <Input
+                                            id="password"
+                                            name="password"
+                                            type={showPassword ? "text" : "password"}
+                                            value={formik.values.password}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                        />
+                                        <div className='absolute right-4 top-1/2 -translate-y-1/2 p-0 h-6 w-6 z-10'>
+                                            <button
+                                                type="button"
+                                                onMouseDown={() => setShowPassword(true)}
+                                                onMouseUp={() => setShowPassword(false)}
+                                                onMouseLeave={() => setShowPassword(false)}
+                                                onTouchStart={() => setShowPassword(true)}
+                                                onTouchEnd={() => setShowPassword(false)}
+                                                className='cursor-pointer'
+                                            >
+                                                <Eye />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
                                     {formik.touched.password && formik.errors.password && (
                                         <p className="text-red-500 text-xs mt-1">{formik.errors.password}</p>
                                     )}
                                 </div>
 
                                 <div className='mt-[14px]'>
-                                    <Paragraph size="sm" className="text-Gray900 font-medium text-center">Have an account?<Link href='/login'><span className='text-blue-600 ml-[1px]'>Sign in</span></Link></Paragraph>
+                                    <Paragraph size="sm" className="text-Gray900 font-medium text-center">Have an account?<Link href='/login'><span className='text-[#5167F6] ml-[1px]'>Sign in</span></Link></Paragraph>
                                 </div>
                             </div>
 
@@ -102,8 +119,7 @@ function SignUp() {
                         {/* Button */}
                         <div className=''>
                             <div className=''>
-                                <Button variant="secondary" className='w-full' type='submit'
-                                disabled={!formik.isValid || formik.isSubmitting}>
+                                <Button variant="secondary" className='w-full' type='submit'>
                                     <Paragraph size="btnText" className="text-White font-black font-satoshi">Create account
                                     </Paragraph>
                                 </Button>

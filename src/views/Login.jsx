@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import { Union } from '@/svgs/Icons'
+import { Union, Eye } from '@/svgs/Icons'
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -26,6 +26,8 @@ export default function Login() {
             router.push('/verify-login')
         },
     });
+    const [showPassword, setShowPassword] = useState(false);
+
 
     return (
         <>
@@ -75,20 +77,36 @@ export default function Login() {
                                     <Label htmlFor="password" className='mb-[8px]'>
                                         <Paragraph size="label" className="text-Gray900 font-bold">Password</Paragraph>
                                     </Label>
-                                    <Input
-                                        id="password"
-                                        type="password"
-                                        value={formik.values.password}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                    />
+                                    <div className='relative'>
+                                        <Input
+                                            id="password"
+                                            type={showPassword ? "text" : "password"}
+                                            value={formik.values.password}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                        />
+                                        <div className='absolute right-4 top-1/2 -translate-y-1/2 p-0 h-6 w-6 z-10'>
+                                            <button
+                                                type="button"
+                                                onMouseDown={() => setShowPassword(true)}
+                                                onMouseUp={() => setShowPassword(false)}
+                                                onMouseLeave={() => setShowPassword(false)}
+                                                onTouchStart={() => setShowPassword(true)}
+                                                onTouchEnd={() => setShowPassword(false)}
+                                                className='cursor-pointer'
+                                            >
+                                                <Eye />
+                                            </button>
+                                        </div>
+                                    </div>
+
                                     {formik.touched.password && formik.errors.password && (
                                         <p className="text-red-500 text-xs mt-1">{formik.errors.password}</p>
                                     )}
                                 </div>
 
                                 <div className='mt-[14px]'>
-                                    <Paragraph size="sm" className="text-Gray900 font-medium text-center">Forgot password?<Link href='/reset-password'><span className='text-blue-600 ml-[1px]'>Reset</span></Link></Paragraph>
+                                    <Paragraph size="sm" className="text-Gray900 font-medium text-center">Forgot password?<Link href='/reset-password'><span className='text-[#5167F6] ml-[1px]'>Reset</span></Link></Paragraph>
                                 </div>
                             </div>
 
@@ -104,7 +122,7 @@ export default function Login() {
                             </div>
                             <div className='mt-[12px] sm:mt-[13px] md:mt-[14px] lg:mt-[15px] xl:mt-[15.5px] 2xl:mt-[16px]
 '>
-                                <Paragraph size="sm" className="text-Gray900 font-medium text-center">Don't have an account yet?<Link href='/create-account'><span className='text-blue-600 ml-[1px]'>Sign up now</span></Link></Paragraph>
+                                <Paragraph size="sm" className="text-Gray900 font-medium text-center">Don't have an account yet?<Link href='/create-account'><span className='text-[#5167F6] ml-[1px]'>Sign up now</span></Link></Paragraph>
                             </div>
                         </div>
                     </form>
