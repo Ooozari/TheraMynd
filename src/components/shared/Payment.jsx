@@ -1,9 +1,11 @@
 'use client';
+import { useState } from 'react';
 import React from 'react';
 import Plan from './Plan';
 import { Button } from "@/components/ui/button"
 import { Paragraph } from "@/components/ui/typography";
-function Payment({ selectedPlanIndex, setSelectedPlanIndex, setIsConfirmed }) {
+function Payment({ setIsConfirmed }) {
+  const [selectedPlanIndex, setSelectedPlanIndex] = useState(null);
   const plans = [
     {
       type: "Basic Plan",
@@ -54,7 +56,7 @@ function Payment({ selectedPlanIndex, setSelectedPlanIndex, setIsConfirmed }) {
               key={i}
               {...plan}
               isSelected={selectedPlanIndex === i}
-              onSelect={() => setSelectedPlanIndex(i)}
+            onSelect={() => setSelectedPlanIndex(i)}
             />
           ))}
         </div>
