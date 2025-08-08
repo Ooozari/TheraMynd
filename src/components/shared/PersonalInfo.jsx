@@ -20,7 +20,8 @@ const validationSchema = Yup.object({
     fname: Yup.string().required('First name is required'),
     lname: Yup.string().required('Last name is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
-    phone: Yup.number().required('Phone is required').typeError('Phone must be a number'),
+    phone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits')
+                .required('Practice phone is required'),
     personalPhone: Yup.number().required('Personal phone is required').typeError('Phone must be a number'),
     city: Yup.string().required('City is required'),
     state: Yup.string().required('State is required'),

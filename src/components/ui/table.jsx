@@ -62,7 +62,7 @@ function TableRow({
     <tr
       data-slot="table-row"
       className={cn(
-        "hover:bg-muted/50 bg-White data-[state=selected]:bg-muted border-b border-b-[#E3E3E3] transition-colors ",
+        "bg-White data-[state=selected]:bg-muted border-b border-b-[#E3E3E3] transition-colors ",
         className
       )}
       {...props} />
@@ -77,7 +77,7 @@ function TableHead({
     <th
       data-slot="table-head"
       className={cn(
-        "text-[#999999] text-left bg-[#F9F9F9] text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] xl:text-[11.5px] 2xl:text-[12px] h-[20px] sm:h-[22px] md:h-[24px] lg:h-[26px] xl:h-[28px] 2xl:h-[30px] px-2  font-[400] whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "text-[#999999] text-left bg-[#F9F9F9] text-[12px] h-[20px] sm:h-[22px] md:h-[24px] lg:h-[26px] xl:h-[28px] 2xl:h-[30px] px-2 font-[400] whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props} />
@@ -92,7 +92,7 @@ function TableCell({
     <td
       data-slot="table-cell"
       className={cn(
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "p-4 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props} />

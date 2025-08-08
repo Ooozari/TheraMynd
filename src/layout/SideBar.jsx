@@ -12,10 +12,9 @@ function SideBar() {
     const pathname = usePathname();
 
     const menuItems = [
-        { label: "Providers", icon: <User className='w-full h-full' />, href: "/dashboard/providers" },
+        { label: "Patients", icon: <User className='w-full h-full' />, href: "/dashboard/providers" },
         { label: "Settings", icon: <Settings className='w-full h-full' />, href: "/dashboard/settings" },
     ];
-
     return (
         <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[48px] md:pb-[28px] flex flex-col justify-between h-screen">
             <div>

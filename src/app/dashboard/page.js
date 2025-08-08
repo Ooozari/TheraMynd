@@ -1,11 +1,5 @@
-import React from 'react'
+import { redirect } from 'next/navigation';
 
-function Page() {
-    return (
-        <>
-        default dashboard
-        </>
-    )
+export default function Page() {
+  redirect('/dashboard/providers');
 }
-
-export default Page

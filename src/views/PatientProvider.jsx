@@ -64,7 +64,7 @@ function PatientProvider() {
         validationSchema: Yup.object({
             name: Yup.string().required('Name is required'),
             email: Yup.string().email('Invalid email').required('Email is required'),
-            phone: Yup.number().required('Phone is required').typeError('Must be a number'),
+            phone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits').required('Phone is required'),
             notify: Yup.string().required('Notification method is required'),
         }),
         onSubmit: values => {
@@ -130,10 +130,11 @@ function PatientProvider() {
                     </div>
                 </div>
                 {/* Table */}
-                <div className="">
+                <div className="w-full overflow-x-auto">
                     <Table className=''>
                         <TableHeader>
                             <TableRow>
+                                <TableHead></TableHead>
                                 <TableHead>Name</TableHead>
                                 <TableHead>Days Active</TableHead>
                                 <TableHead>Status</TableHead>
@@ -144,8 +145,10 @@ function PatientProvider() {
                         <TableBody>
                             {tableData.map((item) => (
                                 <TableRow key={item.id}>
-                                    <TableCell className="font-medium flex items-center gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[18px] xl:gap-[20px] 2xl:gap-[22px]">
-                                        <div className='h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px] 2xl:h-[31px]'>{item.icon}</div>
+                                    <TableCell className="w-[40px] h-full">
+                                        <div className='h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px] 2xl:h-[31px] w-full'>{item.icon}</div>
+                                    </TableCell>
+                                    <TableCell className="font-medium text-left">
                                         <Paragraph size="tabletext" className="text-[#252525] ">
                                             {item.name}
                                         </Paragraph>
@@ -180,7 +183,7 @@ function PatientProvider() {
                                         </Paragraph>
                                     </TableCell>
 
-                                    <TableCell className='text-right'>
+                                    <TableCell className='sticky right-0 bg-white z-5 text-right'>
                                         <div className='flex gap-[10px] justify-end'>
                                             <DropdownMenu>
                                                 <DropdownMenuTrigger> <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#ECECEC] flex justify-center items-center rounded-full cursor-pointer'>
@@ -248,11 +251,9 @@ function PatientProvider() {
                 </div>
             </div>
 
-
-
             {/* DIALOG 1: Add patinet */}
             <Dialog open={openAddPatientDialog} onOpenChange={setopenAddPatientDialog}>
-                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px]
+                <DialogContent className="p-[14px] sm:p-[16px] md:p-[18px] lg:p-[20px] xl:p-[20px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] 
 ">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
@@ -266,77 +267,83 @@ function PatientProvider() {
 
                     {/* input details */}
                     <form onSubmit={formik.handleSubmit}>
-                        <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px]'>
-
+                        <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[24px]'>
                             {/* Patient Name */}
                             <div className='w-full'>
-                                <Label htmlFor="name" className='mb-[8px]'>
+                                <Label htmlFor="name" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patient Name</Paragraph>
                                 </Label>
+                                <div className='relative'>
                                 <Input
-                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
+                                    className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
 '                                   id="name"
                                     name="name"
                                     type="text"
+                                    placeholder="Enter patient name"
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.name}
                                 />
                                 {formik.touched.name && formik.errors.name && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.name}</p>
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.name}</p>
                                 )}
+                                </div>
                             </div>
 
                             {/* Patients email */}
                             <div>
-                                <Label htmlFor="email" className='mb-[8px]'>
+                                <Label htmlFor="email" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patients email</Paragraph>
                                 </Label>
+                                <div className='relative'>
                                 <Input
                                     id="email"
                                     name="email"
-                                    type="email"
+                                    placeholder="Enter patient email"
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.email}
-                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
+                                    className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
                                 />
                                 {formik.touched.email && formik.errors.email && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.email}</p>
                                 )}
+                                </div>
                             </div>
-
 
                             {/*Patients phone*/}
                             <div>
-                                <Label htmlFor="phone" className='mb-[8px]'>
+                                <Label htmlFor="phone" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patients phone</Paragraph>
                                 </Label>
+                                <div className='relative'>
                                 <Input
                                     id="phone"
                                     name="phone"
                                     type="tel"
+                                    placeholder="Enter patient phone"
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.phone}
-                                    className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
+                                    className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
                                 />
                                 {formik.touched.phone && formik.errors.phone && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.phone}</p>
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.phone}</p>
                                 )}
+                                </div>
                             </div>
-
 
                             {/* Notify patient by */}
                             <div>
-                                <Label htmlFor="Notify" className='mb-[8px]'>
+                                <Label htmlFor="Notify" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Notify patient by</Paragraph>
                                 </Label>
+                                <div className='relative'>
                                 <Select name="notify"
                                     value={formik.values.notify}
                                     onValueChange={(value) => formik.setFieldValue('notify', value)}>
-                                    <SelectTrigger className='h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px] w-full'>
-                                        <SelectValue placeholder="Select" />
+                                    <SelectTrigger className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px] w-full'>
+                                        <SelectValue placeholder="Select type" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectItem value="Email">Email</SelectItem>
@@ -346,8 +353,9 @@ function PatientProvider() {
                                     </SelectContent>
                                 </Select>
                                 {formik.touched.notify && formik.errors.notify && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.notify}</p>
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.notify}</p>
                                 )}
+                                </div>
                             </div>
 
                         </div>

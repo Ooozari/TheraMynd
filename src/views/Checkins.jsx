@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import tableData from "@/data/tableData";
-import { Greaterthan, Back, Sad, Forward } from '@/svgs/Icons';
+import { Greaterthan,NewBack, Sad, Forward } from '@/svgs/Icons';
 import Link from 'next/link';
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
@@ -76,7 +76,9 @@ function Checkins({ id }) {
                                 <Link href={`/dashboard/providers/patient/${patient.id}`}>
                                     <div className='inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full 
                                            w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] xl:w-[31px] xl:h-[31px] 2xl:w-[32px] 2xl:h-[32px] hover:cursor-pointer'>
-                                        <Back />
+                                        <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
+                                            <NewBack />
+                                        </div>
                                     </div>
                                 </Link>
                             </div>
