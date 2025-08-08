@@ -23,16 +23,16 @@ const headingVariants = cva(
 
         h6: "text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl",
         
-        // using
-        lgSubText:"text-[14px] sm:text-[17px] md:text-[19px] lg:text-[21px] xl:text-[22.5px] 2xl:text-[24px]",
+        // Updated
+        lgSubText:"text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[23px] 2xl:text-[24px]",
 
         // using
         mdSubText: "text-[18px] sm:text-[21px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]",
 
         // Using
         minih:"text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px]",
-
-        cardmd: "text-[20px] sm:text-[24px] md:text-[28px] lg:text-[31px] xl:text-[34px] 2xl:text-[36px]",
+        // updated
+        cardmd: "text-[26px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[34px] 2xl:text-[36px]",
         cardmd2: "text-[18px] sm:text-[21px] md:text-[25px] lg:text-[30px] xl:text-[33px] 2xl:text-[35.31px]",
         dialogtext: "text-[10px] sm:text-[10.5px] md:text-[11px] lg:text-[11.5px] xl:text-[11.7px] 2xl:text-[12px]",
         detailsheading: "text-[14px] sm:text-[15.5px] md:text-[17px] lg:text-[19px] xl:text-[20px] 2xl:text-[21px]",
@@ -55,10 +55,11 @@ const paragraphVariants = cva("", {
       normal: "text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]",
       tablecell: "text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[17px] 2xl:text-[18.88px]",
       cellsubTitle: "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16.18px]",
-      md: "text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]",
+      normalmd:"text-[14px] md:text-[15px] 2xl:text-[16px]",
+      md: "text-[12px] md:text-[13px] xl:text-[14px]",
       label: "text-[12px] md:text-[12px]",
-      // using
-      sm: "text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]",
+      // using updated
+      sm: "text-xs sm:text-sm lg:text-base",
       btnText: "text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[17.5px] 2xl:text-[18px]",
       smallBtntext: "text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15.25px] 2xl:text-[16.25px]",
       xs: "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]",

@@ -8,10 +8,9 @@ export const Union = () => (
 )
 
 export const Back = () => (
-    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="w-full h-full" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7.9307 1.03711L2.07007 6.89774L7.9307 12.7584" stroke="white" stroke-width="1.80329" />
     </svg>
-
 )
 
 export const Dots = () => (<svg width="4" height="13" viewBox="0 0 4 13" fill="none" xmlns="http://www.w3.org/2000/svg">

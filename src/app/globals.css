@@ -1,9 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-html, body {
+/* html, body {
   height: 100%;
   overflow: hidden;
-}
+} */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,7 +14,6 @@ html, body {
   --color-Gray0: #DEDFE3;
   --color-Secondary: #00738A;
   --color-White: #FFFFFF;
-  --color-Gray0: #DEDFE3;
   --color-Neutral: #F4F4F6;
   --color-MindfulBrown90: #005F72;
   --color-MindfulBrown80: #00738A;

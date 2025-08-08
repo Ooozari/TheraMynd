@@ -20,7 +20,10 @@ export default function Login() {
         },
         validationSchema: Yup.object({
             email: Yup.string().email('Invalid email address').required('Email is required'),
-            password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+            password: Yup.string()
+                .min(8, 'Password must be at least 8 characters')
+                .required('Password is required'),
+
         }),
         onSubmit: (values) => {
             router.push('/verify-login')
@@ -31,14 +34,11 @@ export default function Login() {
 
     return (
         <>
-            <div className='min-h-screen w-full flex items-center justify-center px-4 '>
+            <div className='min-h-screen overflow-y-auto px-5 py-20 w-full flex items-center'>
 
-                <div className='flex flex-col bg-White rounded-[10px] shadow-[0px_9px_34px_0px_#0000001A] gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px] max-w-[432px]
-                p-[18px] sm:p-[19px] md:p-[20px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] w-full
-            '>
-
+                <div className='container mx-auto flex flex-col bg-White rounded-[10px] shadow-[0px_9px_34px_0px_#0000001A] gap-[20px] sm:gap-[22px] md:gap-[24px] lg:gap-[26px] xl:gap-[28px] 2xl:gap-[32px] max-w-[432px] h-max p-[18px] sm:p-[19px] md:p-[20px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] w-full'>
                     {/* top */}
-                    <div className='space-y-[10px] sm:space-y-[11px] md:space-y-[13px] lg:space-y-[14px] xl:space-y-[15px] 2xl:space-y-[16px]
+                    <div className='space-y-[10px] sm:space-y-[11px] md:space-y-[12px] lg:space-y-[13px] xl:space-y-[14px] 2xl:space-y-[16px]
                     text-center'>
                         <div className='flex justify-center'>
                             <div className='w-[25.1px] h-[25.1px] sm:w-[29.3px] sm:h-[29.3px] md:w-[33.5px] md:h-[33.5px] lg:w-[36.7px] lg:h-[36.7px] xl:w-[39px] xl:h-[39px] 2xl:w-[41.1px] 2xl:h-[41.1px]
@@ -49,7 +49,7 @@ export default function Login() {
                         <Heading level="h1" className="font-bold text-Gray900">
                             Sign in
                         </Heading>
-                        <Paragraph size="md" className="text-Gray700 font-medium font-satoshi">Sign in to access TheraMynd</Paragraph>
+                        <Paragraph size="md" className="text-Gray700 font-medium font-satoshi leading-[18px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[24px]">Sign in to access TheraMynd</Paragraph>
                     </div>
 
 
@@ -58,34 +58,39 @@ export default function Login() {
                         {/* Input Feilds */}
                         <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
                             <div>
-                                <Label htmlFor="email" className='mb-[8px]'>
+                                <Label htmlFor="email" className='my-[8px] leading-[16px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Email</Paragraph>
                                 </Label>
-                                <Input
-                                    id="email"
-                                    type="email"
-                                    value={formik.values.email}
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                />
-                                {formik.touched.email && formik.errors.email && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
-                                )}
+                                <div className='relative'>
+                                    <Input
+                                        id="email"
+                                        type="email"
+                                        placeholder="Enter email"
+                                        value={formik.values.email}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                    />
+                                    {formik.touched.email && formik.errors.email && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.email}</p>
+                                    )}
+                                </div>
+
                             </div>
                             <div>
                                 <div>
-                                    <Label htmlFor="password" className='mb-[8px]'>
+                                    <Label htmlFor="password" className='mb-[8px] leading-[16px]'>
                                         <Paragraph size="label" className="text-Gray900 font-bold">Password</Paragraph>
                                     </Label>
                                     <div className='relative'>
                                         <Input
                                             id="password"
+                                            placeholder="Enter password"
                                             type={showPassword ? "text" : "password"}
                                             value={formik.values.password}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                         />
-                                        <div className='absolute right-4 top-1/2 -translate-y-1/2 p-0 h-6 w-6 z-10'>
+                                        <div className='absolute right-4 top-1/2 -translate-y-1/2 p-0 h-5 w-5 md:h-6 md:w-6 z-10'>
                                             <button
                                                 type="button"
                                                 onMouseDown={() => setShowPassword(true)}
@@ -98,11 +103,12 @@ export default function Login() {
                                                 <Eye />
                                             </button>
                                         </div>
+                                        {formik.touched.password && formik.errors.password && (
+                                            <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.password}</p>
+                                        )}
                                     </div>
 
-                                    {formik.touched.password && formik.errors.password && (
-                                        <p className="text-red-500 text-xs mt-1">{formik.errors.password}</p>
-                                    )}
+
                                 </div>
 
                                 <div className='mt-[14px]'>

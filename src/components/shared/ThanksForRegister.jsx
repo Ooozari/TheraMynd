@@ -15,14 +15,13 @@ function ThanksForRegister() {
                     </div>
 
                     <div className="w-full flex flex-col items-center justify-center text-center">
-                        <Heading level="cardmd" className="font-[800] text-[#424242] font-urbanist leading-[22px] sm:leading-[27px] md:leading-[32px] lg:leading-[37px] xl:leading-[41px] 2xl:leading-[44px]">
+                        <Heading level="cardmd" className="font-[800] text-[#424242] font-urbanist leading-[38px] sm:leading-[39px] md:leading-[40px] lg:leading-[41px] xl:leading-[42px] 2xl:leading-[44px]">
                             Thanks for Registering to TheraMynd! 🎉
                         </Heading>
                         <Paragraph size="md" className="text-[#4D4D4D] font-medium font-urbanist mt-2">
                             Thank you for signing up for TheraMynd, you will receive an email in the next few hours with the next steps
                         </Paragraph>
                     </div>
-
                 </div>
             </div>
         </>

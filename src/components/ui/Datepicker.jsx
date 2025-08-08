@@ -37,7 +37,7 @@ export default function Datepicker({ formik }) {
 
   return (
     <div className="flex flex-col gap-2">
-      <Label htmlFor="date">
+      <Label htmlFor="date" className='mt-[8px]'>
         <Paragraph size="label" className="text-Gray900 font-bold">
           Date of Birth
         </Paragraph>
@@ -63,7 +63,9 @@ export default function Datepicker({ formik }) {
             }
           }}
         />
-
+        {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
+          <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.dateOfBirth}</p>
+        )}
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -93,9 +95,7 @@ export default function Datepicker({ formik }) {
           </PopoverContent>
         </Popover>
       </div>
-      {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
-        <p className="text-red-500 text-xs mt-[-4px]">{formik.errors.dateOfBirth}</p>
-      )}
+
     </div>
   )
 }

@@ -25,7 +25,7 @@ function YourProfession({ setCurrentStep }) {
         },
         validationSchema: Yup.object({
             credentials: Yup.string().required("Credential is required"),
-            noOfPatient: Yup.number()
+            noOfPatient: Yup.number().min(1, "Number of patients must be at least one")
                 .typeError("Must be a number")
                 .required("Number of patients is required"),
             licenseNumber: Yup.number().typeError("Must be a number")
@@ -55,59 +55,66 @@ function YourProfession({ setCurrentStep }) {
 
                             {/* credentials */}
                             <div className='w-full'>
-                                <Label htmlFor="fname" className='mb-[8px]'>
+                                <Label htmlFor="fname" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">What are your credentials?</Paragraph>
                                 </Label>
-
-                                <Select onValueChange={(value) => formik.setFieldValue("credentials", value)}>
-                                    <SelectTrigger className="w-full">
-                                        <SelectValue placeholder="Select credential" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="lpc">Licensed Professional Counselor (LPC)</SelectItem>
-                                        <SelectItem value="lcsw">Licensed Clinical Social Worker</SelectItem>
-                                        <SelectItem value="psyd">Doctor of Psychology</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                {formik.touched.credentials && formik.errors.credentials && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.credentials}</p>
-                                )}
+                                <div className='relative'>
+                                    <Select onValueChange={(value) => formik.setFieldValue("credentials", value)}>
+                                        <SelectTrigger className="w-full">
+                                            <SelectValue placeholder="Select credential" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="lpc">Licensed Professional Counselor (LPC)</SelectItem>
+                                            <SelectItem value="lcsw">Licensed Clinical Social Worker</SelectItem>
+                                            <SelectItem value="psyd">Doctor of Psychology</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    {formik.touched.credentials && formik.errors.credentials && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.credentials}</p>
+                                    )}
+                                </div>
 
                             </div>
 
 
                             {/* Number of patients */}
                             <div>
-                                <Label htmlFor="noOfPatient" className='mb-[8px]'>
+                                <Label htmlFor="noOfPatient" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Number of patients</Paragraph>
                                 </Label>
-                                <Input
-                                    id="noOfPatient"
-                                    name="noOfPatient"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.noOfPatient}
-                                />
-                                {formik.touched.noOfPatient && formik.errors.noOfPatient && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.noOfPatient}</p>
-                                )}
+                                <div className='relative'>
+                                    <Input
+                                        id="noOfPatient"
+                                        name="noOfPatient"
+                                        placeholder="Enter number of patients"
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.noOfPatient}
+                                    />
+                                    {formik.touched.noOfPatient && formik.errors.noOfPatient && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.noOfPatient}</p>
+                                    )}
+                                </div>
                             </div>
 
                             {/* Professional License Number */}
                             <div>
-                                <Label htmlFor="License" className='mb-[8px]'>
+                                <Label htmlFor="License" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Professional License Number?</Paragraph>
                                 </Label>
-                                <Input
-                                    id="licenseNumber"
-                                    name="licenseNumber"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.licenseNumber}
-                                />
-                                {formik.touched.licenseNumber && formik.errors.licenseNumber && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.licenseNumber}</p>
-                                )}
+                                <div className='relative'>
+                                    <Input
+                                        id="licenseNumber"
+                                        name="licenseNumber"
+                                        placeholder="Enter professional license number"
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.licenseNumber}
+                                    />
+                                    {formik.touched.licenseNumber && formik.errors.licenseNumber && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.licenseNumber}</p>
+                                    )}
+                                </div>
                             </div>
 
                             {/* License (Board & state) + Button  */}
@@ -116,42 +123,46 @@ function YourProfession({ setCurrentStep }) {
                                 <div className='flex flex-col lg:flex-row gap-4'>
                                     {/* Board */}
                                     <div className='w-full'>
-                                        <Label htmlFor="board" className='mb-[8px]'>
+                                        <Label htmlFor="board" className='my-[8px]'>
                                             <Paragraph size="label" className="text-Gray900 font-bold">Licensing board</Paragraph>
                                         </Label>
-                                        <Input
-                                            id="board"
-                                            name="board"
-                                            type="text"
-                                            onChange={formik.handleChange}
-                                            onBlur={formik.handleBlur}
-                                            value={formik.values.board}
-                                        />
-                                        {formik.touched.board && formik.errors.board && (
-                                            <p className="text-red-500 text-xs mt-1">{formik.errors.board}</p>
-                                        )}
+                                        <div className='relative'>
+                                            <Input
+                                                id="board"
+                                                name="board"
+                                                type="text"
+                                                placeholder="Enter licensing board"
+                                                onChange={formik.handleChange}
+                                                onBlur={formik.handleBlur}
+                                                value={formik.values.board}
+                                            />
+                                            {formik.touched.board && formik.errors.board && (
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.board}</p>
+                                            )}
+                                        </div>
                                     </div>
                                     {/* State */}
                                     <div className='w-full'>
-                                        <Label htmlFor="state" className='mb-[8px]'>
+                                        <Label htmlFor="state" className='my-[8px]'>
                                             <Paragraph size="label" className="text-Gray900 font-bold">License State</Paragraph>
                                         </Label>
-                                        <Select onValueChange={(value) => formik.setFieldValue("state", value)}>
-                                            <SelectTrigger className="w-full">
-                                                <SelectValue placeholder="Select state" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="california">California</SelectItem>
-                                                <SelectItem value="texas">Texas</SelectItem>
-                                                <SelectItem value="new-york">New York</SelectItem>
-                                                <SelectItem value="florida">Florida</SelectItem>
-                                                <SelectItem value="illinois">Illinois</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        {formik.touched.state && formik.errors.state && (
-                                            <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
-                                        )}
-
+                                        <div className='relative'>
+                                            <Select onValueChange={(value) => formik.setFieldValue("state", value)}>
+                                                <SelectTrigger className="w-full">
+                                                    <SelectValue placeholder="Select state" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="california">California</SelectItem>
+                                                    <SelectItem value="texas">Texas</SelectItem>
+                                                    <SelectItem value="new-york">New York</SelectItem>
+                                                    <SelectItem value="florida">Florida</SelectItem>
+                                                    <SelectItem value="illinois">Illinois</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                            {formik.touched.state && formik.errors.state && (
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.state}</p>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -164,26 +175,27 @@ function YourProfession({ setCurrentStep }) {
                                 </div>
                             </div>
 
-
-
                             {/* NPI Number */}
                             <div>
-                                <Label htmlFor="npi" className='mb-[8px]'>
+                                <Label htmlFor="npi" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">NPI number</Paragraph>
                                 </Label>
-                                <Input
-                                    id="npi"
-                                    name="npi"
-                                    type="text"
-                                    inputMode="numeric"
-                                    className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.npi}
-                                />
-                                {formik.touched.npi && formik.errors.npi && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.npi}</p>
-                                )}
+                                <div className='relative'>
+                                    <Input
+                                        id="npi"
+                                        name="npi"
+                                        type="text"
+                                        placeholder="Enter NPI number"
+                                        inputMode="numeric"
+                                        className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.npi}
+                                    />
+                                    {formik.touched.npi && formik.errors.npi && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.npi}</p>
+                                    )}
+                                </div>
                             </div>
 
                         </div>

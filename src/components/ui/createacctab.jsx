@@ -10,12 +10,12 @@ const steps = [
 ];
 
 export default function CreateAccTab({ currentStep, children }) {
-
   return (
-    <div className="w-full flex flex-col gap-[22px] sm:gap-[24px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]">
+    <div className="w-full flex flex-col gap-[40px] sm:gap-[45px] md:gap-[50px] lg:gap-[55px] xl:gap-[60px] 2xl:gap-[65px]">
 
       {/* Stepper Header */}
-      <div className="flex items-center justify-center w-full">
+      <div className="flex items-center justify-center px-[35.5px] sm:px-[40px] md:px-[44.5px] lg:px-[48.5px] xl:px-[51px] 2xl:px-[52.5px]
+      w-full relative">
         {steps.map((step, index) => {
           const isActive = step.id === currentStep;
           const isCompleted = step.id < currentStep;
@@ -27,18 +27,21 @@ export default function CreateAccTab({ currentStep, children }) {
 
           return (
             <React.Fragment key={step.id}>
-              <div className="flex flex-col items-center">
+              <div className="relative flex flex-col items-center justify-center">
+                {/* Circle */}
                 <div
                   className={cn(
-                    "w-[18px] h-[18px] sm:w-[22px] sm:h-[22px] md:w-[26px] md:h-[26px] lg:w-[30px] lg:h-[30px] xl:w-[32px] xl:h-[32px] 2xl:w-[34px] 2xl:h-[34px] rounded-full flex items-center justify-center font-bold transition",
+                    "w-[24px] h-[24px] sm:w-[25px] sm:h-[25px] md:w-[26px] md:h-[26px] lg:w-[30px] lg:h-[30px] xl:w-[32px] xl:h-[32px] 2xl:w-[34px] 2xl:h-[34px] rounded-full flex items-center justify-center font-bold transition",
                     circleBg
                   )}
                 >
                   <Paragraph size="md">{step.id}</Paragraph>
                 </div>
+
+                {/* Label */}
                 <span
                   className={cn(
-                    "mt-2 text-center font-urbanist font-[800]",
+                    "absolute top-full mt-[12px] left-1/2 -translate-x-1/2 whitespace-nowrap font-urbanist font-[800] text-center",
                     isActive || isCompleted ? "text-Secondary" : "text-[#979797]"
                   )}
                 >
@@ -46,10 +49,11 @@ export default function CreateAccTab({ currentStep, children }) {
                 </span>
               </div>
 
+              {/* Horizontal Line Between Steps */}
               {index < steps.length - 1 && (
                 <div
                   className={cn(
-                    "h-[2px] md:h-[4px] lg:h-[6px] flex-1 w-full rounded-full",
+                    "h-[4px] lg:h-[6px] w-full mx-[10px] sm:mx-[12px] md:mx-[14px] lg:mx-[17px] xl:mx-[19px] 2xl:mx-[20px] rounded-full",
                     isCompleted ? "bg-MindfulBrown80" : "bg-[#0000001A]"
                   )}
                 />
@@ -59,9 +63,8 @@ export default function CreateAccTab({ currentStep, children }) {
         })}
       </div>
 
-      {/* Render current step */}
+      {/* Current Step Content */}
       <div>{React.Children.toArray(children)[currentStep - 1]}</div>
-
     </div>
   );
 }

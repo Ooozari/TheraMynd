@@ -33,7 +33,7 @@ function ResetPassword() {
         <>
             {!emailStatus ? (
                 <div>{/* Sent Email */}
-                    <div className='min-h-screen w-full flex items-center justify-center px-4 '>
+                    <div className='min-h-screen overflow-y-auto py-20 w-full flex items-center justify-center px-4'>
                         <div className='flex flex-col bg-White rounded-[10px] shadow-[0px_9px_34px_0px_#0000001A] gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[21px] xl:gap-[21.5px] 2xl:gap-[22px] max-w-[432px] p-[18px] sm:p-[19px] md:p-[20px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] w-full'>
 
                             {/* top */}
@@ -41,13 +41,15 @@ function ResetPassword() {
                                 <div>
                                     <Link href='/login'>
                                         <div className='inline-flex items-center justify-center text-center bg-Secondary rounded-full 
-                            w-[15.65px] h-[15.65px] 
-                            sm:w-[18.25px] sm:h-[18.25px] 
-                            md:w-[21px] md:h-[21px] 
-                            lg:w-[24px] lg:h-[24px] 
-                            xl:w-[26.5px] xl:h-[26.5px] 
-                            2xl:w-[28.65px] 2xl:h-[28.65px] hover:cursor-pointer'>
-                                            <Back />
+                                        w-[15.65px] h-[15.65px] 
+                                        sm:w-[18.25px] sm:h-[18.25px] 
+                                        md:w-[21px] md:h-[21px] 
+                                        lg:w-[24px] lg:h-[24px] 
+                                        xl:w-[26.5px] xl:h-[26.5px] 2xl:w-[28.65px] 2xl:h-[28.65px] hover:cursor-pointer'>
+                                            <div className='w-[4px] h-[6px] sm:w-[4.5px] sm:h-[7.5px] md:w-[5px] md:h-[9px] lg:w-[5.5px] lg:h-[10.5px] xl:w-[5.8px] xl:h-[11.2px] 2xl:w-[6px] 2xl:h-[12px]'>
+                                                <Back />
+                                            </div>
+
                                         </div>
                                     </Link>
                                 </div>
@@ -74,26 +76,30 @@ function ResetPassword() {
                                         <Label htmlFor="email" className='mb-[8px]'>
                                             <Paragraph size="label" className="text-Gray900 font-bold font-satoshi">Enter Email Address</Paragraph>
                                         </Label>
-                                        <Input
-                                            id="email"
-                                            name="email"
-                                            type="email"
-                                            value={formik.values.email}
-                                            onChange={formik.handleChange}
-                                            onBlur={formik.handleBlur}
-                                        />
+                                        <div className='relative'>
+                                            <Input
+                                                id="email"
+                                                name="email"
+                                                type="email"
+                                                placeholder="Enter email"
+                                                value={formik.values.email}
+                                                onChange={formik.handleChange}
+                                                onBlur={formik.handleBlur}
+                                            />
+                                            {formik.touched.email && formik.errors.email && (
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.email}</p>
+                                            )}
+                                        </div>
                                     </div>
-                                    {formik.touched.email && formik.errors.email && (
-                                        <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
-                                    )}
+
+
                                 </div>
 
 
                                 {/* Button */}
                                 <div className=''>
                                     <div className=''>
-                                        <Button variant="secondary" className='w-full' type='submit'
-                                            disabled={!formik.isValid || formik.isSubmitting}>
+                                        <Button variant="secondary" className='w-full' type='submit'>
                                             <Paragraph size="btnText" className="text-White font-black font-satoshi">Reset Password
                                             </Paragraph>
                                         </Button>
@@ -109,8 +115,7 @@ function ResetPassword() {
                 </div>
             ) : emailStatus === true ? (
                 <div>{/* Check Email - Back to Login */}
-                    <div className='min-h-screen w-full flex items-center justify-center px-4 '>
-
+                    <div className='min-h-screen overflow-y-auto py-20 w-full flex items-center justify-center px-4 '>
                         <div className='flex flex-col bg-White rounded-[10px] shadow-[0px_9px_34px_0px_#0000001A] gap-[24px] sm:gap-[26px] md:gap-[28px] lg:gap-[30px] xl:gap-[31px] 2xl:gap-[32px]
                 max-w-[432px] w-full p-[24px] sm:p-[28px] md:p-[32px] lg:p-[36px] xl:p-[38px] 2xl:p-[40px] '>
 

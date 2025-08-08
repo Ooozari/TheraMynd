@@ -106,7 +106,7 @@ function PatientProvider() {
                             <Paragraph size="label" className="text-Gray900 font-bold">Sort by</Paragraph>
                         </Label>
                         <Select>
-                            <SelectTrigger className="w-[184px]">
+                            <SelectTrigger className="w-[184px] bg-White">
                                 <SelectValue placeholder="Select" />
                             </SelectTrigger>
                             <SelectContent>
