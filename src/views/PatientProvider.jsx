@@ -49,11 +49,6 @@ import {
 function PatientProvider() {
     const router = useRouter();
 
-    const statusColorMap = {
-        Active: "bg-[#00FF1A]",
-        Pending: "bg-[#FFC700]",
-        Inactive: "bg-[#FF0100]",
-    }
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -134,32 +129,32 @@ function PatientProvider() {
                     <Table className=''>
                         <TableHeader>
                             <TableRow>
-                                <TableHead></TableHead>
-                                <TableHead>Name</TableHead>
-                                <TableHead>Days Active</TableHead>
-                                <TableHead>Status</TableHead>
-                                <TableHead>Start date</TableHead>
-                                <TableHead></TableHead>
+                                <TableHead className="[5%]"></TableHead> {/* icon column */}
+                                <TableHead className="w-[35%]">Name</TableHead>
+                                <TableHead className="w-[15%]">Days Active</TableHead>
+                                <TableHead className="w-[15%]">Status</TableHead>
+                                <TableHead className="w-[15%]">Start date</TableHead>
+                                <TableHead className="w-[15%]"></TableHead> {/* action buttons */}
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {tableData.map((item) => (
                                 <TableRow key={item.id}>
-                                    <TableCell className="w-[40px] h-full">
-                                        <div className='h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px] 2xl:h-[31px] w-full'>{item.icon}</div>
+                                    <TableCell className=' pr-[18px] pl-[18px] md:pl-[18px] md:pr-[18px]'>
+                                        <span className='h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px] 2xl:h-[31px] w-full'>{item.icon}</span>
                                     </TableCell>
-                                    <TableCell className="font-medium text-left">
+                                    <TableCell className="text-left">
                                         <Paragraph size="tabletext" className="text-[#252525] ">
                                             {item.name}
                                         </Paragraph>
 
                                     </TableCell>
-                                    <TableCell>
+                                    <TableCell >
                                         <Paragraph size="tabletext" className="text-[#252525]">
                                             {item.days}
                                         </Paragraph>
                                     </TableCell>
-                                    <TableCell>
+                                    <TableCell >
                                         <div className="flex items-center gap-[6px]">
                                             <div
                                                 className={cn(
@@ -183,7 +178,7 @@ function PatientProvider() {
                                         </Paragraph>
                                     </TableCell>
 
-                                    <TableCell className='sticky right-0 bg-white z-5 text-right'>
+                                    <TableCell className='sticky right-0 bg-white z-5 text-right  pr-[12px]  md:pr-[26px]'>
                                         <div className='flex gap-[10px] justify-end'>
                                             <DropdownMenu>
                                                 <DropdownMenuTrigger> <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#ECECEC] flex justify-center items-center rounded-full cursor-pointer'>
@@ -274,19 +269,19 @@ function PatientProvider() {
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patient Name</Paragraph>
                                 </Label>
                                 <div className='relative'>
-                                <Input
-                                    className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
+                                    <Input
+                                        className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]
 '                                   id="name"
-                                    name="name"
-                                    type="text"
-                                    placeholder="Enter patient name"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.name}
-                                />
-                                {formik.touched.name && formik.errors.name && (
-                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.name}</p>
-                                )}
+                                        name="name"
+                                        type="text"
+                                        placeholder="Enter patient name"
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.name}
+                                    />
+                                    {formik.touched.name && formik.errors.name && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.name}</p>
+                                    )}
                                 </div>
                             </div>
 
@@ -296,18 +291,18 @@ function PatientProvider() {
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patients email</Paragraph>
                                 </Label>
                                 <div className='relative'>
-                                <Input
-                                    id="email"
-                                    name="email"
-                                    placeholder="Enter patient email"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.email}
-                                    className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
-                                />
-                                {formik.touched.email && formik.errors.email && (
-                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.email}</p>
-                                )}
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter patient email"
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.email}
+                                        className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
+                                    />
+                                    {formik.touched.email && formik.errors.email && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.email}</p>
+                                    )}
                                 </div>
                             </div>
 
@@ -317,19 +312,19 @@ function PatientProvider() {
                                     <Paragraph size="label" className="text-Gray900 font-bold">Patients phone</Paragraph>
                                 </Label>
                                 <div className='relative'>
-                                <Input
-                                    id="phone"
-                                    name="phone"
-                                    type="tel"
-                                    placeholder="Enter patient phone"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.phone}
-                                    className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
-                                />
-                                {formik.touched.phone && formik.errors.phone && (
-                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.phone}</p>
-                                )}
+                                    <Input
+                                        id="phone"
+                                        name="phone"
+                                        type="tel"
+                                        placeholder="Enter patient phone"
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.phone}
+                                        className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]'
+                                    />
+                                    {formik.touched.phone && formik.errors.phone && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.phone}</p>
+                                    )}
                                 </div>
                             </div>
 
@@ -339,22 +334,22 @@ function PatientProvider() {
                                     <Paragraph size="label" className="text-Gray900 font-bold">Notify patient by</Paragraph>
                                 </Label>
                                 <div className='relative'>
-                                <Select name="notify"
-                                    value={formik.values.notify}
-                                    onValueChange={(value) => formik.setFieldValue('notify', value)}>
-                                    <SelectTrigger className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px] w-full'>
-                                        <SelectValue placeholder="Select type" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="Email">Email</SelectItem>
-                                        <SelectItem value="Phone">Phone</SelectItem>
-                                        <SelectItem value="Sms">Sms</SelectItem>
-                                        <SelectItem value="Neither">Neither</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                {formik.touched.notify && formik.errors.notify && (
-                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.notify}</p>
-                                )}
+                                    <Select name="notify"
+                                        value={formik.values.notify}
+                                        onValueChange={(value) => formik.setFieldValue('notify', value)}>
+                                        <SelectTrigger className='h-[40px] sm:h-[42px] md:h-[42px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px] w-full'>
+                                            <SelectValue placeholder="Select type" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="Email">Email</SelectItem>
+                                            <SelectItem value="Phone">Phone</SelectItem>
+                                            <SelectItem value="Sms">Sms</SelectItem>
+                                            <SelectItem value="Neither">Neither</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    {formik.touched.notify && formik.errors.notify && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.notify}</p>
+                                    )}
                                 </div>
                             </div>
 
