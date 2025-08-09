@@ -5,9 +5,8 @@ import { Paragraph } from "@/components/ui/typography";
 
 function TopBar({ onMenuClick }) {
   return (
-    <header className="flex items-center justify-between pt-[20px] pr-[14px] sm:pt-[25px] sm:pr-[19px] md:pt-[30px] md:pr-[24px] lg:pt-[35px] lg:pr-[29px] xl:pt-[40px] xl:pr-[34px] 2xl:pt-[53px] 2xl:pr-[39px]
-        pb-[8px] sticky top-0 z-10 gap-3 w-full bg-[#F4F4F4]">
-      
+    <header className="flex items-center justify-between pt-[20px] pr-[14px] sm:pt-[25px] sm:pr-[19px] md:pt-[30px] md:pr-[24px] lg:pt-[35px] lg:pr-[29px] xl:pt-[40px] xl:pr-[34px] 2xl:pt-[53px] 2xl:pr-[39px] pb-[8px]  gap-3 w-full bg-[#F4F4F4]">
+
       {/* Hamburger Menu on Mobile */}
       <div className="block lg:hidden pl-4">
         <Menu

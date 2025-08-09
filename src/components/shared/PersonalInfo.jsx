@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useState, useRef } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Edit, PersonIcon } from '@/svgs/Icons'
@@ -7,7 +7,6 @@ import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { useState } from 'react';
 import {
     Select,
     SelectContent,
@@ -21,7 +20,7 @@ const validationSchema = Yup.object({
     lname: Yup.string().required('Last name is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
     phone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits')
-                .required('Practice phone is required'),
+        .required('Practice phone is required'),
     personalPhone: Yup.number().required('Personal phone is required').typeError('Phone must be a number'),
     city: Yup.string().required('City is required'),
     state: Yup.string().required('State is required'),
@@ -29,6 +28,17 @@ const validationSchema = Yup.object({
 });
 
 function PersonalInfo() {
+    const [profileImage, setProfileImage] = useState(null);
+    const fileInputRef = useRef(null);
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const imageUrl = URL.createObjectURL(file);
+            setProfileImage(imageUrl);
+        }
+    };
+    console.log("This is img", profileImage)
     const [isEditable, setIsEditable] = useState(false);
 
     const formik = useFormik({
@@ -36,8 +46,8 @@ function PersonalInfo() {
             fname: 'John',
             lname: 'Doe',
             email: 'abc@gamil.com',
-            phone: '1234567890',
-            personalPhone: '3216540987',
+            phone: '12345678900',
+            personalPhone: '32165409870',
             city: 'New York',
             state: 'illinois',
             allowPatient: 'work',
@@ -62,14 +72,35 @@ function PersonalInfo() {
                         <div className="relative w-[40px] h-[40px] sm:w-[49px] sm:h-[49px] md:w-[58px] md:h-[58px] lg:w-[66px] lg:h-[66px] xl:w-[72px] xl:h-[72px] 2xl:w-[77px] 2xl:h-[77px] rounded-full bg-[#D9D9D9] flex items-end justify-center">
                             {/* Center User Icon: Head + Body */}
                             <div className="">
-                                <PersonIcon className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[55px] lg:h-[55px] xl:w-[58px] xl:h-[58px] 2xl:w-[60px] 2xl:h-[60px] text-White" />
+                                {profileImage ? (
+                                    <div className='w-[40px] h-[40px] sm:w-[49px] sm:h-[49px] md:w-[58px] md:h-[58px] lg:w-[66px] lg:h-[66px] xl:w-[72px] xl:h-[72px] 2xl:w-[77px] 2xl:h-[77px] rounded-full'>
+                                        <img
+                                            src={profileImage}
+                                            alt="Profile"
+                                            className="w-full rounded-full h-full object-cover"
+                                        />
+                                    </div>
+                                ) : (<PersonIcon className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[55px] lg:h-[55px] xl:w-[58px] xl:h-[58px] 2xl:w-[60px] 2xl:h-[60px] text-White" />)}
+
                             </div>
                             {/* Bottom-right Edit Icon */}
-                            <div className="absolute -bottom-0 -right-0 bg-Secondary p-0.5 md:p-[4px] xl:p-[5px] 2xl:p-[6px] rounded-full cursor-pointer">
+                            <div
+                                onClick={() => fileInputRef.current.click()}
+                                className={`absolute -bottom-0 -right-0 bg-Secondary p-0.5 md:p-[4px] xl:p-[5px] 2xl:p-[6px] rounded-full  ${isEditable ? "cursor-pointer" : "cursor-not-allowed"
+                                    }`}>
                                 <div className='w-[6px] h-[7px] sm:w-[7px] sm:h-[8px] md:w-[8px] md:h-[9px] lg:w-[9px] lg:h-[10px] xl:w-[9.5px] xl:h-[10.5px] 2xl:w-[10px] 2xl:h-[11px]'>
                                     <Edit color="white" />
                                 </div>
                             </div>
+                            {/* Hidden File Input */}
+                            <input
+                                type="file"
+                                disabled={!isEditable}
+                                accept="image/*"
+                                ref={fileInputRef}
+                                onChange={handleFileChange}
+                                className="hidden disabled:cursor-not-allowed"
+                            />
                         </div>
                     </div>
 
@@ -79,7 +110,7 @@ function PersonalInfo() {
                             <Heading level="lgSubText" className="font-[800] font-urbanist text-[#292929]">
                                 Personal Info
                             </Heading>
-                            <button type="button"
+                            {!isEditable ? (<button type="button"
                                 className='cursor-pointer'
                                 onClick={() => setIsEditable(true)}>
                                 <Paragraph size="md" className="text-MindfulBrown60 font-[700] font-urbanist flex gap-1 items-center">
@@ -91,7 +122,16 @@ function PersonalInfo() {
                                     </div>
 
                                 </Paragraph>
-                            </button>
+                            </button>) : (<button type="button"
+                                className='cursor-pointer'
+                                onClick={() => setIsEditable(false)}>
+                                <Paragraph size="md" className="text-[#DD0000] font-[700] font-urbanist">
+                                    <span>Cancel</span>
+                                </Paragraph>
+                            </button>)}
+                            
+                            
+
                         </div>
                         <Paragraph size="md" className="text-[#292929] font-medium font-urbanist leading-2.5">Add, update, or remove your billing methods.
                         </Paragraph>
@@ -105,122 +145,134 @@ function PersonalInfo() {
                         {/* Names */}
                         <div className='w-full flex flex-col lg:flex-row gap-5'>
                             <div className='w-full'>
-                                <Label htmlFor="fname" className='mb-[8px]'>
+                                <Label htmlFor="fname" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">First Name</Paragraph>
                                 </Label>
-                                <Input
-                                    id="fname"
-                                    name="fname"
-                                    type="text"
-                                    disabled={!isEditable}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.fname}
-                                    onChange={formik.handleChange}
-                                />
-                                {formik.touched.fname && formik.errors.fname && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.fname}</p>
-                                )}
+                                <div className='relative'>
+                                    <Input
+                                        id="fname"
+                                        name="fname"
+                                        type="text"
+                                        disabled={!isEditable}
+                                        onBlur={formik.handleBlur}
+                                        value={formik.values.fname}
+                                        onChange={formik.handleChange}
+                                    />
+                                    {formik.touched.fname && formik.errors.fname && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.fname}</p>
+                                    )}
+                                </div>
                             </div>
                             <div className='w-full'>
-                                <Label htmlFor="lname" className='mb-[8px]'>
+                                <Label htmlFor="lname" className='my-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Last Name</Paragraph>
                                 </Label>
-                                <Input
-                                    id="lname"
-                                    name="lname"
-                                    type="text"
-                                    disabled={!isEditable}
-                                    value={formik.values.lname}
-                                    onBlur={formik.handleBlur}
-                                    onChange={formik.handleChange}
-                                />
-                                {formik.touched.lname && formik.errors.lname && (
-                                    <p className="text-red-500 text-xs mt-1">{formik.errors.lname}</p>
-                                )}
+                                <div className='relative'>
+                                    <Input
+                                        id="lname"
+                                        name="lname"
+                                        type="text"
+                                        disabled={!isEditable}
+                                        value={formik.values.lname}
+                                        onBlur={formik.handleBlur}
+                                        onChange={formik.handleChange}
+                                    />
+                                    {formik.touched.lname && formik.errors.lname && (
+                                        <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.lname}</p>
+                                    )}
+                                </div>
                             </div>
                         </div>
 
 
                         {/* Email */}
                         <div>
-                            <Label htmlFor="email" className='mb-[8px]'>
+                            <Label htmlFor="email" className='my-[8px]'>
                                 <Paragraph size="label" className="text-Gray900 font-bold">Email</Paragraph>
                             </Label>
-                            <Input
-                                id="email"
-                                name="email"
-                                type="email"
-                                disabled={!isEditable}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.email}
-                                onChange={formik.handleChange}
-                            />
-                            {formik.touched.email && formik.errors.email && (
-                                <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
-                            )}
+                            <div className='relative'>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    disabled={!isEditable}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                />
+                                {formik.touched.email && formik.errors.email && (
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.email}</p>
+                                )}
+                            </div>
                         </div>
 
                         {/* Practise Phone Number */}
                         <div>
-                            <Label htmlFor="phone" className='mb-[8px]'>
+                            <Label htmlFor="phone" className='my-[8px]'>
                                 <Paragraph size="label" className="text-Gray900 font-bold">Practice phone number</Paragraph>
                             </Label>
-                            <Input
-                                id="phone"
-                                name="phone"
-                                type="tel"
-                                disabled={!isEditable}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.phone}
-                                onChange={formik.handleChange}
-                            />
-                            {formik.touched.phone && formik.errors.phone && (
-                                <p className="text-red-500 text-xs mt-1">{formik.errors.phone}</p>
-                            )}
+                            <div className='relative'>
+                                <Input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    disabled={!isEditable}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.phone}
+                                    onChange={formik.handleChange}
+                                />
+                                {formik.touched.phone && formik.errors.phone && (
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.phone}</p>
+                                )}
+                            </div>
                         </div>
 
                         {/*Personal phone number Optional*/}
                         <div>
-                            <Label htmlFor="personalPhone" className='mb-[8px]'>
+                            <Label htmlFor="personalPhone" className='my-[8px]'>
                                 <Paragraph size="label" className="text-Gray900 font-bold">Work or cell phone number</Paragraph>
                             </Label>
-                            <Input
-                                id="personalPhone"
-                                name="personalPhone"
-                                type="tel"
-                                onBlur={formik.handleBlur}
-                                disabled={!isEditable}
-                                value={formik.values.personalPhone}
-                                onChange={formik.handleChange}
-                            />
-                            {formik.touched.personalPhone && formik.errors.personalPhone && (
-                                <p className="text-red-500 text-xs mt-1">{formik.errors.personalPhone}</p>
-                            )}
+                            <div className='relative'>
+                                <Input
+                                    id="personalPhone"
+                                    name="personalPhone"
+                                    type="tel"
+                                    onBlur={formik.handleBlur}
+                                    disabled={!isEditable}
+                                    value={formik.values.personalPhone}
+                                    onChange={formik.handleChange}
+                                />
+                                {formik.touched.personalPhone && formik.errors.personalPhone && (
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.personalPhone}</p>
+                                )}
+                            </div>
                         </div>
 
 
                         {/* Allow Patient */}
                         <div>
-                            <Label htmlFor="phone" className='mb-[8px]'>
+                            <Label htmlFor="phone" className='my-[8px]'>
                                 <Paragraph size="label" className="text-Gray900 font-bold">Allow Patients to call my</Paragraph>
                             </Label>
-                            <Select disabled={!isEditable}
-                                value={formik.values.allowPatient}
-                                onValueChange={(value) => formik.setFieldValue("allowPatient", value)}>
-                                <SelectTrigger disabled={!isEditable} className="w-[169px]">
-                                    <SelectValue placeholder="Select permission" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="personal">Personal</SelectItem>
-                                    <SelectItem value="work">Work</SelectItem>
-                                    <SelectItem value="public">Public</SelectItem>
-                                    <SelectItem value="neither">Neither</SelectItem>
+                            <div className='relative'>
+                                <Select disabled={!isEditable}
+                                    value={formik.values.allowPatient}
+                                    onValueChange={(value) => formik.setFieldValue("allowPatient", value)}>
+                                    <SelectTrigger disabled={!isEditable} className="w-[169px]">
+                                        <SelectValue placeholder="Select permission" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="personal">Personal</SelectItem>
+                                        <SelectItem value="work">Work</SelectItem>
+                                        <SelectItem value="public">Public</SelectItem>
+                                        <SelectItem value="neither">Neither</SelectItem>
 
-                                </SelectContent>
-                            </Select>
-                            {formik.touched.allowPatient && formik.errors.allowPatient && (
-                                <p className="text-red-500 text-xs mt-1">{formik.errors.allowPatient}</p>
-                            )}
+                                    </SelectContent>
+                                </Select>
+                                {formik.touched.allowPatient && formik.errors.allowPatient && (
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.allowPatient}</p>
+                                )}
+                            </div>
                         </div>
 
                         {/*Office address Input div */}
@@ -239,45 +291,48 @@ function PersonalInfo() {
 
                                     {/* City */}
                                     <div className=' w-full lg:w-[75%]'>
-                                        <Label htmlFor="city" className='mb-[8px]'>
+                                        <Label htmlFor="city" className='my-[8px]'>
                                             <Paragraph size="label" className="text-Gray900 font-bold">City</Paragraph>
                                         </Label>
-                                        <Input
-                                            id="city"
-                                            name="city"
-                                            type="text"
-                                            disabled={!isEditable}
-                                            onBlur={formik.handleBlur}
-                                            value={formik.values.city}
-                                            onChange={formik.handleChange}
-                                        />
-                                        {formik.touched.city && formik.errors.city && (
-                                            <p className="text-red-500 text-xs mt-1">{formik.errors.city}</p>
-                                        )}
+                                        <div className='relative'>
+                                            <Input
+                                                id="city"
+                                                name="city"
+                                                type="text"
+                                                disabled={!isEditable}
+                                                onBlur={formik.handleBlur}
+                                                value={formik.values.city}
+                                                onChange={formik.handleChange}
+                                            />
+                                            {formik.touched.city && formik.errors.city && (
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.city}</p>
+                                            )}
+                                        </div>
                                     </div>
                                     {/* State */}
                                     <div className='w-full lg:w-[25%]'>
-                                        <Label htmlFor="state" className='mb-[8px]'>
+                                        <Label htmlFor="state" className='my-[8px]'>
                                             <Paragraph size="label" className="text-Gray900 font-bold">State</Paragraph>
                                         </Label>
-                                        <Select disabled={!isEditable}
-                                            value={formik.values.state}
-                                            onValueChange={(value) => formik.setFieldValue("state", value)}>
-                                            <SelectTrigger disabled={!isEditable} className="w-full">
-                                                <SelectValue placeholder="Select state" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="california">California</SelectItem>
-                                                <SelectItem value="texas">Texas</SelectItem>
-                                                <SelectItem value="new-york">New York</SelectItem>
-                                                <SelectItem value="florida">Florida</SelectItem>
-                                                <SelectItem value="illinois">Illinois</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        {formik.touched.state && formik.errors.state && (
-                                            <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
-                                        )}
-
+                                        <div className='relative'>
+                                            <Select disabled={!isEditable}
+                                                value={formik.values.state}
+                                                onValueChange={(value) => formik.setFieldValue("state", value)}>
+                                                <SelectTrigger disabled={!isEditable} className="w-full">
+                                                    <SelectValue placeholder="Select state" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="california">California</SelectItem>
+                                                    <SelectItem value="texas">Texas</SelectItem>
+                                                    <SelectItem value="new-york">New York</SelectItem>
+                                                    <SelectItem value="florida">Florida</SelectItem>
+                                                    <SelectItem value="illinois">Illinois</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                            {formik.touched.state && formik.errors.state && (
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.state}</p>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

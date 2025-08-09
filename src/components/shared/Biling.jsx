@@ -90,30 +90,36 @@ function Biling() {
                                     {/* Names */}
                                     <div className='w-full flex flex-col lg:flex-row gap-5'>
                                         <div className='w-full'>
-                                            <Label htmlFor="fname" className='mb-[8px]'>
+                                            <Label htmlFor="fname" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">First Name</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Input
                                                 name="fname"
+                                                placeholder="Enter first name"
                                                 value={formik.values.fname}
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.fname && formik.errors.fname && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.fname}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.fname}</p>
                                             )}
+                                            </div>
                                         </div>
                                         <div className='w-full'>
-                                            <Label htmlFor="lname" className='mb-[8px]'>
+                                            <Label htmlFor="lname" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Last Name</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Input
                                                 name="lname"
+                                                placeholder="Enter last name"
                                                 value={formik.values.lname}
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.lname && formik.errors.lname && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.lname}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.lname}</p>
                                             )}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -122,73 +128,85 @@ function Biling() {
 
                                         {/* City */}
                                         <div className=' w-full lg:w-[75%]'>
-                                            <Label htmlFor="cardNum" className='mb-[8px]'>
+                                            <Label htmlFor="cardNum" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Card Number</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Input
                                                 name="cardNum"
+                                                placeholder="Enter card number"
                                                 value={formik.values.cardNum}
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.cardNum && formik.errors.cardNum && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.cardNum}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.cardNum}</p>
                                             )}
+                                            </div>
                                         </div>
                                         {/* CVV */}
                                         <div className='w-full lg:w-[25%]'>
-                                            <Label htmlFor="cvv" className='mb-[8px]'>
+                                            <Label htmlFor="cvv" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">CVV</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Input
                                                 id="cvv"
+                                                placeholder="Enter CVV"
                                                 value={formik.values.cvv}
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.cvv && formik.errors.cvv && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.cvv}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.cvv}</p>
                                             )}
-
+                                            </div>
                                         </div>
                                     </div>
 
                                     {/* Street Address */}
                                     <div>
-                                        <Label htmlFor="Address" className='mb-[8px]'>
+                                        <Label htmlFor="Address" className='my-[8px]'>
                                             <Paragraph size="label" className="text-Gray900 font-bold">Street Address</Paragraph>
                                         </Label>
+                                        <div className='relative'>
                                         <Input
                                             type="address"
                                             id="Address"
+                                            placeholder="Enter street address"
                                             name="Address"
                                             value={formik.values.Address}
                                             onChange={formik.handleChange}
                                         />
                                         {formik.touched.Address && formik.errors.Address && (
-                                            <p className="text-red-500 text-xs mt-1">{formik.errors.Address}</p>
+                                            <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.Address}</p>
                                         )}
+                                        </div>
                                     </div>
 
                                     {/*State & Zip Code*/}
                                     <div className='flex flex-col lg:flex-row gap-4'>
                                         {/* City */}
                                         <div className=' w-full lg:w-[75%]'>
-                                            <Label htmlFor="city" className='mb-[8px]'>
+                                            <Label htmlFor="city" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">City</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Input
                                                 id="city"
+                                                placeholder="Enter"
                                                 value={formik.values.city}
                                                 onChange={formik.handleChange}
                                             />
                                             {formik.touched.city && formik.errors.city && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.city}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.city}</p>
                                             )}
+                                            </div>
                                         </div>
                                         {/* State */}
                                         <div className='w-full lg:w-[25%]'>
-                                            <Label htmlFor="state" className='mb-[8px]'>
+                                            <Label htmlFor="state" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">State</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Select value={formik.values.state}
                                                 onValueChange={(val) => formik.setFieldValue('state', val)}>
                                                 <SelectTrigger className="w-full">
@@ -203,8 +221,9 @@ function Biling() {
                                                 </SelectContent>
                                             </Select>
                                             {formik.touched.state && formik.errors.state && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.state}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.state}</p>
                                             )}
+                                            </div>
 
                                         </div>
                                     </div>
@@ -213,9 +232,10 @@ function Biling() {
                                     <div className='flex flex-col lg:flex-row gap-4'>
                                         {/* Country */}
                                         <div className=' w-full lg:w-[75%]'>
-                                            <Label htmlFor="country" className='mb-[8px]'>
+                                            <Label htmlFor="country" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Country</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Select value={formik.values.country}
                                                 onValueChange={(val) => formik.setFieldValue('country', val)}>
                                                 <SelectTrigger className="w-full">
@@ -231,23 +251,27 @@ function Biling() {
                                                 </SelectContent>
                                             </Select>
                                             {formik.touched.country && formik.errors.country && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.country}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.country}</p>
                                             )}
+                                            </div>
                                         </div>
                                         {/* State */}
                                         <div className='w-full lg:w-[25%]'>
-                                            <Label htmlFor="zip" className='mb-[8px]'>
+                                            <Label htmlFor="zip" className='my-[8px]'>
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Zip</Paragraph>
                                             </Label>
+                                            <div className='relative'>
                                             <Input
                                                 id="zip"
+                                                placeholder="Enter zip"
                                                 value={formik.values.zip}
                                                 onChange={formik.handleChange}
 
                                             />
                                             {formik.touched.zip && formik.errors.zip && (
-                                                <p className="text-red-500 text-xs mt-1">{formik.errors.zip}</p>
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.zip}</p>
                                             )}
+                                            </div>
                                         </div>
                                     </div>
 

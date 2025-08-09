@@ -86,7 +86,7 @@ function PatientProvider() {
 
     return (
         <>
-            <div className='flex flex-col gap-[12px] sm:gap-[14px] md:gap-[17px] lg:gap-[20px] xl:gap-[21.5px] 2xl:gap-[23px]'>
+            <div className='flex flex-col gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[21px] xl:gap-[22px] 2xl:gap-[23px]'>
 
                 <div>
                     <Heading level="mdSubText" className="font-[700] text-[#292929]">
@@ -101,7 +101,7 @@ function PatientProvider() {
                             <Paragraph size="label" className="text-Gray900 font-bold">Sort by</Paragraph>
                         </Label>
                         <Select>
-                            <SelectTrigger className="w-[184px] bg-White">
+                            <SelectTrigger className="w-[144px] md:w-[164px] xl:w-[184px] bg-White">
                                 <SelectValue placeholder="Select" />
                             </SelectTrigger>
                             <SelectContent>
