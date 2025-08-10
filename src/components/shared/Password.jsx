@@ -26,7 +26,11 @@ function Password() {
             currentpassword: "",
         },
         validationSchema: Yup.object({
-            currentpassword: Yup.string().required("Current password is required"),
+            currentpassword: Yup.string().min(8, 'Password must be at least 8 characters')
+                .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
+                .matches(/[0-9]/, 'Password must contain at least one number')
+                .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain at least one special character')
+                .required('Password is required'),
         }),
         onSubmit: (values) => {
             setOpenCurrentDialog(false);
@@ -38,7 +42,11 @@ function Password() {
             newpassword: "",
         },
         validationSchema: Yup.object({
-            newpassword: Yup.string().required("Password is required"),
+            newpassword: Yup.string().min(8, 'Password must be at least 8 characters')
+                .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
+                .matches(/[0-9]/, 'Password must contain at least one number')
+                .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain at least one special character')
+                .required('Password is required'),
         }),
         onSubmit: (values) => {
             setOpenEditDialog(false);
@@ -73,24 +81,25 @@ function Password() {
                                 <Heading level="mdSubText" className="font-[800] font-urbanist text-[#424242]">Enter Current Password</Heading>
                             </DialogTitle>
                         </DialogHeader>
-                        <form onSubmit={currentPasswordFormik.handleSubmit} className="grid gap-4">
-                                    <div>
-
-                                    
+                        <form onSubmit={currentPasswordFormik.handleSubmit} className="grid gap-6 md:gap-8">
+                            <div>
                                 <Label htmlFor="currentpassword" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-[#292929] font-[600]">Current password</Paragraph>
                                 </Label>
+                                <div className='relative'>
                                 <Input id="currentpassword"
                                     name="currentpassword"
                                     type="password"
+                                    placeholder="Enter current password"
                                     value={currentPasswordFormik.values.currentpassword}
                                     onChange={currentPasswordFormik.handleChange}
                                     onBlur={currentPasswordFormik.handleBlur}
                                 />
                                 {currentPasswordFormik.touched.currentpassword && currentPasswordFormik.errors.currentpassword && (
-                                    <p className="text-red-500 text-xs mt-1">{currentPasswordFormik.errors.currentpassword}</p>
+                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{currentPasswordFormik.errors.currentpassword}</p>
                                 )}
-                        </div>
+                                </div>
+                            </div>
                             <DialogFooter>
                                 <Button
                                     type="submit"
@@ -112,22 +121,25 @@ function Password() {
                     <DialogHeader>
                         <DialogTitle>Edit Password</DialogTitle>
                     </DialogHeader>
-                    <form onSubmit={newPasswordFormik.handleSubmit} className="grid gap-4">
+                    <form onSubmit={newPasswordFormik.handleSubmit} className="grid gap-6 md:gap-8">
                         <div className="">
                             <Label htmlFor="newpassword" className='mb-[8px]'>
                                 <Paragraph size="label" className="text-[#292929] font-[600]">New password</Paragraph>
-                                </Label>
+                            </Label>
+                            <div className='relative'>
                             <Input
                                 id="newpassword"
                                 name="newpassword"
                                 type="password"
+                                placeholder="Enter new password"
                                 value={newPasswordFormik.values.newpassword}
                                 onChange={newPasswordFormik.handleChange}
                                 onBlur={newPasswordFormik.handleBlur}
                             />
                             {newPasswordFormik.touched.newpassword && newPasswordFormik.errors.newpassword && (
-                                <p className="text-red-500 text-xs mt-1">{newPasswordFormik.errors.newpassword}</p>
+                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{newPasswordFormik.errors.newpassword}</p>
                             )}
+                            </div>
                         </div>
                         <DialogFooter>
                             <Button
