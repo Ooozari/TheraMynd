@@ -46,7 +46,7 @@ function Membership() {
             status: [
                 { text: "Popular", bg: "bg-SerenityGreen40" }
             ],
-            price: "$8",
+            price: "$16",
             specs: [
                 { status: true, text: "Additional text can be added here" },
                 { status: true, text: "Additional text can be added here" },
@@ -66,12 +66,15 @@ function Membership() {
             ],
         },
     ]
-    const handlePlanSelect = (planType) => {
+    const handlePlanSelect = (planType, planPrice) => {
         setSelectedPlanType(planType); // save selected plan type
+        setSelectedPlanPrice(planPrice);  // save selected plan price
         setOpenCurrentDialog(false);   // close Dialog 1
         setOpenEditDialog(true);        // open password edit dialog
     };
     const [selectedPlanType, setSelectedPlanType] = useState('');
+    const [selectedPlanPrice, setSelectedPlanPrice] = useState('');
+
 
     return (
         <>
@@ -129,20 +132,20 @@ function Membership() {
                             </Heading>
                         </DialogTitle>
                     </DialogHeader>
-                    
-                        <div className="grid 2xl:grid-cols-[repeat(auto-fit,_minmax(300px,1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(280px,1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(250px,1fr))] md:grid-cols-[repeat(auto-fit,_minmax(240px,1fr))] grid-cols-[repeat(auto-fit,_minmax(280px,1fr))] gap-4 place-items-center lg:place-items-start">
-                            {plans.map((plan, index) => (
-                                <Plan
-                                    key={index}
-                                    type={plan.type}
-                                    userNo={plan.userNo}
-                                    status={plan.status}
-                                    price={plan.price}
-                                    specs={plan.specs}
-                                    onSelect={() => handlePlanSelect(plan.type)}
-                                />
-                            ))}
-                        </div>
+
+                    <div className="grid 2xl:grid-cols-[repeat(auto-fit,_minmax(300px,1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(280px,1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(250px,1fr))] md:grid-cols-[repeat(auto-fit,_minmax(240px,1fr))] grid-cols-[repeat(auto-fit,_minmax(280px,1fr))] gap-4 place-items-center lg:place-items-start">
+                        {plans.map((plan, index) => (
+                            <Plan
+                                key={index}
+                                type={plan.type}
+                                userNo={plan.userNo}
+                                status={plan.status}
+                                price={plan.price}
+                                specs={plan.specs}
+                                onSelect={() => handlePlanSelect(plan.type, plan.price)}
+                            />
+                        ))}
+                    </div>
                 </DialogContent>
             </Dialog>
             {/* DIALOG 1.2: Confrim Upgrade Plan */}
@@ -157,7 +160,9 @@ function Membership() {
                                 }}
                                 className="inline-flex items-center justify-center text-center bg-Secondary rounded-full w-[30px] h-[30px] hover:cursor-pointer"
                             >
-                                <Back />
+                                <div className='w-[4px] h-[6px] sm:w-[4.5px] sm:h-[7.5px] md:w-[5px] md:h-[9px] lg:w-[5.5px] lg:h-[10.5px] xl:w-[5.8px] xl:h-[11.2px] 2xl:w-[6px] 2xl:h-[12px]'>
+                                    <Back />
+                                </div>
                             </div>
                             <div>
                                 Confirm upgrade to: <span className="text-Secondary">{selectedPlanType}</span>
@@ -169,7 +174,7 @@ function Membership() {
                     </DialogHeader>
                     <div className="grid gap-4">
                         <Heading level="mdSubText" className="font-[700] font-urbanist text-[#424242]">
-                            Due today: $6.56
+                            Due today: {selectedPlanPrice}
                         </Heading>
                         <Paragraph size="md" className="font-[600] font-urbanist text-[#424242]">
                             Due 12/23/24: <span className="font-[800]">$20.99</span>
