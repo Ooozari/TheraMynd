@@ -59,10 +59,7 @@ function DialogContent({
           data-slot="dialog-content"
 
           className={cn(
-            "bg-White data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 z-50 grid w-full max-w-[calc(100%-2rem)] gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[27px] xl:gap-[29px] 2xl:gap-[32px] rounded-[10px] p-[24px] duration-200 max-h-[95vh] shadow-[0px 9px 34px 0px #0000001A] overflow-y-auto",
-            className?.includes("pricing-dialog")
-              ? "2xl:max-w-7xl xl:max-w-5xl lg:max-w-[950px] md:max-w-[700px] max-w-[340px] max-h-[95vh] overflow-y-auto "
-              : className?.includes("fit-dialog") ? "w-fit max-w-none" : "sm:max-w-lg",
+            "bg-White data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 z-50 grid w-full max-w-[calc(100%-2rem)] gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[27px] xl:gap-[29px] 2xl:gap-[32px] rounded-[10px] p-[24px] duration-200 max-h-[95vh] shadow-[0px 9px 34px 0px #0000001A] overflow-y-auto w-fit",
             className
           )}
           {...props}>

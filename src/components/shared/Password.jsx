@@ -75,7 +75,7 @@ function Password() {
                     </div>
 
                     {/* DIALOG 1: Enter Current Password */}
-                    <DialogContent  className='rounded-[20px]'>
+                    <DialogContent  className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                         <DialogHeader>
                             <DialogTitle>
                                 <Heading level="mdSubText" className="font-[800] font-urbanist text-[#424242]">Enter Current Password</Heading>
@@ -117,7 +117,7 @@ function Password() {
 
             {/* DIALOG 2: Edit New Password */}
             <Dialog open={openEditDialog} onOpenChange={setOpenEditDialog}>
-                <DialogContent  className='rounded-[20px]'>
+                <DialogContent  className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle>Edit Password</DialogTitle>
                     </DialogHeader>
@@ -156,7 +156,7 @@ function Password() {
 
             {/* DIALOG 3: Success */}
             <Dialog open={openSuccessDialog} onOpenChange={setOpenSuccessDialog}>
-                <DialogContent className='rounded-[20px]'>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle>Password updated! 🎉</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>Your new password has been set.</DialogDescription>

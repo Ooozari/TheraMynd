@@ -248,7 +248,7 @@ function PatientProvider() {
 
             {/* DIALOG 1: Add patinet */}
             <Dialog open={openAddPatientDialog} onOpenChange={setopenAddPatientDialog}>
-                <DialogContent className="p-[14px] sm:p-[16px] md:p-[18px] lg:p-[20px] xl:p-[20px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] 
+                <DialogContent className="p-[14px] sm:p-[16px] md:p-[18px] lg:p-[20px] xl:p-[20px] 2xl:p-[24px] gap-[10px] sm:gap-[10px]  md:gap-[10px] lg:gap-[10px] xl:gap-[10px] 2xl:gap-[10px] 
 ">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
@@ -262,7 +262,7 @@ function PatientProvider() {
 
                     {/* input details */}
                     <form onSubmit={formik.handleSubmit}>
-                        <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[24px]'>
+                        <div className='flex flex-col gap-[20px] md:gap-[22px]  xl:gap-[24px]'>
                             {/* Patient Name */}
                             <div className='w-full'>
                                 <Label htmlFor="name" className='my-[8px]'>
@@ -355,7 +355,7 @@ function PatientProvider() {
 
                         </div>
 
-                        <DialogFooter className='w-full mt-[12px] sm:mt-[16px] md:mt-[20px] lg:mt-[24px] xl:mt-[28px] 2xl:mt-[32px]'>
+                        <DialogFooter className='w-full mt-[28px] sm:mt-[29px] md:mt-[30px] lg:mt-[30px] xl:mt-[31px] 2xl:mt-[32px]'>
                             <Button
                                 variant='secondary'
                                 className='w-full'

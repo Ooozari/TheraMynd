@@ -76,8 +76,8 @@ function Biling() {
                 (
                     <>
                         <form onSubmit={formik.handleSubmit}>
-                            <div className='bg-White shadow-[0px 17.32px 34.65px 0px #1018280D] rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px]  flex flex-col
-                            gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[27px] xl:gap-[28px] 2xl:gap-[31px] max-w-[668px] mb-[50px] md:mb-0'>
+                            <div className='bg-White shadow-[0px_17.32px_34.65px_0px_#1018280d] rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px]  flex flex-col
+                            gap-[28px] md:gap-[29px] xl:gap-[30px] 2xl:gap-[31px] max-w-[668px]'>
 
                                 {/* Header */}
                                 <div className=''>
@@ -290,13 +290,12 @@ function Biling() {
                             </div>
 
                         </form>
-
-
                     </>
 
                 )
 
-                : (<div className="bg-White shadow-[0px 17.32px 34.65px 0px #1018280D] rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px] flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px] w-full">
+                : (<div className="bg-White shadow-[0px_17.32px_34.65px_0px_#1018280d]
+                    rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px] flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px] w-full">
 
                     {/* Heading and SubHead */}
                     <div className='flex flex-col gap-2'>
@@ -333,9 +332,9 @@ function Biling() {
                                             Edit
                                         </Paragraph>
                                         <div onClick={() => setopenRemoveConfirmDialog(true)}>
-                                        <Paragraph size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
-                                            Remove
-                                        </Paragraph>
+                                            <Paragraph size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
+                                                Remove
+                                            </Paragraph>
                                         </div>
                                     </div>
 
@@ -370,9 +369,9 @@ function Biling() {
                                             Edit
                                         </Paragraph>
                                         <div onClick={() => setopenRemoveConfirmDialog(true)}>
-                                        <Paragraph  size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
-                                            Remove
-                                        </Paragraph>
+                                            <Paragraph size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
+                                                Remove
+                                            </Paragraph>
                                         </div>
                                     </div>
 
@@ -395,10 +394,10 @@ function Biling() {
 
 
             <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-                <DialogContent  className='rounded-[20px]'>
+                <DialogContent className='rounded-[20px]  sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
-                        <DialogTitle>Card successfully added! 🎉</DialogTitle>
-                        <DialogDescription>Your new credit card has been successfully added as a payment method.</DialogDescription>
+                        <DialogTitle className='text-start'>Card successfully added! 🎉</DialogTitle>
+                        <DialogDescription className='text-start'>Your new credit card has been successfully added as a payment method.</DialogDescription>
                     </DialogHeader>
                     <DialogFooter>
                         <Button
@@ -415,7 +414,7 @@ function Biling() {
 
             {/* DIALOG 2.1: Are you sure you want to remove? */}
             <Dialog open={openRemoveConfirmDialog} onOpenChange={setopenRemoveConfirmDialog}>
-                <DialogContent  className='rounded-[20px]'>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to remove?</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -452,7 +451,7 @@ function Biling() {
 
             {/* DIALOG 2.2: Card Removed */}
             <Dialog open={openRemovedDialog} onOpenChange={setopenRemovedDialog}>
-                <DialogContent  className='rounded-[20px]'>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Card removed</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
