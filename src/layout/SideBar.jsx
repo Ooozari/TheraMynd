@@ -16,7 +16,7 @@ function SideBar() {
         { label: "Settings", icon: <Settings className='w-full h-full' />, href: "/dashboard/settings" },
     ];
     return (
-        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[48px] md:pb-[28px] flex flex-col gap-[37px] h-screen">
+        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[27px] flex flex-col gap-[37px] h-screen">
 
             {/* Logo and Name */}
             <div className="sticky top-[38px] flex items-center justify-center gap-[6px] sm:gap-[7px] md:gap-[8px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]">
@@ -29,8 +29,8 @@ function SideBar() {
                     TheraMynd
                 </Heading>
             </div>
-            
-            <div className='overflow-y-auto bg-Calender'>
+
+            <div className='h-full flex flex-col justify-between overflow-y-auto '>
                 {/* Navigation */}
                 <nav className="flex flex-col gap-2">
                     {menuItems.map((item) => {
@@ -65,10 +65,13 @@ function SideBar() {
                 </nav>
 
                 {/* Logout Button */}
-                <Button variant="negative" className='w-full'>
-                    <Paragraph size="md" className="font-[600]">Log out
-                    </Paragraph>
-                </Button>
+                <div className='w-full mt-90 pb-[27px]'>
+                    <Button variant="negative" className='w-full'>
+                        <Paragraph size="md" className="font-[600]">Log out
+                        </Paragraph>
+                    </Button>
+                </div>
+
             </div>
 
 
