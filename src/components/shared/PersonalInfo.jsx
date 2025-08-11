@@ -80,13 +80,13 @@ function PersonalInfo() {
                                             className="w-full rounded-full h-full object-cover"
                                         />
                                     </div>
-                                ) : (<PersonIcon className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] lg:w-[55px] lg:h-[55px] xl:w-[58px] xl:h-[58px] 2xl:w-[60px] 2xl:h-[60px] text-White" />)}
+                                ) : (<PersonIcon className="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px] lg:w-[55px] lg:h-[55px] xl:w-[58px] xl:h-[58px] 2xl:w-[60px] 2xl:h-[60px] text-White" />)}
 
                             </div>
                             {/* Bottom-right Edit Icon */}
                             <div
                                 onClick={() => fileInputRef.current.click()}
-                                className={`absolute -bottom-0 -right-0 bg-Secondary p-0.5 md:p-[4px] xl:p-[5px] 2xl:p-[6px] rounded-full  ${isEditable ? "cursor-pointer" : "cursor-not-allowed"
+                                className={`absolute -bottom-0 -right-0 bg-Secondary p-[3px] md:p-[4px] xl:p-[5px] 2xl:p-[6px] rounded-full  ${isEditable ? "cursor-pointer" : "cursor-not-allowed"
                                     }`}>
                                 <div className='w-[6px] h-[7px] sm:w-[7px] sm:h-[8px] md:w-[8px] md:h-[9px] lg:w-[9px] lg:h-[10px] xl:w-[9.5px] xl:h-[10.5px] 2xl:w-[10px] 2xl:h-[11px]'>
                                     <Edit color="white" />
