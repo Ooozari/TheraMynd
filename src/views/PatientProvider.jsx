@@ -455,7 +455,7 @@ function PatientProvider() {
                         <div className='md:w-1/2 w-full'>
                             <Button
                                 variant='secondaryOutline'
-                                className='w-full rounded-[15px] hover:bg-Secondary  group'
+                                className='w-full rounded-[15px] hover:bg-Secondary/70  group'
                                 onClick={() => { setdeactivatePatient(false) }}
                             >
                                 <Paragraph size="btnText" className="text-Secondary font-[700] font-satoshi group-hover:text-White">I changed my mind</Paragraph>
@@ -510,7 +510,7 @@ function PatientProvider() {
                         <div className='w-full'>
                             <Button
                                 variant='secondaryOutline'
-                                className='w-full rounded-[15px] hover:bg-Secondary  group'
+                                className='w-full rounded-[15px] hover:bg-Secondary/70  group'
                                 onClick={() => { setdeletePatient(false) }}
                             >
                                 <Paragraph size="btnText" className="text-Secondary font-[700] font-satoshi group-hover:text-White">I changed my mind</Paragraph>

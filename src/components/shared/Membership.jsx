@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -16,6 +16,10 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { DialogDescription } from '@radix-ui/react-dialog';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 function Membership() {
     const [openCancelConfirmDialog, setOpenCancelConfirmDialog] = useState(false);
@@ -75,6 +79,15 @@ function Membership() {
     const [selectedPlanType, setSelectedPlanType] = useState('');
     const [selectedPlanPrice, setSelectedPlanPrice] = useState('');
 
+    const swiperRef = useRef(null);
+
+    useEffect(() => {
+        if (openCurrentDialog && swiperRef.current) {
+            setTimeout(() => {
+                swiperRef.current.update();
+            }, 50); // short delay to let modal render
+        }
+    }, [openCurrentDialog]);
 
     return (
         <>
@@ -124,7 +137,7 @@ function Membership() {
 
             {/* DIALOG 1.1: Pricing Plan */}
             <Dialog open={openCurrentDialog} onOpenChange={setOpenCurrentDialog}>
-                <DialogContent className="gap-[35px] sm:gap-[40px] md:gap-[50px] lg:gap-[60px] xl:gap-[70px] 2xl:gap-[80px] xl:p-[25px] 2xl:p-[40px] 2xl:w-7xl">
+                <DialogContent className="gap-[35px] sm:gap-[40px] md:gap-[50px] lg:gap-[60px] xl:gap-[45px] 2xl:gap-[80px] p-[25px] lg:p-[30px] xl:p-[35px] 2xl:p-[40px] lg:w-3xl xl:w-5xl 2xl:w-7xl">
                     <DialogHeader>
                         <DialogTitle className="text-center">
                             <Heading level="h4" className="font-[800] font-urbanist text-[#000000]">
@@ -133,19 +146,32 @@ function Membership() {
                         </DialogTitle>
                     </DialogHeader>
 
-                    <div className="flex gap-4">
+                    <Swiper
+                        className='w-full flex'
+                        onSwiper={(swiper) => (swiperRef.current = swiper)}
+                        modules={[Navigation]}
+                        slidesPerView="auto"
+                        navigation
+                        spaceBetween={24}
+
+                    >
                         {plans.map((plan, index) => (
-                            <Plan
+                            <SwiperSlide
+                                className="max-w-[384px]"
+
                                 key={index}
-                                type={plan.type}
-                                userNo={plan.userNo}
-                                status={plan.status}
-                                price={plan.price}
-                                specs={plan.specs}
-                                onSelect={() => handlePlanSelect(plan.type, plan.price)}
-                            />
+                            >
+                                <Plan
+                                    type={plan.type}
+                                    userNo={plan.userNo}
+                                    status={plan.status}
+                                    price={plan.price}
+                                    specs={plan.specs}
+                                    onSelect={() => handlePlanSelect(plan.type, plan.price)}
+                                />
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
                 </DialogContent>
             </Dialog>
             {/* DIALOG 1.2: Confrim Upgrade Plan */}

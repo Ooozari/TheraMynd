@@ -195,3 +195,10 @@
     font-family: var(--font-inter);
   }
 }
+@layer components {
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    @apply text-Secondary;
+  }
+}
+

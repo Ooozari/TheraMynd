@@ -6,9 +6,13 @@ import { Button } from "@/components/ui/button"
 function Plan({ type, userNo, status, price, specs, onSelect, isSelected }) {
     return (
         <>
-            <div className='flex flex-col bg-White rounded-[8px] shadow-[0px_4px_30px_0px_#0000001A] gap-2 p-[10px] sm:p-[11px] md:p-[12px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px] max-w-[384px]'>
+            <div
+                className={`flex flex-col ${type === "Business Plan" ? "bg-Secondary" : "bg-White"
+                    } rounded-[8px] shadow-[0px_4px_30px_0px_#0000001A] gap-2 p-[10px] sm:p-[11px] md:p-[12px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px] max-w-[384px]`}
+            >
                 {/* Top */}
-                <div className='bg-White flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                <div className='bg-White rounded-[8px] p-[10px] sm:p-[12px] md:p-[13px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px]
+                 flex flex-col gap-[20px] sm:gap-[21px] md:gap-[22px] lg:gap-[23px] xl:gap-[24px] 2xl:gap-[32px]'>
                     <div className='flex justify-between items-baseline'>
                         <div>
                             <Heading level="lgSubText" className='font-urbanist font-[800] text-Black '>{type}</Heading>
@@ -38,10 +42,13 @@ function Plan({ type, userNo, status, price, specs, onSelect, isSelected }) {
                         </div>
                     </div>
                 </div>
+                <div className='bg-white rounded-[8px] p-[10px] sm:p-[12px] md:p-[13px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px]
+  flex flex-col gap-2'>
 
-                {/* Specs */}
+
+                    {/* Specs */}
                     <div className='bg-Gray100 rounded-[8px] p-[10px] sm:p-[11px] md:p-[12px] lg:p-[14px] xl:p-[15px] 2xl:p-[16px]'>
-                        <ul className='flex flex-col gap-[10px] sm:gap-[12px] md:gap-[14px] lg:gap-[17px] xl:gap-[18.5px] 2xl:gap-[20px]'>
+                        <ul className='flex flex-col gap-[10px] sm:gap-[12px] md:gap-[14px] lg:gap-[16px] xl:gap-[18px] 2xl:gap-[20px]'>
                             {specs.map((spec, i) => (
                                 <li key={i} className="flex items-center gap-2">
                                     {spec.status ? <TickSelected /> : <TickUnSelected />}
@@ -59,7 +66,7 @@ function Plan({ type, userNo, status, price, specs, onSelect, isSelected }) {
                     </div>
 
                     {/* Button */}
-                    <div>
+                    <div >
                         <Button variant={isSelected ? 'secondary' : 'secondaryOutline'} className='w-full' onClick={onSelect} type="button">
                             <Paragraph size="normal" className="font-[900] font-satoshi">
                                 Select
@@ -67,6 +74,7 @@ function Plan({ type, userNo, status, price, specs, onSelect, isSelected }) {
                         </Button>
                     </div>
                 </div>
+            </div >
         </>
     )
 }
