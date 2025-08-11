@@ -79,6 +79,9 @@ function PatientProvider() {
     // new code success message
     const [openNewSuccessDialog, setopenNewSuccessDialog] = useState(false)
 
+    // deactivate patinet
+    const [deactivatePatient, setdeactivatePatient] = useState(false)
+    const [deactivatedPatientSuccessMsg, setdeactivatedPatientSuccessMsg] = useState(false)
     // delete patinet
     const [deletePatient, setdeletePatient] = useState(false)
     const [deletePatientSuccessMsg, setdeletePatientSuccessMsg] = useState(false)
@@ -187,34 +190,28 @@ function PatientProvider() {
                                                 </DropdownMenuTrigger>
 
                                                 <DropdownMenuContent>
-
                                                     <DropdownMenuItem className='flex items-center gap-[7px]'>
                                                         <NewEdit />
-
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>Edit details</Paragraph>
 
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem >
-                                                        <button className='flex items-center gap-[7px]' onClick={() => setSeeVarificationCode(true)}>
+                                                    <DropdownMenuItem className='flex items-center' onClick={() => setSeeVarificationCode(true)}>      
                                                             <See />
                                                             <Paragraph size='dialogtext' className='text-[#000000]'>See verification code</Paragraph>
-                                                        </button>
-
                                                     </DropdownMenuItem>
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem>
-                                                        <button className='flex items-center gap-[7px]' onClick={() => setopenNewVerifacationCode(true)}>                                    <Generate />
-                                                            <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
-                                                        </button>
+                                                    <DropdownMenuItem className='flex items-center' onClick={() => setopenNewVerifacationCode(true)}>
+                                                        <Generate />
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Generate new code</Paragraph>
                                                     </DropdownMenuItem>
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem >
+                                                    <DropdownMenuItem onClick={() => setdeactivatePatient(true)}>
                                                         <User />
                                                         <Paragraph size='dialogtext' className='text-[#000000]'>
                                                             {item.status === 'Inactive' ? 'Reactivate' : 'Make Inactive'}
@@ -223,12 +220,9 @@ function PatientProvider() {
 
                                                     <DropdownMenuSeparator />
 
-                                                    <DropdownMenuItem>
-                                                        <button className='flex items-center gap-[7px]' onClick={() => setdeletePatient(true)}>
-                                                            <Bin />
-                                                            <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
-                                                        </button>
-
+                                                    <DropdownMenuItem className='flex items-center' onClick={() => setdeletePatient(true)}>
+                                                        <Bin />
+                                                        <Paragraph size='dialogtext' className='text-[#000000]'>Delete patient</Paragraph>
                                                     </DropdownMenuItem>
                                                 </DropdownMenuContent>
                                             </DropdownMenu>
@@ -248,7 +242,7 @@ function PatientProvider() {
 
             {/* DIALOG 1: Add patinet */}
             <Dialog open={openAddPatientDialog} onOpenChange={setopenAddPatientDialog}>
-                <DialogContent className="p-[14px] sm:p-[16px] md:p-[18px] lg:p-[20px] xl:p-[20px] 2xl:p-[24px] gap-[10px] sm:gap-[10px]  md:gap-[10px] lg:gap-[10px] xl:gap-[10px] 2xl:gap-[10px] 
+                <DialogContent className="p-[24px] gap-[10px] sm:gap-[10px]  md:gap-[10px] lg:gap-[10px] xl:gap-[10px] 2xl:gap-[10px] md:w-[440px] lg:w-[460px] xl:w-[480px] 2xl:w-[491px]
 ">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
@@ -370,7 +364,7 @@ function PatientProvider() {
 
             {/* See Varification Code*/}
             <Dialog open={seeVarificationCode} onOpenChange={setSeeVarificationCode}>
-                <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'>
+                <DialogContent className='gap-[14px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px] md:w-[440px] lg:w-[460px] xl:w-[480px] 2xl:w-[491px]'>
                     <DialogHeader>
                         <DialogTitle className='text-center'>
                             <Paragraph size='subText' className='text-MindfulBrown90 font-urbanist font-[800]'>Current verification code:</Paragraph>
@@ -400,7 +394,7 @@ function PatientProvider() {
 
             {/* Generate New Varification Code*/}
             <Dialog open={openNewVerifacationCode} onOpenChange={setopenNewVerifacationCode}>
-                <DialogContent className='gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'
+                <DialogContent className='gap-[14px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px] md:w-[440px] lg:w-[460px] xl:w-[480px] 2xl:w-[491px]'
                     onInteractOutside={(e) => e.preventDefault()}>
                     <DialogHeader>
                         <DialogTitle className='text-center'>
@@ -431,7 +425,7 @@ function PatientProvider() {
 
             {/* Success Message (New Varification Code)*/}
             <Dialog open={openNewSuccessDialog} onOpenChange={setopenNewSuccessDialog}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle>
                             New code successfully sent! 🎉</DialogTitle>
@@ -448,9 +442,64 @@ function PatientProvider() {
             </Dialog>
 
 
+            {/* Are you sure (deactivate patient) */}
+            <Dialog open={deactivatePatient} onOpenChange={setdeactivatePatient}>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>Are you sure you want to deactivate patient? </DialogTitle>
+                        <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
+                            Once a patient is deleted, there information will be non recoverable.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter className='w-full'>
+                        <div className='md:w-1/2 w-full'>
+                            <Button
+                                variant='secondaryOutline'
+                                className='w-full rounded-[15px] hover:bg-Secondary  group'
+                                onClick={() => { setdeactivatePatient(false) }}
+                            >
+                                <Paragraph size="btnText" className="text-Secondary font-[700] font-satoshi group-hover:text-White">I changed my mind</Paragraph>
+                            </Button>
+                        </div>
+                        <div className='md:w-1/2 w-full'>
+                            <Button
+                                variant='secondary'
+                                className='w-full rounded-[15px]'
+                                onClick={() => {
+                                    setdeactivatePatient(false);
+                                    setdeactivatedPatientSuccessMsg(true);
+                                }}
+                            >
+                                <Paragraph size="btnText" className=" font-black font-satoshi text-White">Yes, deactivate</Paragraph>
+                            </Button>
+                        </div>
+
+
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* Patient deactivated */}
+            <Dialog open={deactivatedPatientSuccessMsg} onOpenChange={setdeactivatedPatientSuccessMsg}>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>Patient successfully deactivated</DialogTitle>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <Button
+                            variant='secondary'
+                            className='w-full'
+                            onClick={() => setdeactivatedPatientSuccessMsg(false)}
+                        >
+                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Close</Paragraph>
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
             {/* Are you sure (delete patients) */}
             <Dialog open={deletePatient} onOpenChange={setdeletePatient}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to deactivate patient? </DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -487,7 +536,7 @@ function PatientProvider() {
 
             {/* Patient deleted */}
             <Dialog open={deletePatientSuccessMsg} onOpenChange={setdeletePatientSuccessMsg}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Patient successfully deleted </DialogTitle>
                     </DialogHeader>
