@@ -201,4 +201,7 @@
     @apply text-Secondary;
   }
 }
+@theme {
+  --breakpoint-xs: 28rem;
+}
 

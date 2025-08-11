@@ -114,7 +114,7 @@ function Payment({ setIsConfirmed }) {
         </div>
 
         {/* Error (If no plan selected) */}
-        {nopPlanSelected && <p className='text-red-500 text-xs absolute left-1/2 bottom-[-24px] transform -translate-x-1/2'>Please select a plan before continuing</p>}
+        {nopPlanSelected && <p className='text-red-500 text-xs absolute left-1/2 bottom-[-24px] transform -translate-x-1/2'>Please select a plan</p>}
       </div>
 
       {/* Continue Button */}

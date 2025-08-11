@@ -16,22 +16,23 @@ function SideBar() {
         { label: "Settings", icon: <Settings className='w-full h-full' />, href: "/dashboard/settings" },
     ];
     return (
-        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[48px] md:pb-[28px] flex flex-col justify-between h-screen">
-            <div>
-                {/* Logo and Name */}
-                <div className="flex items-center justify-center gap-[6px] sm:gap-[7px] md:gap-[8px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]">
-                    <div className='flex justify-center'>
-                        <div className='w-[18px] h-[18px] sm:w-[23px] sm:h-[23px] md:w-[28px] md:h-[28px] lg:w-[33px] lg:h-[33px] xl:w-[37px] xl:h-[37px] 2xl:w-[41.1px] 2xl:h-[41.1px]'>
-                            <Union />
-                        </div>
-                    </div>
-                    <Heading level="minih" className="font-[700] text-MindfulBrown80 font-urbanist">
-                        TheraMynd
-                    </Heading>
-                </div>
+        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[48px] md:pb-[28px] flex flex-col gap-[37px] h-screen">
 
+            {/* Logo and Name */}
+            <div className="sticky top-[38px] flex items-center justify-center gap-[6px] sm:gap-[7px] md:gap-[8px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]">
+                <div className='flex justify-center'>
+                    <div className='w-[18px] h-[18px] sm:w-[23px] sm:h-[23px] md:w-[28px] md:h-[28px] lg:w-[33px] lg:h-[33px] xl:w-[37px] xl:h-[37px] 2xl:w-[41.1px] 2xl:h-[41.1px]'>
+                        <Union />
+                    </div>
+                </div>
+                <Heading level="minih" className="font-[700] text-MindfulBrown80 font-urbanist">
+                    TheraMynd
+                </Heading>
+            </div>
+            
+            <div className='overflow-y-auto bg-Calender'>
                 {/* Navigation */}
-                <nav className="flex flex-col gap-2 mt-[37px]">
+                <nav className="flex flex-col gap-2">
                     {menuItems.map((item) => {
                         const cleanPath = pathname.replace(/\/$/, "");
                         const isActive = cleanPath.startsWith(item.href);
@@ -62,13 +63,15 @@ function SideBar() {
                         );
                     })}
                 </nav>
+
+                {/* Logout Button */}
+                <Button variant="negative" className='w-full'>
+                    <Paragraph size="md" className="font-[600]">Log out
+                    </Paragraph>
+                </Button>
             </div>
 
-            {/* Logout Button */}
-            <Button variant="negative" className='w-full'>
-                <Paragraph size="md" className="font-[600]">Log out
-                </Paragraph>
-            </Button>
+
         </aside>
     );
 }

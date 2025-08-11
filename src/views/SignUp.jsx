@@ -22,10 +22,10 @@ function SignUp() {
         validationSchema: Yup.object({
             email: Yup.string().email('Invalid email').required('Email is required'),
             password: Yup.string()
-                .min(8, 'Password must be at least 8 characters')
-                .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
-                .matches(/[0-9]/, 'Password must contain at least one number')
-                .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain at least one special character')
+                .min(8, 'Minimum characters')
+                .matches(/[A-Z]/, 'Must contain uppercase letter')
+                .matches(/[0-9]/, 'Must contain number')
+                .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Must contain special character')
                 .required('Password is required'),
         }),
         onSubmit: (values) => {
