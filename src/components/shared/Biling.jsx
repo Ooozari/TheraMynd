@@ -394,7 +394,7 @@ function Biling() {
 
 
             <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-                <DialogContent className='rounded-[20px]  sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px]  sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Card successfully added! 🎉</DialogTitle>
                         <DialogDescription className='text-start'>Your new credit card has been successfully added as a payment method.</DialogDescription>
@@ -414,7 +414,7 @@ function Biling() {
 
             {/* DIALOG 2.1: Are you sure you want to remove? */}
             <Dialog open={openRemoveConfirmDialog} onOpenChange={setopenRemoveConfirmDialog}>
-                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to remove?</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -451,7 +451,7 @@ function Biling() {
 
             {/* DIALOG 2.2: Card Removed */}
             <Dialog open={openRemovedDialog} onOpenChange={setopenRemovedDialog}>
-                <DialogContent className='rounded-[20px] sm:w-[350px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Card removed</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>

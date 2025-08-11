@@ -117,10 +117,6 @@ function Payment({ setIsConfirmed }) {
         {nopPlanSelected && <p className='text-red-500 text-xs absolute left-1/2 bottom-[-24px] transform -translate-x-1/2'>Please select a plan before continuing</p>}
       </div>
 
-
-
-
-
       {/* Continue Button */}
       <div className="flex justify-center mt-6">
         <Button
