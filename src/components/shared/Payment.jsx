@@ -107,7 +107,7 @@ function Payment({ setIsConfirmed }) {
           {plans.map((_, index) => (
             <div
               key={index}
-              className={`w-[24px] h-[6px] rounded-sm transition-all duration-300 ${currentSlideIndex === index ? 'bg-[#00738A] w-[34px]' : 'bg-gray-400'
+              className={`w-[24px] h-[6px] rounded-sm transition-all duration-300 ${currentSlideIndex === index ? 'bg-[#00738A] w-[48px]' : 'bg-gray-400'
                 }`}
             />
           ))}

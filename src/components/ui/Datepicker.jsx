@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import { CalendarIcon } from "lucide-react"
 
-import { Heading, Paragraph } from "@/components/ui/typography";
+import { Paragraph } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
@@ -72,7 +72,7 @@ export default function Datepicker({ formik }) {
               variant="ghost"
               className="absolute right-2 top-1/2 -translate-y-1/2 p-0 h-6 w-6"
             >
-              <CalendarIcon className="h-4 w-4 text-gray-500" />
+              <CalendarIcon className="h-4 w-4 text-gray-400" />
               <span className="sr-only">Select date</span>
             </Button>
           </PopoverTrigger>
