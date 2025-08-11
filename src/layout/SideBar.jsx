@@ -65,7 +65,7 @@ function SideBar() {
                 </nav>
 
                 {/* Logout Button */}
-                <div className='w-full mt-90 pb-[27px]'>
+                <div className='w-full mt-35 md:mt-40 lg:mt-45 xl:mt-70 2xl:mt-90'>
                     <Button variant="negative" className='w-full'>
                         <Paragraph size="md" className="font-[600]">Log out
                         </Paragraph>

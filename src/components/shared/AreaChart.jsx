@@ -32,7 +32,7 @@ const CustomAreaChart = ({ data, color = '#F6B85C' }) => {
 
         {/* Y Axis with LVL labels */}
         <YAxis
-          ticks={[1,2,3,4,5,6,7,8,9,10]}
+          ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           domain={[1, 10]}
           tickFormatter={(value) => `LVL ${value}`}
           tick={{
@@ -66,6 +66,8 @@ const CustomAreaChart = ({ data, color = '#F6B85C' }) => {
           stroke={color}
           strokeWidth={4.36}
           fill={`url(#${gradientId})`}
+          strokeLinejoin="round"  // This rounds corner joins
+          strokeLinecap="round"   // This rounds line ends
         />
       </AreaChart>
     </ResponsiveContainer>
