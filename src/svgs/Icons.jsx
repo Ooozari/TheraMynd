@@ -19,6 +19,13 @@ export const NewBack = () => (
     </svg>
 
 )
+export const Back20 = () => (
+    <svg className="w-full h-full" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.7161 1.79126L2.50684 10.0005L10.7161 18.2098" stroke="white" stroke-width="2.52596"/>
+</svg>
+
+
+)
 
 
 export const Dots = () => (<svg width="4" height="13" viewBox="0 0 4 13" fill="none" xmlns="http://www.w3.org/2000/svg">

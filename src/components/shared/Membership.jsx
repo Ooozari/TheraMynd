@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Plan from './Plan'
-import { Back } from '@/svgs/Icons'
+import { Back20 } from '@/svgs/Icons'
 
 import {
     Dialog,
@@ -124,7 +124,7 @@ function Membership() {
 
             {/* DIALOG 1.1: Pricing Plan */}
             <Dialog open={openCurrentDialog} onOpenChange={setOpenCurrentDialog}>
-                <DialogContent className="pricing-dialog">
+                <DialogContent className="pricing-dialog rounded-[20px]">
                     <DialogHeader>
                         <DialogTitle className="text-center">
                             <Heading level="h4" className="font-[800] font-urbanist text-[#000000]">
@@ -150,7 +150,7 @@ function Membership() {
             </Dialog>
             {/* DIALOG 1.2: Confrim Upgrade Plan */}
             <Dialog open={openEditDialog} onOpenChange={setOpenEditDialog}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px]'>
                     <DialogHeader>
                         <DialogTitle className="flex flex-col gap-3 text-start">
                             <div
@@ -158,17 +158,17 @@ function Membership() {
                                     setOpenEditDialog(false);
                                     setOpenCurrentDialog(true);
                                 }}
-                                className="inline-flex items-center justify-center text-center bg-Secondary rounded-full w-[30px] h-[30px] hover:cursor-pointer"
+                                className="inline-flex items-center justify-center text-center bg-Secondary rounded-full w-[30px] h-[30px]  md:w-[35px] md:h-[35px] xl:w-[37px] xl:h-[37px] 2xl:w-[40.1px] 2xl:h-[40.1px] hover:cursor-pointer hover:bg-Secondary/80"
                             >
-                                <div className='w-[4px] h-[6px] sm:w-[4.5px] sm:h-[7.5px] md:w-[5px] md:h-[9px] lg:w-[5.5px] lg:h-[10.5px] xl:w-[5.8px] xl:h-[11.2px] 2xl:w-[6px] 2xl:h-[12px]'>
-                                    <Back />
+                                <div className='w-[8px] h-[14px] md:w-[10px] md:h-[16px] xl:w-[11px] xl:h-[18px] 2xl:w-[12px] 2xl:h-[20px]'>
+                                    <Back20 />
                                 </div>
                             </div>
                             <div>
                                 Confirm upgrade to: <span className="text-Secondary">{selectedPlanType}</span>
                             </div>
                         </DialogTitle>
-                        <DialogDescription className="font-urbanist text-start text-sm">
+                        <DialogDescription className="font-urbanist text-start">
                             By clicking confirm below, you confirm to updating your current plan and changes that come with it.
                         </DialogDescription>
                     </DialogHeader>
@@ -199,10 +199,10 @@ function Membership() {
             </Dialog>
             {/* DIALOG 1.3: Success */}
             <Dialog open={openSuccessDialog} onOpenChange={setOpenSuccessDialog}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px]'>
                     <DialogHeader>
                         <DialogTitle className="text-start">Plan successfully upgraded! 🎉</DialogTitle>
-                        <DialogDescription className="font-urbanist text-start text-sm">
+                        <DialogDescription className="font-urbanist text-start">
                             Your plan has now been upgraded, you may now continue to use as normal.
                         </DialogDescription>
                     </DialogHeader>
@@ -216,7 +216,7 @@ function Membership() {
 
             {/* DIALOG 2.1: Are you sure you want to cancel? */}
             <Dialog open={openCancelConfirmDialog} onOpenChange={setOpenCancelConfirmDialog}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to cancel?</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -253,7 +253,7 @@ function Membership() {
 
             {/* DIALOG 2.2: Membership cancelled */}
             <Dialog open={openCancelledDialog} onOpenChange={setOpenCancelledDialog}>
-                <DialogContent>
+                <DialogContent className='rounded-[20px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Membership cancelled</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>

@@ -24,7 +24,7 @@ const headingVariants = cva(
         h6: "text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl",
         
         // Updated
-        lgSubText:"text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[23px] 2xl:text-[24px]",
+        lgSubText:"text-xl md:text-2xl",
 
         // using
         mdSubText: "text-[18px] sm:text-[21px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]",

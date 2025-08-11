@@ -138,9 +138,9 @@ function PersonalInfo() {
                     </div>
                 </div>
 
-                <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px]'>
+                <form onSubmit={formik.handleSubmit} className='flex flex-col'>
                     {/* Input div */}
-                    <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px]'>
+                    <div className='flex flex-col gap-[20px] md:gap-[22px]  xl:gap-[24px] mt-[20px] md:mt-[22px] xl:mt-[24px]'>
 
                         {/* Names */}
                         <div className='w-full flex flex-col lg:flex-row gap-5'>
@@ -276,15 +276,15 @@ function PersonalInfo() {
                         </div>
 
                         {/*Office address Input div */}
-                        <div className='flex flex-col gap-[12px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]'>
+                        <div className='flex flex-col gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[27px] xl:gap-[28px] 2xl:gap-[30px]'>
                             {/* Headings */}
                             <div>
-                                <Heading level="minih" className='font-urbanist font-[700] text-[#424242]'>What is your office address?</Heading>
+                                <Heading level="minih" className='font-urbanist font-[700] text-[#424242]'>Where is your practice located?</Heading>
                             </div>
 
                             {/* Inputs */}
                             <div className='flex flex-col gap-[8px] sm:gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[15px] 2xl:gap-[16px]
-                                        '>
+                            mb-[28px] md:mb-[30spx] xl:mb-[32px]'>
 
                                 {/* State & Zip Code */}
                                 <div className='flex flex-col lg:flex-row gap-4'>
@@ -340,7 +340,7 @@ function PersonalInfo() {
                     </div>
 
                     {/* Save Changes button */}
-                    {isEditable && (<div>
+                    {isEditable && (<div className='mt-[20px] md:mt-[22px] xl:mt-[24px]'>
                         <Button variant="secondary" className='w-full' type='submit' >
                             <Paragraph size="btnText" className="text-White font-black font-satoshi">Save changes
                             </Paragraph>

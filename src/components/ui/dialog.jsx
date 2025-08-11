@@ -59,7 +59,7 @@ function DialogContent({
           data-slot="dialog-content"
 
           className={cn(
-            "bg-White data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95  z-50 grid w-full max-w-[calc(100%-2rem)] gap-[14px] sm:gap-[18px] md:gap-[22px] lg:gap-[26px] xl:gap-[29px] 2xl:gap-[32px] rounded-[20px] p-[28px] sm:p-[32px] md:p-[34px] lg:p-[36px] xl:p-[38px] 2xl:p-[40px] shadow-lg duration-200 max-h-[95vh] shadow-[0px 9px 34px 0px #0000001A] overflow-y-auto",
+            "bg-White data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 z-50 grid w-full max-w-[calc(100%-2rem)] gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[27px] xl:gap-[29px] 2xl:gap-[32px] rounded-[10px] p-[24px] duration-200 max-h-[95vh] shadow-[0px 9px 34px 0px #0000001A] overflow-y-auto",
             className?.includes("pricing-dialog")
               ? "2xl:max-w-7xl xl:max-w-5xl lg:max-w-[950px] md:max-w-[700px] max-w-[340px] max-h-[95vh] overflow-y-auto "
               : className?.includes("fit-dialog") ? "w-fit max-w-none" : "sm:max-w-lg",
@@ -112,7 +112,7 @@ function DialogTitle({
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn("text-[18px] sm:text-[21px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px] leading-none font-[800] font-urbanist text-[#424242]", className)}
+      className={cn("text-[18px] sm:text-[21px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px] leading-[26px] sm:leading-[28px] md:leading-[30px] lg:leading-[31px] xl:leading-[32px] 2xl:leading-[32px] font-[800] font-urbanist text-[#424242]", className)}
       {...props} />
   );
 }
@@ -124,7 +124,7 @@ function DialogDescription({
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
-      className={cn("text-[#4D4D4D] text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px] font-urbanist font-medium", className)}
+      className={cn("text-[#4D4D4D] text-[14px] md:text-[15px] xl:text-[16px] font-urbanist font-medium", className)}
       {...props} />
   );
 }

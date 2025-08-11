@@ -50,6 +50,8 @@ function Biling() {
     }
 
     const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+    const [openRemoveConfirmDialog, setopenRemoveConfirmDialog] = useState(false);
+    const [openRemovedDialog, setopenRemovedDialog] = useState(false);
     const formik = useFormik({
         initialValues: {
             fname: '',
@@ -75,7 +77,7 @@ function Biling() {
                     <>
                         <form onSubmit={formik.handleSubmit}>
                             <div className='bg-White shadow-[0px 17.32px 34.65px 0px #1018280D] rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px]  flex flex-col
-                            gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px] max-w-[668px] mb-[50px] md:mb-0'>
+                            gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[27px] xl:gap-[28px] 2xl:gap-[31px] max-w-[668px] mb-[50px] md:mb-0'>
 
                                 {/* Header */}
                                 <div className=''>
@@ -85,7 +87,7 @@ function Biling() {
                                 </div>
 
                                 {/* Input div */}
-                                <div className='flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px]'>
+                                <div className='flex flex-col gap-[20px] md:gap-[22px]  xl:gap-[24px] '>
 
                                     {/* Names */}
                                     <div className='w-full flex flex-col lg:flex-row gap-5'>
@@ -94,15 +96,15 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">First Name</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Input
-                                                name="fname"
-                                                placeholder="Enter first name"
-                                                value={formik.values.fname}
-                                                onChange={formik.handleChange}
-                                            />
-                                            {formik.touched.fname && formik.errors.fname && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.fname}</p>
-                                            )}
+                                                <Input
+                                                    name="fname"
+                                                    placeholder="Enter first name"
+                                                    value={formik.values.fname}
+                                                    onChange={formik.handleChange}
+                                                />
+                                                {formik.touched.fname && formik.errors.fname && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.fname}</p>
+                                                )}
                                             </div>
                                         </div>
                                         <div className='w-full'>
@@ -110,15 +112,15 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Last Name</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Input
-                                                name="lname"
-                                                placeholder="Enter last name"
-                                                value={formik.values.lname}
-                                                onChange={formik.handleChange}
-                                            />
-                                            {formik.touched.lname && formik.errors.lname && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.lname}</p>
-                                            )}
+                                                <Input
+                                                    name="lname"
+                                                    placeholder="Enter last name"
+                                                    value={formik.values.lname}
+                                                    onChange={formik.handleChange}
+                                                />
+                                                {formik.touched.lname && formik.errors.lname && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.lname}</p>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -132,15 +134,15 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Card Number</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Input
-                                                name="cardNum"
-                                                placeholder="Enter card number"
-                                                value={formik.values.cardNum}
-                                                onChange={formik.handleChange}
-                                            />
-                                            {formik.touched.cardNum && formik.errors.cardNum && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.cardNum}</p>
-                                            )}
+                                                <Input
+                                                    name="cardNum"
+                                                    placeholder="Enter card number"
+                                                    value={formik.values.cardNum}
+                                                    onChange={formik.handleChange}
+                                                />
+                                                {formik.touched.cardNum && formik.errors.cardNum && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.cardNum}</p>
+                                                )}
                                             </div>
                                         </div>
                                         {/* CVV */}
@@ -149,15 +151,15 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">CVV</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Input
-                                                id="cvv"
-                                                placeholder="Enter CVV"
-                                                value={formik.values.cvv}
-                                                onChange={formik.handleChange}
-                                            />
-                                            {formik.touched.cvv && formik.errors.cvv && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.cvv}</p>
-                                            )}
+                                                <Input
+                                                    id="cvv"
+                                                    placeholder="Enter CVV"
+                                                    value={formik.values.cvv}
+                                                    onChange={formik.handleChange}
+                                                />
+                                                {formik.touched.cvv && formik.errors.cvv && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.cvv}</p>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -168,17 +170,17 @@ function Biling() {
                                             <Paragraph size="label" className="text-Gray900 font-bold">Street Address</Paragraph>
                                         </Label>
                                         <div className='relative'>
-                                        <Input
-                                            type="address"
-                                            id="Address"
-                                            placeholder="Enter street address"
-                                            name="Address"
-                                            value={formik.values.Address}
-                                            onChange={formik.handleChange}
-                                        />
-                                        {formik.touched.Address && formik.errors.Address && (
-                                            <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.Address}</p>
-                                        )}
+                                            <Input
+                                                type="address"
+                                                id="Address"
+                                                placeholder="Enter street address"
+                                                name="Address"
+                                                value={formik.values.Address}
+                                                onChange={formik.handleChange}
+                                            />
+                                            {formik.touched.Address && formik.errors.Address && (
+                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.Address}</p>
+                                            )}
                                         </div>
                                     </div>
 
@@ -190,15 +192,15 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">City</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Input
-                                                id="city"
-                                                placeholder="Enter"
-                                                value={formik.values.city}
-                                                onChange={formik.handleChange}
-                                            />
-                                            {formik.touched.city && formik.errors.city && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.city}</p>
-                                            )}
+                                                <Input
+                                                    id="city"
+                                                    placeholder="Enter"
+                                                    value={formik.values.city}
+                                                    onChange={formik.handleChange}
+                                                />
+                                                {formik.touched.city && formik.errors.city && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.city}</p>
+                                                )}
                                             </div>
                                         </div>
                                         {/* State */}
@@ -207,22 +209,22 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">State</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Select value={formik.values.state}
-                                                onValueChange={(val) => formik.setFieldValue('state', val)}>
-                                                <SelectTrigger className="w-full">
-                                                    <SelectValue placeholder="Select state" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="california">California</SelectItem>
-                                                    <SelectItem value="texas">Texas</SelectItem>
-                                                    <SelectItem value="new-york">New York</SelectItem>
-                                                    <SelectItem value="florida">Florida</SelectItem>
-                                                    <SelectItem value="illinois">Illinois</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                            {formik.touched.state && formik.errors.state && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.state}</p>
-                                            )}
+                                                <Select value={formik.values.state}
+                                                    onValueChange={(val) => formik.setFieldValue('state', val)}>
+                                                    <SelectTrigger className="w-full">
+                                                        <SelectValue placeholder="Select state" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        <SelectItem value="california">California</SelectItem>
+                                                        <SelectItem value="texas">Texas</SelectItem>
+                                                        <SelectItem value="new-york">New York</SelectItem>
+                                                        <SelectItem value="florida">Florida</SelectItem>
+                                                        <SelectItem value="illinois">Illinois</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                                {formik.touched.state && formik.errors.state && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.state}</p>
+                                                )}
                                             </div>
 
                                         </div>
@@ -236,23 +238,23 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Country</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Select value={formik.values.country}
-                                                onValueChange={(val) => formik.setFieldValue('country', val)}>
-                                                <SelectTrigger className="w-full">
-                                                    <SelectValue placeholder="Select country" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="pakistan">Pakistan</SelectItem>
-                                                    <SelectItem value="india">India</SelectItem>
-                                                    <SelectItem value="united-kingdom">United Kingdom</SelectItem>
-                                                    <SelectItem value="canada">Canada</SelectItem>
-                                                    <SelectItem value="australia">Australia</SelectItem>
+                                                <Select value={formik.values.country}
+                                                    onValueChange={(val) => formik.setFieldValue('country', val)}>
+                                                    <SelectTrigger className="w-full">
+                                                        <SelectValue placeholder="Select country" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        <SelectItem value="pakistan">Pakistan</SelectItem>
+                                                        <SelectItem value="india">India</SelectItem>
+                                                        <SelectItem value="united-kingdom">United Kingdom</SelectItem>
+                                                        <SelectItem value="canada">Canada</SelectItem>
+                                                        <SelectItem value="australia">Australia</SelectItem>
 
-                                                </SelectContent>
-                                            </Select>
-                                            {formik.touched.country && formik.errors.country && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.country}</p>
-                                            )}
+                                                    </SelectContent>
+                                                </Select>
+                                                {formik.touched.country && formik.errors.country && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.country}</p>
+                                                )}
                                             </div>
                                         </div>
                                         {/* State */}
@@ -261,16 +263,16 @@ function Biling() {
                                                 <Paragraph size="label" className="text-Gray900 font-bold">Zip</Paragraph>
                                             </Label>
                                             <div className='relative'>
-                                            <Input
-                                                id="zip"
-                                                placeholder="Enter zip"
-                                                value={formik.values.zip}
-                                                onChange={formik.handleChange}
+                                                <Input
+                                                    id="zip"
+                                                    placeholder="Enter zip"
+                                                    value={formik.values.zip}
+                                                    onChange={formik.handleChange}
 
-                                            />
-                                            {formik.touched.zip && formik.errors.zip && (
-                                                <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.zip}</p>
-                                            )}
+                                                />
+                                                {formik.touched.zip && formik.errors.zip && (
+                                                    <p className="text-red-500 text-xs absolute left-0 bottom-[-16px]">{formik.errors.zip}</p>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -330,9 +332,11 @@ function Biling() {
                                         <Paragraph size="md" className="text-MindfulBrown60 font-[600] font-urbanist cursor-pointer">
                                             Edit
                                         </Paragraph>
+                                        <div onClick={() => setopenRemoveConfirmDialog(true)}>
                                         <Paragraph size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
                                             Remove
                                         </Paragraph>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -365,9 +369,11 @@ function Biling() {
                                         <Paragraph size="md" className="text-MindfulBrown60 font-[600] font-urbanist cursor-pointer">
                                             Edit
                                         </Paragraph>
-                                        <Paragraph size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
+                                        <div onClick={() => setopenRemoveConfirmDialog(true)}>
+                                        <Paragraph  size="md" className="text-PresentRed80 font-[600] font-urbanist cursor-pointer">
                                             Remove
                                         </Paragraph>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -389,7 +395,7 @@ function Biling() {
 
 
             <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-                <DialogContent>
+                <DialogContent  className='rounded-[20px]'>
                     <DialogHeader>
                         <DialogTitle>Card successfully added! 🎉</DialogTitle>
                         <DialogDescription>Your new credit card has been successfully added as a payment method.</DialogDescription>
@@ -405,6 +411,66 @@ function Biling() {
                     </DialogFooter>
                 </DialogContent>
             </Dialog>
+
+
+            {/* DIALOG 2.1: Are you sure you want to remove? */}
+            <Dialog open={openRemoveConfirmDialog} onOpenChange={setopenRemoveConfirmDialog}>
+                <DialogContent  className='rounded-[20px]'>
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>Are you sure you want to remove?</DialogTitle>
+                        <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
+                            If you remove this card, it will no longer be available for future payments.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter className='w-full'>
+                        <div className='w-full'>
+                            <Button
+                                variant='secondary'
+                                className='w-full'
+                                onClick={() => setopenRemoveConfirmDialog(false)}
+                            >
+                                <Paragraph size="btnText" className="text-White font-black font-satoshi">Take me back</Paragraph>
+                            </Button>
+                        </div>
+                        <div className='w-full'>
+                            <Button
+                                variant='cancel'
+                                className='w-full'
+                                onClick={() => {
+                                    setopenRemoveConfirmDialog(false);
+                                    setopenRemovedDialog(true);
+                                }}
+                            >
+                                <Paragraph size="btnText" className=" font-black font-satoshi">Yes, remove</Paragraph>
+                            </Button>
+                        </div>
+
+
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* DIALOG 2.2: Card Removed */}
+            <Dialog open={openRemovedDialog} onOpenChange={setopenRemovedDialog}>
+                <DialogContent  className='rounded-[20px]'>
+                    <DialogHeader>
+                        <DialogTitle className='text-start'>Card removed</DialogTitle>
+                        <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
+                            The selected payment card has been successfully removed.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <Button
+                            variant='secondary'
+                            className='w-full'
+                            onClick={() => setopenRemovedDialog(false)}
+                        >
+                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Done</Paragraph>
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
         </>
     )
 }
