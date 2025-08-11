@@ -95,7 +95,7 @@ function Membership() {
                 <Heading level="lgSubText" className="font-[800] font-urbanist text-[#292929]">Membership Plan</Heading>
 
                 {/* Current Plan: */}
-                <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[75px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
+                <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[54px] sm:h-[63px] md:h-[70px] lg:h-[77px] xl:h-[82px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
                     <Paragraph size="md" className="text-[#292929] font-[600] font-urbanist">
                         Current Plan: <span className='text-MindfulBrown90 font-[800]'>Basic (5 users)</span>
                     </Paragraph>
@@ -106,7 +106,7 @@ function Membership() {
 
                 </div>
                 {/* Billing Cycle: */}
-                <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[75px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
+                <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[54px] sm:h-[63px] md:h-[70px] lg:h-[77px] xl:h-[82px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
                     <Paragraph size="md" className="text-[#292929] font-[600] font-urbanist">
                         Billing Cycle:
                         <span className='text-MindfulBrown90 font-[800]'> Mar 16, 2024 — Apr 15, 2024</span>
@@ -116,7 +116,7 @@ function Membership() {
                     </Paragraph>
                 </div>
                 {/* Cancel Memberchsip */}
-                <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[42px] sm:h-[50px] md:h-[60px] lg:h-[70px] xl:h-[75px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
+                <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[54px] sm:h-[63px] md:h-[70px] lg:h-[77px] xl:h-[82px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
                     <Paragraph size="md" className="text-[#292929] font-[600] font-urbanist">
                         Cancel Membership
                     </Paragraph>
