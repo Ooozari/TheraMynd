@@ -42,10 +42,10 @@ function Password() {
             newpassword: "",
         },
         validationSchema: Yup.object({
-            newpassword: Yup.string().min(8, 'Password must be at least 8 characters')
-                .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
-                .matches(/[0-9]/, 'Password must contain at least one number')
-                .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain at least one special character')
+            newpassword: Yup.string().min(8, 'Minimum 8 characters')
+                .matches(/[A-Z]/, 'Must contain uppercase letter')
+                .matches(/[0-9]/, 'Must contain number')
+                .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Must contain special character')
                 .required('Password is required'),
         }),
         onSubmit: (values) => {
@@ -75,7 +75,7 @@ function Password() {
                     </div>
 
                     {/* DIALOG 1: Enter Current Password */}
-                    <DialogContent  className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[30px] md:p-[40px]'>
+                    <DialogContent  className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                         <DialogHeader>
                             <DialogTitle className="text-start">
                                 <Heading level="mdSubText" className="font-[800] font-urbanist text-[#424242]">Enter Current Password</Heading>
@@ -117,7 +117,7 @@ function Password() {
 
             {/* DIALOG 2: Edit New Password */}
             <Dialog open={openEditDialog} onOpenChange={setOpenEditDialog}>
-                <DialogContent  className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[30px] md:p-[40px]'>
+                <DialogContent  className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className="text-start">Edit Password</DialogTitle>
                     </DialogHeader>
@@ -156,7 +156,7 @@ function Password() {
 
             {/* DIALOG 3: Success */}
             <Dialog open={openSuccessDialog} onOpenChange={setOpenSuccessDialog}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[30px] md:p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className="text-start">Password updated! 🎉</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>Your new password has been set.</DialogDescription>

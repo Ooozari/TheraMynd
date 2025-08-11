@@ -21,7 +21,8 @@ const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email').required('Email is required'),
     phone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits')
         .required('Practice phone is required'),
-    personalPhone: Yup.number().required('Personal phone is required').typeError('Phone must be a number'),
+    personalPhone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits')
+        .required('Personal phone is required'),
     city: Yup.string().required('City is required'),
     state: Yup.string().required('State is required'),
     allowPatient: Yup.string().required('Required'),
@@ -38,7 +39,6 @@ function PersonalInfo() {
             setProfileImage(imageUrl);
         }
     };
-    console.log("This is img", profileImage)
     const [isEditable, setIsEditable] = useState(false);
 
     const formik = useFormik({
@@ -55,7 +55,6 @@ function PersonalInfo() {
         validationSchema,
         enableReinitialize: true,
         onSubmit: (values) => {
-            console.log("Form Submitted:", values);
             setIsEditable(false);
         },
     });

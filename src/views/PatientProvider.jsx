@@ -363,7 +363,7 @@ function PatientProvider() {
 
             {/* See Varification Code*/}
             <Dialog open={seeVarificationCode} onOpenChange={setSeeVarificationCode}>
-                <DialogContent className='gap-[14px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px]  xs:w-[400px] sm:w-[400px] md:w-[440px] lg:w-[460px] xl:w-[480px] 2xl:w-[491px]'>
+                <DialogContent className='gap-[14px] sm:gap-[14px] md:gap-[16px] lg:gap-[18px] xl:gap-[19px] 2xl:gap-[20px] xs:w-[400px] sm:w-[400px] md:w-[440px] lg:w-[460px] xl:w-[480px] 2xl:w-[491px]'>
                     <DialogHeader>
                         <DialogTitle className='text-center'>
                             <Paragraph size='subText' className='text-MindfulBrown90 font-urbanist font-[800]'>Current verification code:</Paragraph>
@@ -424,7 +424,7 @@ function PatientProvider() {
 
             {/* Success Message (New Varification Code)*/}
             <Dialog open={openNewSuccessDialog} onOpenChange={setopenNewSuccessDialog}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>
                             New code successfully sent! 🎉</DialogTitle>
@@ -443,7 +443,7 @@ function PatientProvider() {
 
             {/* Are you sure (deactivate patient) */}
             <Dialog open={deactivatePatient} onOpenChange={setdeactivatePatient}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to deactivate patient? </DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -480,7 +480,7 @@ function PatientProvider() {
 
             {/* Patient deactivated */}
             <Dialog open={deactivatedPatientSuccessMsg} onOpenChange={setdeactivatedPatientSuccessMsg}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Patient successfully deactivated</DialogTitle>
                     </DialogHeader>
@@ -498,7 +498,7 @@ function PatientProvider() {
 
             {/* Are you sure (delete patients) */}
             <Dialog open={deletePatient} onOpenChange={setdeletePatient}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to deleted patient? </DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -535,7 +535,7 @@ function PatientProvider() {
 
             {/* Patient deleted */}
             <Dialog open={deletePatientSuccessMsg} onOpenChange={setdeletePatientSuccessMsg}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Patient successfully deleted </DialogTitle>
                     </DialogHeader>

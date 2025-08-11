@@ -30,7 +30,7 @@ const validationSchema = Yup.object({
     fname: Yup.string().required('First name is required'),
     lname: Yup.string().required('Last name is required'),
     cardNum: Yup.string()
-        .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 digits')
+        .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Must be 16 digits')
         .required('Card number is required'),
     cvv: Yup.string()
         .matches(/^\d{3,4}$/, 'CVV must be 3 or 4 digits')
@@ -281,7 +281,6 @@ function Biling() {
 
                                 {/* Add Card button */}
                                 <div>
-
                                     <Button variant="secondary" className='w-full' type="submit">
                                         <Paragraph size="btnText" className="text-White font-black font-satoshi">Add card
                                         </Paragraph>
@@ -295,7 +294,7 @@ function Biling() {
                 )
 
                 : (<div className="bg-White shadow-[0px_17.32px_34.65px_0px_#1018280d]
-                    rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px] flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px] w-full">
+                    rounded-[15px] py-[17px] px-[18px] sm:py-[18px] sm:px-[19px] md:py-[21px] md:px-[22px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px] flex flex-col gap-[14px] sm:gap-[16px] md:gap-[18px] lg:gap-[21px] xl:gap-[22.5px] 2xl:gap-[24px] w-full">
 
                     {/* Heading and SubHead */}
                     <div className='flex flex-col gap-2'>
@@ -306,7 +305,7 @@ function Biling() {
                         </Paragraph>
                     </div>
 
-                    <div className='flex flex-col gap-[7px] sm:gap-[8px] md:gap-[9px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]'>
+                    <div className='flex flex-col gap-[10px] sm:gap-[10px] md:gap-[11px] lg:gap-[12px] xl:gap-[12px] 2xl:gap-[12px]'>
                         <div className='flex flex-col gap-[6px] sm:gap-[7px] md:gap-[9px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]'>
                             <div className="flex justify-between items-center border-1 border-[#E1E1E0] h-[54px] sm:h-[63px] md:h-[70px] lg:h-[77px] xl:h-[82px] 2xl:h-[86px] rounded-[12px] px-[12px] sm:px-[14px] md:px-[16px] lg:px-[18px] xl:px-[20px] 2xl:px-[25px]">
 
@@ -394,7 +393,7 @@ function Biling() {
 
 
             <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Card successfully added! 🎉</DialogTitle>
                         <DialogDescription className='text-start'>Your new credit card has been successfully added as a payment method.</DialogDescription>
@@ -414,7 +413,7 @@ function Biling() {
 
             {/* DIALOG 2.1: Are you sure you want to remove? */}
             <Dialog open={openRemoveConfirmDialog} onOpenChange={setopenRemoveConfirmDialog}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Are you sure you want to remove?</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
@@ -451,7 +450,7 @@ function Biling() {
 
             {/* DIALOG 2.2: Card Removed */}
             <Dialog open={openRemovedDialog} onOpenChange={setopenRemovedDialog}>
-                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[40px]'>
+                <DialogContent className='rounded-[20px] xs:w-[400px] sm:w-[440px] md:w-[480px] lg:w-[490px] xl:w-[500px] 2xl:w-[540px] p-[20px] xs:p-[25px] md:p-[30px] lg:p-[35px] xl:p-[40px]'>
                     <DialogHeader>
                         <DialogTitle className='text-start'>Card removed</DialogTitle>
                         <DialogDescription className='font-urbanist text-start text-[12px] md:text-[13px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]'>
