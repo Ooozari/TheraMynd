@@ -15,7 +15,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Calendar } from "@/components/ui/calendar"
-
+import DateRangePicker from '@/components/ui/rangedatepicker'
 
 
 
@@ -29,7 +29,7 @@ function Copying({ id }) {
     return (
         <>
             {/*  */}
-            <div className='flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[43px] md:mb-0 mb-[40px]'>
+            <div className='flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[43px]'>
                 {/* Header */}
                 <div className="flex flex-col gap-[18px] sm:gap-[20px] md:gap-[21px] lg:gap-[22px] xl:gap-[23px] 2xl:gap-[24px] ">
                     <Paragraph size="md" className='font-[500] text-OptimisticGray60 flex'>
@@ -57,50 +57,59 @@ function Copying({ id }) {
                 {/* Calender and table */}
                 <div className="flex flex-col md:flex-row gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px]">
                     {/* calender */}
-                    <div className="min-w-[316px] min-h-[326px]">
-                        <Calendar
-                            mode="range"
-                            selected={range}
-                            onSelect={setRange}
-                            className="h-full w-full border-1 border-[#E1E1E1] shadow-[0px 1px 2px 0px #00000040] rounded-[10px]"
-                        />
+                    <div className="md:flex hidden">
+                        <div className="w-[316px] min-h-[326px]">
+                            <Calendar
+                                mode="range"
+                                selected={range}
+                                onSelect={setRange}
+                                className="h-full w-full border-1 border-[#E1E1E1] shadow-[0px 1px 2px 0px #00000040] rounded-[10px]"
+                            />
+                        </div>
                     </div>
-                    {/* table */}
-                    <div className="w-full overflow-x-auto">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead className='pl-[24px] md:pl-[34px] w-[25%]'>Activity</TableHead>
-                                    <TableHead className='w-[25%] px-2 md:px-2'>Date</TableHead>
-                                    <TableHead className='w-[25%] px-2 md:px-2'>Time added</TableHead>
-                                    <TableHead className='w-[25%]'></TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {patient.copyMechanismData.map((item, index) => (
-                                    <TableRow key={index}>
-                                        <TableCell className="font-medium pl-[24px] md:pl-[34px] pr-2 md:pr-2">
-                                            <Paragraph size="tabletext" className="text-[#292929]">
-                                                {item.activity}
-                                            </Paragraph>
 
-                                        </TableCell>
-                                        <TableCell className='px-2 md:px-2'>
-                                            <Paragraph size="tabletext" className="text-[#292929]">
-                                                {item.date}
-                                            </Paragraph>
-                                        </TableCell>
-                                        <TableCell className='px-2 md:px-2'>
-                                            <Paragraph size="tabletext" className="text-[##292929] ">
-                                                {item.timeAdded}
-                                            </Paragraph>
-                                        </TableCell>
-                                        <TableCell>
-                                        </TableCell>
+                    {/* Table and DatePicker */}
+                    <div className="flex flex-col gap-[22px] sm:gap-[24px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
+
+                        {/* DOB */}
+                        <div className="flex md:hidden w-full">
+                            <DateRangePicker />
+                        </div>
+                        {/* table */}
+                        <div className="w-full overflow-x-auto">
+                            <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead className='pl-[24px] md:pl-[34px] w-[25%]'>Activity</TableHead>
+                                        <TableHead className='w-[25%] px-2 md:px-2'>Date</TableHead>
+                                        <TableHead className='w-[25%] px-2 md:px-2'>Time added</TableHead>
+
                                     </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
+                                </TableHeader>
+                                <TableBody>
+                                    {patient.copyMechanismData.map((item, index) => (
+                                        <TableRow key={index}>
+                                            <TableCell className="font-medium pl-[24px] md:pl-[34px] pr-2 md:pr-2">
+                                                <Paragraph size="tabletext" className="text-[#292929]">
+                                                    {item.activity}
+                                                </Paragraph>
+
+                                            </TableCell>
+                                            <TableCell className='px-2 md:px-2'>
+                                                <Paragraph size="tabletext" className="text-[#292929]">
+                                                    {item.date}
+                                                </Paragraph>
+                                            </TableCell>
+                                            <TableCell className='px-2 md:px-2'>
+                                                <Paragraph size="tabletext" className="text-[##292929] ">
+                                                    {item.timeAdded}
+                                                </Paragraph>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </div>
                     </div>
                 </div>
             </div>

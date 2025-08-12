@@ -41,7 +41,7 @@ import {
     TabsTrigger,
     TabsContent,
 } from "@/components/ui/userinfotabs";
-
+import DateRangePicker from '@/components/ui/rangedatepicker'
 
 
 function Journals({ id }) {
@@ -51,10 +51,6 @@ function Journals({ id }) {
     });
     const patientId = Number(id);
     const patient = tableData.find(p => p.id === patientId);
-    console.log(patient)
-    console.log(patientId)
-
-
     const [openJournalsDialog, setopenJournalsDialog] = useState(false)
 
     return (
@@ -89,7 +85,7 @@ function Journals({ id }) {
                     </div>
 
                     {/* calender */}
-                    <div className="min-w-[316px] min-h-[326px]">
+                    <div className="md:w-[280px] lg:w-[316px] min-h-[326px] self-center md:flex hidden">
                         <Calendar
                             mode="range"
                             selected={range}
@@ -103,51 +99,57 @@ function Journals({ id }) {
                 <div className="flex flex-col self-start gap-[22px] sm:gap-[24px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
 
                     {/* tabs */}
-                    <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px]">
-                        {/* select */}
-                        <div className=" p-0 m-0">
-                            <Label htmlFor="mood" className="pb-[8px]">
-                                <Paragraph size="label" className="text-Gray900 font-bold">
-                                    Mood type
-                                </Paragraph>
-                            </Label>
-                            <Select className='bg-White'>
-                                <SelectTrigger className="w-[169px] bg-White border-1 border-[#DEDFE3] rounded-[10px]">
-                                    <SelectValue placeholder="Select mood" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="happy" default>Happy</SelectItem>
-                                    <SelectItem value="sad">Sad</SelectItem>
-                                    <SelectItem value="good">Good</SelectItem>
-                                </SelectContent>
-                            </Select>
+                    <div className="flex justify-center flex-col">
+                        <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] justify-between md:justify-start">
+                            {/* select */}
+                            <div className=" p-0 m-0">
+                                <Label htmlFor="mood" className="pb-[8px]">
+                                    <Paragraph size="label" className="text-Gray900 font-bold">
+                                        Mood type
+                                    </Paragraph>
+                                </Label>
+                                <Select className='bg-White'>
+                                    <SelectTrigger className="w-[154px] bg-White border-1 border-[#DEDFE3] rounded-[10px]">
+                                        <SelectValue placeholder="Select mood" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="happy" default>Happy</SelectItem>
+                                        <SelectItem value="sad">Sad</SelectItem>
+                                        <SelectItem value="good">Good</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            {/* filter */}
+                            <div className=" m-0 p-0">
+                                <Label htmlFor="Sort" className="pb-[8px]">
+                                    <Paragraph size="label" className="text-Gray900 font-bold">
+                                        Sort by
+                                    </Paragraph>
+                                </Label>
+                                <Userinfotabs defaultValue="newest" className='w-fit'>
+                                    <TabsList className="flex whitespace-nowrap bg-White border-1 border-[#DEDFE3] rounded-[32px] h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]  shadow-[0px_1px_3px_0px_#00000033] px-[4px]">
+                                        <TabsTrigger value="newest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
+                                            <Paragraph size="xxs" className="whitespace-nowrap">Newest</Paragraph>
+                                        </TabsTrigger>
+                                        <TabsTrigger value="oldest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
+                                            <Paragraph size="xxs" className="whitespace-nowrap">Oldest</Paragraph>
+                                        </TabsTrigger>
+                                    </TabsList>
+
+                                    <TabsContent value="newest">
+
+                                    </TabsContent>
+                                    <TabsContent value="oldest">
+
+                                    </TabsContent>
+                                </Userinfotabs>
+
+                            </div>
                         </div>
-
-                        {/* filter */}
-                        <div className=" m-0 p-0">
-                            <Label htmlFor="Sort" className="pb-[8px]">
-                                <Paragraph size="label" className="text-Gray900 font-bold">
-                                    Sort by
-                                </Paragraph>
-                            </Label>
-                            <Userinfotabs defaultValue="newest" className='w-fit'>
-                                <TabsList className="flex whitespace-nowrap bg-White border-1 border-[#DEDFE3] rounded-[32px] h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]  shadow-[0px_1px_3px_0px_#00000033] px-[4px]">
-                                    <TabsTrigger value="newest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
-                                        <Paragraph size="xxs" className="whitespace-nowrap">Newest</Paragraph>
-                                    </TabsTrigger>
-                                    <TabsTrigger value="oldest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
-                                        <Paragraph size="xxs" className="whitespace-nowrap">Oldest</Paragraph>
-                                    </TabsTrigger>
-                                </TabsList>
-
-                                <TabsContent value="newest">
-
-                                </TabsContent>
-                                <TabsContent value="oldest">
-
-                                </TabsContent>
-                            </Userinfotabs>
-
+                        {/* DOB */}
+                        <div className="flex md:hidden w-full">
+                            <DateRangePicker />
                         </div>
                     </div>
 
@@ -199,7 +201,7 @@ function Journals({ id }) {
             </div>
 
             <Dialog open={openJournalsDialog} onOpenChange={setopenJournalsDialog}>
-                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px]">
+                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] xs:w-[440x] sm:w-[460px] md:w-[500px] lg:w-[560px] xl:w-[600px] 2xl:w-[623px] ">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
                             <Heading level='detailsheading' className='text-[#292929] font-[700]'>Journal</Heading>
@@ -241,7 +243,8 @@ function Journals({ id }) {
                                 <Label htmlFor="entry" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">Journal entry</Paragraph>
                                 </Label>
-                                <Readonly value="Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes." textClassNames="font-medium text-[#3F3C36]" />
+                                <Readonly value="Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes." textClassNames="font-medium text-[#3F3C36] leading-[160%]"
+                                    outerDivClassNames="min-h-[179px] sm:min-h-[184px] md:min-h-[189px] lg:min-h-[179px] 2xl:min-h-[218px]" />
                             </div>
                         </div>
                     </div>

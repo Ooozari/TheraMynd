@@ -34,8 +34,9 @@ const headingVariants = cva(
         // updated
         cardmd: "text-[26px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[34px] 2xl:text-[36px]",
         cardmd2: "text-[18px] sm:text-[21px] md:text-[25px] lg:text-[30px] xl:text-[33px] 2xl:text-[35.31px]",
-        dialogtext: "text-[10px] sm:text-[10.5px] md:text-[11px] lg:text-[11.5px] xl:text-[11.7px] 2xl:text-[12px]",
-        detailsheading: "text-[14px] sm:text-[15.5px] md:text-[17px] lg:text-[19px] xl:text-[20px] 2xl:text-[21px]",
+        dialogtext: "text-[12px]",
+        // updated
+        detailsheading: "text-[18px] lg:text-[19px] xl:text-[20px] 2xl:text-[21px]",
       },
     },
     defaultVariants: { level: "h1" },

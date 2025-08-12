@@ -41,7 +41,7 @@ import {
     TabsTrigger,
     TabsContent,
 } from "@/components/ui/userinfotabs";
-
+import DateRangePicker from '@/components/ui/rangedatepicker'
 
 
 function Checkins({ id }) {
@@ -62,7 +62,7 @@ function Checkins({ id }) {
             {/*  */}
             <div className='flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] md:flex-row flex-col md:mb-0 mb-[40px]'>
                 {/* Calender  and navigation*/}
-                <div className="flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] ">
+                <div className="flex flex-col gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px]">
                     {/* Header */}
                     <div className="flex flex-col gap-[16px] sm:gap-[18px] md:gap-[20px] lg:gap-[21px] xl:gap-[24px] 2xl:gap-[28px] ">
                         <Paragraph size="md" className='font-[500] text-OptimisticGray60 flex'>
@@ -89,7 +89,7 @@ function Checkins({ id }) {
                     </div>
 
                     {/* calender */}
-                    <div className="min-w-[316px] min-h-[326px]">
+                    <div className="md:w-[280px] lg:w-[316px] min-h-[326px] self-center md:flex hidden">
                         <Calendar
                             mode="range"
                             selected={range}
@@ -103,7 +103,8 @@ function Checkins({ id }) {
                 <div className="flex flex-col self-start gap-[22px] sm:gap-[24px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
 
                     {/* tabs */}
-                    <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px]">
+                    <div className="flex justify-center flex-col">        
+                    <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px] justify-between md:justify-start">
                         {/* select */}
                         <div className=" p-0 m-0">
                             <Label htmlFor="mood" className="pb-[8px]">
@@ -122,7 +123,7 @@ function Checkins({ id }) {
                                 </SelectContent>
                             </Select>
                         </div>
-
+                       
                         {/* filter */}
                         <div className=" m-0 p-0">
                             <Label htmlFor="Sort" className="pb-[8px]">
@@ -148,6 +149,11 @@ function Checkins({ id }) {
                                 </TabsContent>
                             </Userinfotabs>
 
+                        </div>
+                    </div>
+                         {/* DOB */}
+                        <div className="flex md:hidden w-full">
+                            <DateRangePicker />
                         </div>
                     </div>
 
@@ -211,7 +217,7 @@ function Checkins({ id }) {
             </div>
 
             <Dialog open={openDailyCheckInDialog} onOpenChange={setopenDailyCheckInDialog}>
-                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px]">
+                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] xs:w-[430x] sm:[550px] md:w-[600px] lg:w-[630px] xl:w-[690px] 2xl:w-[721px]">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
                             <Heading level='detailsheading' className='text-[#292929] font-[700]'>Daily Check-In</Heading>
@@ -232,7 +238,7 @@ function Checkins({ id }) {
 
                             </div>
 
-                            <div className="grid grid-cols-[repeat(auto-fit,minmax(98px,1fr))] gap-[12px] sm:gap-[13px] md:gap-[14px] lg:gap-[15px] xl:gap-[15.5px] 2xl:gap-[16px] w-full">
+                            <div className="grid grid-cols-[repeat(auto-fit,minmax(98.83px,1fr))] gap-[12px] sm:gap-[13px] md:gap-[14px] lg:gap-[15px] xl:gap-[15.5px] 2xl:gap-[16px] w-full">
                                 {/* Mood */}
                                 <div className="min-w-[98px]">
                                     <Label htmlFor="Mood" className="mb-[8px]">
@@ -284,11 +290,12 @@ function Checkins({ id }) {
 
 
                             {/* About stressor */}
-                            <div>
+                            <div className="">
                                 <Label htmlFor="stressor" className='mb-[8px]'>
                                     <Paragraph size="label" className="text-Gray900 font-bold">About stressor</Paragraph>
                                 </Label>
-                                <Readonly value="Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes." textClassNames="font-medium text-[#3F3C36]" />
+                                <Readonly value="Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes. Today I had a hard time concentrating. I was very worried about making mistakes." textClassNames="font-medium text-[#3F3C36] leading-[160%]"
+                                    outerDivClassNames="min-h-[180px] sm:min-h-[185px] md:min-h-[190px] lg:min-h-[180px] 2xl:min-h-[217px]" />
                             </div>
                         </div>
                     </div>
