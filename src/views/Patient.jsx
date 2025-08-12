@@ -21,6 +21,7 @@ import {
     TabsContent,
 } from "@/components/ui/userinfotabs";
 import { DailyCheckIns, CustomAreaChart, JournalEntries, CopingMechanisms } from '@/components/shared'
+import DateRangePicker from '@/components/ui/rangedatepicker'
 
 
 export default function Patient({ id }) {
@@ -208,10 +209,10 @@ export default function Patient({ id }) {
                 </div>
 
                 {/* Calender and tabel */}
-                <div className="flex md:flex-row flex-col bg-White rounded-[15px] shadow-[0px 12.13px 44.49px 0px #0000001A]">
+                <div className="flex md:flex-row flex-col bg-White rounded-[15px] shadow-[0px 12.13px 44.49px 0px #0000001A] pt-[16px] pb-[17px] px-[15px]">
 
                     {/* Calender */}
-                    <div className="w-full md:w-[300px] lg:w-[330.05px] xl:w-[380.05px] 2xl:w-[426.05px] pt-[15.78px] pl-[9.44px] pb-[16px]">
+                    <div className="w-full md:w-[300px] lg:w-[330.05px] xl:w-[380.05px] 2xl:w-[426.05px] md:flex hidden">
                         <Calendar
                             mode="range"
                             selected={range}
@@ -220,38 +221,46 @@ export default function Patient({ id }) {
                         />
                     </div>
 
-                    <div className="flex-1 min-w-0 px-[12px] md:px-0">
-                        <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)} className="">
-                            {/* Tab Buttons */}
-                            <div className="flex flex-col items-center xl:flex-row md:justify-between w-full gap-[12px] md:items-end px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] lg:items-center md:gap-4 xl:gap-0">
-                                <div className="flex justify-center md:justify-center lg:justify-center xl:justify-start xl:items-center w-full h-full scrollbar-thin overflow-x-auto scroll-px-[5px]">
-                                    <TabsList
-                                        className="
+                    <div className="flex-1 min-w-0">
+                        <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)}>
+                            <div className="flex flex-col gap-4">
+                                {/* Tab Buttons */}
+                                <div className="flex items-center flex-col justify-between xl:flex-row w-full gap-[12px] md:px-[26px] pt-[12px] lg:px-[28px] xl:px-[30px] 2xl:px-[32px]">
+                                    <div className="flex h-full">
+                                        <TabsList
+                                            className="
                                         h-[42px] sm:h-[44px] md:h-[46px] lg:h-[47px] xl:h-[48px] 2xl:h-[48.38px]
                                         px-[5px]
-                                        flex flex-nowrap
+                                        overflow-x-auto
+                                        flex
                                         whitespace-nowrap">
-                                        <TabsTrigger value="daily" className="h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit">
-                                            <Paragraph size="xxs" className="whitespace-nowrap">Daily Check-ins</Paragraph>
-                                        </TabsTrigger>
-                                        <TabsTrigger value="journal" className="max-w-fit h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px]">
-                                            <Paragraph size="xxs" className="whitespace-nowrap">Journal Entries</Paragraph>
-                                        </TabsTrigger>
-                                        <TabsTrigger value="coping" className=" h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit">
-                                            <Paragraph size="xxs" className="whitespace-nowrap">Coping Mechanisms</Paragraph>
-                                        </TabsTrigger>
-                                    </TabsList>
-                                </div>
+                                            <TabsTrigger value="daily" className="h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit whitespace-nowrap">
+                                                Daily Check-ins
 
-                                <div className="w-full md:w-auto flex justify-end md:justify-start">
-                                    <Button variant="newghost" asChild>
-                                        <Link href={`/dashboard/providers/patient/${patient.id}/${getTabPath(tab)}`}>
-                                            <Paragraph size="md" className="text-MindfulBrown90 font-inter">View all</Paragraph>
-                                        </Link>
-                                    </Button>
-                                </div>
+                                            </TabsTrigger>
+                                            <TabsTrigger value="journal" className="max-w-fit h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] whitespace-nowrap">
+                                                Journal Entries
+                                            </TabsTrigger>
+                                            <TabsTrigger value="coping" className=" h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit whitespace-nowrap">
+                                                Coping Mechanisms
+                                            </TabsTrigger>
+                                        </TabsList>
+                                    </div>
 
+                                    <div className="self-end xl:self-center">
+                                        <Button variant="newghost" asChild>
+                                            <Link href={`/dashboard/providers/patient/${patient.id}/${getTabPath(tab)}`}>
+                                                <Paragraph size="md" className="text-MindfulBrown90 font-inter">View all</Paragraph>
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </div>
+                                {/* DOB */}
+                                <div className="flex md:hidden w-full">
+                                    <DateRangePicker />
+                                </div>
                             </div>
+
 
                             {/* Tab Contents */}
                             <TabsContent value="daily">

@@ -3,24 +3,25 @@ import tableData from "@/data/tableData";
 import { Paragraph } from "@/components/ui/typography";
 import { Sad, Forward } from '@/svgs/Icons';
 import Link from 'next/link';
-function CopingMechanisms({id}) {
+function CopingMechanisms({ id }) {
     const patientId = Number(id);
     const patient = tableData.find(p => p.id === patientId);
     return (
         <>
+         <div className="w-full overflow-x-auto">
             <table className="table-auto w-full border-collapse text-center">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        
+                        <th className='w-[40%]'></th>
+                        <th className='w-[30%]'></th>
+                        <th className='w-[30%]'></th>
+
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="border-y-[1.35px] border-[#D9D9D9] ">
                         {/* 1 */}
-                        <td className="text-start px-[20px] py-[8px] sm:px-[23px] sm:py-[9px] md:px-[26px] md:py-[10px] lg:px-[29px] lg:py-[12px] xl:px-[31px] xl:py-[13px] 2xl:px-[32px] 2xl:py-[14px]">
+                        <td className="text-start px-[20px] py-[8px] sm:px-[23px] sm:py-[9px] md:px-[26px] md:py-[10px] lg:px-[29px] lg:py-[12px] xl:px-[31px] xl:py-[13px] 2xl:px-[32px] 2xl:py-[14px] whitespace-nowrap">
                             <div className="flex flex-col gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px]">
                                 <span>
                                     <Paragraph size="tablecell" className="text-[#292929] font-medium">Outdoor walk</Paragraph>
@@ -33,7 +34,8 @@ function CopingMechanisms({id}) {
 
                         {/* 2 */}
                         <td className="text-start">
-                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto">
+                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto px-[20px] sm:px-[23px] md:px-[26px] lg:px-[29px] xl:px-[30.5px] 2xl:px-[32px]
+">
                                 <Paragraph size="tablecell" className="text-[#292929] font-medium">
                                     10:10am
                                 </Paragraph>
@@ -45,7 +47,7 @@ function CopingMechanisms({id}) {
 
 
                         {/* 3 */}
-                        <td className="">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/coping`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -68,7 +70,8 @@ function CopingMechanisms({id}) {
 
                         {/* 2 */}
                         <td className="text-start">
-                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto">
+                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto px-[20px] sm:px-[23px] md:px-[26px] lg:px-[29px] xl:px-[30.5px] 2xl:px-[32px]
+">
                                 <Paragraph size="tablecell" className="text-[#292929] font-medium">
                                     10:10am
                                 </Paragraph>
@@ -80,7 +83,7 @@ function CopingMechanisms({id}) {
 
 
                         {/* 3 */}
-                        <td className="">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/coping`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -103,7 +106,8 @@ function CopingMechanisms({id}) {
 
                         {/* 2 */}
                         <td className="text-start">
-                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto">
+                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto px-[20px] sm:px-[23px] md:px-[26px] lg:px-[29px] xl:px-[30.5px] 2xl:px-[32px]
+">
                                 <Paragraph size="tablecell" className="text-[#292929] font-medium">
                                     10:10am
                                 </Paragraph>
@@ -115,7 +119,7 @@ function CopingMechanisms({id}) {
 
 
                         {/* 3 */}
-                        <td className="">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/coping`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -138,7 +142,8 @@ function CopingMechanisms({id}) {
 
                         {/* 2 */}
                         <td className="text-start">
-                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto">
+                            <div className="flex flex-col items-start self-center gap-[4px] sm:gap-[5px] md:gap-[6.5px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] mx-auto px-[20px] sm:px-[23px] md:px-[26px] lg:px-[29px] xl:px-[30.5px] 2xl:px-[32px]
+">
                                 <Paragraph size="tablecell" className="text-[#292929] font-medium">
                                     10:10am
                                 </Paragraph>
@@ -150,7 +155,7 @@ function CopingMechanisms({id}) {
 
 
                         {/* 3 */}
-                        <td className="">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/coping`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -158,10 +163,9 @@ function CopingMechanisms({id}) {
                             </Link>
                         </td>
                     </tr>
-                    
-                    
                 </tbody>
             </table>
+            </div>
         </>
     )
 }
