@@ -20,10 +20,14 @@ import {
     TabsTrigger,
     TabsContent,
 } from "@/components/ui/userinfotabs";
-import { DailyCheckIns, CustomAreaChart,JournalEntries,CopingMechanisms } from '@/components/shared'
+import { DailyCheckIns, CustomAreaChart, JournalEntries, CopingMechanisms } from '@/components/shared'
 
 
 export default function Patient({ id }) {
+    const [range, setRange] = useState({
+        from: new Date(),
+        to: new Date(),
+    });
     const [metricTab, setMetricTab] = useState("stress");
 
     const dummyData = [
@@ -93,10 +97,10 @@ export default function Patient({ id }) {
                         <Link href='/dashboard/providers'>
                             <div className='inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full 
                                                                        w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] xl:w-[31px] xl:h-[31px] 2xl:w-[32px] 2xl:h-[32px] hover:cursor-pointer'>
-                                                                    <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
-                                                                        <NewBack />
-                                                                    </div>
-                                                                </div>
+                                <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
+                                    <NewBack />
+                                </div>
+                            </div>
                         </Link>
                     </div>
                     <div className="">
@@ -114,48 +118,48 @@ export default function Patient({ id }) {
                 <div className="flex md:flex-row flex-col bg-White rounded-[15px] 
                 shadow-[0px 17.32px 34.65px 0px #1018280D] p-[10px] gap-[20px]">
                     {/* graph and tabs */}
-                    <div className="w-full">
+                    <div className="min-w-0 flex-1">
                         {/* graph */}
                         <div className="">
                             <CustomAreaChart data={chartInfo.data} color={chartInfo.color} />
                         </div>
 
                         {/* tabs and select */}
-                        <div className="w-full">
+                        <div className="max-w-full">
                             <Userinfotabs defaultValue="stress" onValueChange={(value) => setMetricTab(value)}>
                                 {/* Tab Buttons */}
-                                <div className="w-full flex md:flex-row flex-col md:justify-between justify-start gap-[16px] md:gap-2">
-
-                                    <div className="flex justify-center md:justify-start overflow-x-auto w-full scrollbar-thin">
+                                <div className="w-full flex md:flex-row flex-col justify-start gap-[16px] md:gap-2">
+                                    <div className="flex justify-center md:justify-start w-full scrollbar-thin overflow-x-auto h-full">
                                         <TabsList
                                             className="
-                                           
-                                            overflow-x-auto
-                                            overflow-y-hidden
-                                            scroll-smooth
-                                            scrollbar-thin
+                                            flex flex-nowrap
+                                            px-[4.8px]
+                                            h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]
                                             whitespace-nowrap
                                             "
                                         >
                                             <TabsTrigger value="stress"
-                                                onClick={() => setMetricTab("stress")} className="flex-shrink-0 w-fit px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
+                                                onClick={() => setMetricTab("stress")} className="max-w-fit px-[43px] md:px-[53px] 2xl:px-[63px] h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]
+">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Stress</Paragraph>
                                             </TabsTrigger>
 
                                             <TabsTrigger value="sleep"
-                                                onClick={() => setMetricTab("sleep")} className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
+                                                onClick={() => setMetricTab("sleep")} className="px-[43px] md:px-[53px] 2xl:px-[63px] h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px] max-w-fit
+">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Sleep</Paragraph>
                                             </TabsTrigger>
 
                                             <TabsTrigger value="mood"
                                                 onClick={() => setMetricTab("mood")}
-                                                className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
+                                                className="px-[43px] md:px-[53px] 2xl:px-[63px] h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px] max-w-fit
+">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Mood</Paragraph>
                                             </TabsTrigger>
 
                                             <TabsTrigger value="appetite"
                                                 onClick={() => setMetricTab("appetite")}
-                                                className="flex-shrink-0 px-[20px] sm:px-[25px] md:px-[30px] lg:px-[35px] xl:px-[55px] 2xl:px-[60px]">
+                                                className="px-[43px] md:px-[53px] 2xl:px-[63px] h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px] max-w-fit">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Appetite</Paragraph>
                                             </TabsTrigger>
                                         </TabsList>
@@ -164,7 +168,7 @@ export default function Patient({ id }) {
                                     {/* select */}
                                     <div className="flex justify-end">
                                         <Select className=''>
-                                            <SelectTrigger className="w-[110px] sm:w-[120px] md:w-[130px] lg:w-[140px] xl:w-[110px] 2xl:w-[184px] bg-White border-1 border-[#E1E1E1] rounded-[8px] h-[34px] sm:h-[37px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]">
+                                            <SelectTrigger className="w-[140px] md:w-[134px] lg:w-[140px] xl:w-[150px] 2xl:w-[184px] bg-White border-1 border-[#E1E1E1] rounded-[8px] h-[34px] sm:h-[37px] md:h-[40px] lg:h-[44px] xl:h-[46px] 2xl:h-[48px]">
                                                 <SelectValue placeholder="Select" />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -209,36 +213,31 @@ export default function Patient({ id }) {
                     {/* Calender */}
                     <div className="w-full md:w-[300px] lg:w-[330.05px] xl:w-[380.05px] 2xl:w-[426.05px] pt-[15.78px] pl-[9.44px] pb-[16px]">
                         <Calendar
-                            mode="single"
-                            selected={date}
-                            onSelect={setDate}
+                            mode="range"
+                            selected={range}
+                            onSelect={setRange}
                             className="h-full w-full xs:border-b-[1.35px] xs:border-[#DBDBDB] xs:border-r-0 md:border-r-[1.35px] md:border-[#DBDBDB] md:border-b-0"
                         />
                     </div>
 
                     <div className="flex-1 min-w-0 px-[12px] md:px-0">
-                        <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)}>
+                        <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)} className="">
                             {/* Tab Buttons */}
-                            <div className="flex flex-col xl:flex-row md:justify-between items-start w-full gap-[12px] md:items-end px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] overflow-x-hidden lg:items-end xl:md:items-center md:gap-4 xl:gap-0">
-                                <div className="flex justify-center md:justify-center lg:justify-center xl:justify-start overflow-x-auto w-full scrollbar-thin">
+                            <div className="flex flex-col xl:flex-row md:justify-between items-start w-full gap-[12px] md:items-end px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] lg:items-end md:gap-4 xl:gap-0">
+                                <div className="flex justify-center md:justify-center lg:justify-center xl:justify-start w-full h-full scrollbar-thin overflow-x-auto scroll-px-[5px]">
                                     <TabsList
                                         className="
-                                    w-max md:w-fit
-                                    flex
-                                    overflow-x-auto
-                                    overflow-y-hidden
-                                    scroll-smooth
-                                    scrollbar-thin
-                                    whitespace-nowrap
-                                    "
-                                    >
-                                        <TabsTrigger value="daily" className="flex-shrink-0">
+                                        h-[42px] sm:h-[44px] md:h-[46px] lg:h-[47px] xl:h-[48px] 2xl:h-[48.38px]
+                                        px-[5px]
+                                        flex flex-nowrap
+                                        whitespace-nowrap">
+                                        <TabsTrigger value="daily" className="h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit">
                                             <Paragraph size="xxs" className="whitespace-nowrap">Daily Check-ins</Paragraph>
                                         </TabsTrigger>
-                                        <TabsTrigger value="journal" className="flex-shrink-0">
+                                        <TabsTrigger value="journal" className="max-w-fit h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px]">
                                             <Paragraph size="xxs" className="whitespace-nowrap">Journal Entries</Paragraph>
                                         </TabsTrigger>
-                                        <TabsTrigger value="coping" className="flex-shrink-0">
+                                        <TabsTrigger value="coping" className=" h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit">
                                             <Paragraph size="xxs" className="whitespace-nowrap">Coping Mechanisms</Paragraph>
                                         </TabsTrigger>
                                     </TabsList>
@@ -256,13 +255,13 @@ export default function Patient({ id }) {
 
                             {/* Tab Contents */}
                             <TabsContent value="daily">
-                                <DailyCheckIns id={id}/>
+                                <DailyCheckIns id={id} />
                             </TabsContent>
                             <TabsContent value="journal">
-                                <JournalEntries id={id}/>
+                                <JournalEntries id={id} />
                             </TabsContent>
                             <TabsContent value="coping">
-                                <CopingMechanisms id={id}/>
+                                <CopingMechanisms id={id} />
                             </TabsContent>
                         </Userinfotabs>
                     </div>

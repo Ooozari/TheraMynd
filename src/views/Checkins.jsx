@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import tableData from "@/data/tableData";
-import { Greaterthan,NewBack, Sad, Forward } from '@/svgs/Icons';
+import { Greaterthan, NewBack, Sad, Forward } from '@/svgs/Icons';
 import Link from 'next/link';
 import { Heading, Paragraph } from "@/components/ui/typography";
 import { Label } from "@/components/ui/label"
@@ -112,7 +112,7 @@ function Checkins({ id }) {
                                 </Paragraph>
                             </Label>
                             <Select className='bg-White'>
-                                <SelectTrigger className="w-[169px] bg-White border-1 border-[#DEDFE3] rounded-[10px]">
+                                <SelectTrigger className="w-[154px] bg-White border-1 border-[#DEDFE3] rounded-[10px]">
                                     <SelectValue placeholder="Select mood" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -130,12 +130,12 @@ function Checkins({ id }) {
                                     Sort by
                                 </Paragraph>
                             </Label>
-                            <Userinfotabs defaultValue="newest" className='w-fit shadow-[0px 1px 3px 0px #00000033]'>
-                                <TabsList className="flex whitespace-nowrap bg-White border-1 border-[#DEDFE3] rounded-[32px] " >
-                                    <TabsTrigger value="newest" className="flex-shrink-0">
+                            <Userinfotabs defaultValue="newest" className='w-fit'>
+                                <TabsList className="flex whitespace-nowrap bg-White border-1 border-[#DEDFE3] rounded-[32px] h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]  shadow-[0px_1px_3px_0px_#00000033] px-[4px]">
+                                    <TabsTrigger value="newest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
                                         <Paragraph size="xxs" className="whitespace-nowrap">Newest</Paragraph>
                                     </TabsTrigger>
-                                    <TabsTrigger value="oldest" className="flex-shrink-0">
+                                    <TabsTrigger value="oldest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
                                         <Paragraph size="xxs" className="whitespace-nowrap">Oldest</Paragraph>
                                     </TabsTrigger>
                                 </TabsList>
