@@ -226,13 +226,14 @@ export default function Patient({ id }) {
                             <div className="flex flex-col gap-4">
                                 {/* Tab Buttons */}
                                 <div className="flex items-center flex-col justify-between xl:flex-row w-full gap-[12px] md:px-[26px] pt-[12px] lg:px-[28px] xl:px-[30px] 2xl:px-[32px]">
-                                    <div className="flex h-full">
+                                    <div className="flex w-full h-full">
                                         <TabsList
                                             className="
                                         h-[42px] sm:h-[44px] md:h-[46px] lg:h-[47px] xl:h-[48px] 2xl:h-[48.38px]
                                         px-[5px]
                                         overflow-x-auto
                                         flex
+                                        w-fit
                                         whitespace-nowrap">
                                             <TabsTrigger value="daily" className="h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit whitespace-nowrap">
                                                 Daily Check-ins
