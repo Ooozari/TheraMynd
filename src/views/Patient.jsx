@@ -130,12 +130,14 @@ export default function Patient({ id }) {
                             <Userinfotabs defaultValue="stress" onValueChange={(value) => setMetricTab(value)}>
                                 {/* Tab Buttons */}
                                 <div className="w-full flex md:flex-row flex-col justify-start gap-[16px] md:gap-2">
-                                    <div className="flex justify-center md:justify-start w-full scrollbar-thin overflow-x-auto h-full">
+                                    <div className="flex justify-center md:justify-start w-full scrollbar-thin h-full">
                                         <TabsList
                                             className="
                                             flex flex-nowrap
                                             px-[4.8px]
                                             h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]
+                                            overflow-x-auto
+                                            w-fit
                                             whitespace-nowrap
                                             "
                                         >
