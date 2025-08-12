@@ -135,15 +135,15 @@ function PatientProvider() {
                                 <TableHead className="[5%]"></TableHead> {/* icon column */}
                                 <TableHead className="w-[35%]">Name</TableHead>
                                 <TableHead className="w-[15%]">Days Active</TableHead>
-                                <TableHead className="w-[15%]">Status</TableHead>
-                                <TableHead className="w-[15%]">Start date</TableHead>
-                                <TableHead className="w-[15%]"></TableHead> {/* action buttons */}
+                                <TableHead className="w-[15%] ">Status</TableHead>
+                                <TableHead className="w-[15%] ">Start date</TableHead>
+                                <TableHead className="w-[15%] "></TableHead> {/* action buttons */}
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {tableData.map((item) => (
                                 <TableRow key={item.id}>
-                                    <TableCell className=' pr-[18px] pl-[18px] md:pl-[18px] md:pr-[18px]'>
+                                    <TableCell className='pr-[18px] pl-[18px] md:pl-[18px] md:pr-[18px]'>
                                         <span className='h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px] 2xl:h-[31px] w-full'>{item.icon}</span>
                                     </TableCell>
                                     <TableCell className="text-left">

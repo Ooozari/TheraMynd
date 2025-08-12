@@ -223,8 +223,8 @@ export default function Patient({ id }) {
                     <div className="flex-1 min-w-0 px-[12px] md:px-0">
                         <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)} className="">
                             {/* Tab Buttons */}
-                            <div className="flex flex-col xl:flex-row md:justify-between items-start w-full gap-[12px] md:items-end px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] lg:items-end md:gap-4 xl:gap-0">
-                                <div className="flex justify-center md:justify-center lg:justify-center xl:justify-start w-full h-full scrollbar-thin overflow-x-auto scroll-px-[5px]">
+                            <div className="flex flex-col items-center xl:flex-row md:justify-between w-full gap-[12px] md:items-end px-0 pt-0 md:px-[26px] md:pt-[14px] lg:px-[28px] lg:pt-[16px] xl:px-[30px] xl:pt-[18px] 2xl:px-[32px] 2xl:pt-[20px] lg:items-center md:gap-4 xl:gap-0">
+                                <div className="flex justify-center md:justify-center lg:justify-center xl:justify-start xl:items-center w-full h-full scrollbar-thin overflow-x-auto scroll-px-[5px]">
                                     <TabsList
                                         className="
                                         h-[42px] sm:h-[44px] md:h-[46px] lg:h-[47px] xl:h-[48px] 2xl:h-[48.38px]

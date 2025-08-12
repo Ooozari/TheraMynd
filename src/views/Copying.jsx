@@ -4,7 +4,7 @@ import { useState } from "react";
 import tableData from "@/data/tableData";
 import { Greaterthan, NewBack } from '@/svgs/Icons';
 import Link from 'next/link';
-import {Paragraph } from "@/components/ui/typography";
+import { Paragraph } from "@/components/ui/typography";
 import {
     Table,
     TableBody,
@@ -42,11 +42,11 @@ function Copying({ id }) {
                         <div>
                             <Link href={`/dashboard/providers/patient/${patient.id}`}>
                                 <div className='inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full 
-                                                                           w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] xl:w-[31px] xl:h-[31px] 2xl:w-[32px] 2xl:h-[32px] hover:cursor-pointer'>
-                                                                        <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
-                                                                            <NewBack />
-                                                                        </div>
-                                                                    </div>
+                                    w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] xl:w-[31px] xl:h-[31px] 2xl:w-[32px] 2xl:h-[32px] hover:cursor-pointer'>
+                                    <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
+                                        <NewBack />
+                                    </div>
+                                </div>
                             </Link>
                         </div>
                         <div className="">
@@ -66,31 +66,31 @@ function Copying({ id }) {
                         />
                     </div>
                     {/* table */}
-                    <div className="w-full ">
-                        <Table className='w-full'>
+                    <div className="w-full overflow-x-auto">
+                        <Table>
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>Activity</TableHead>
-                                    <TableHead>Date</TableHead>
-                                    <TableHead>Time added</TableHead>
-                                    <TableHead></TableHead>
+                                    <TableHead className='pl-[24px] md:pl-[34px] w-[25%]'>Activity</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Date</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Time added</TableHead>
+                                    <TableHead className='w-[25%]'></TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {patient.copyMechanismData.map((item, index) => (
                                     <TableRow key={index}>
-                                        <TableCell className="font-medium flex items-center gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[18px] xl:gap-[20px] 2xl:gap-[22px]">
+                                        <TableCell className="font-medium pl-[24px] md:pl-[34px] pr-2 md:pr-2">
                                             <Paragraph size="tabletext" className="text-[#292929]">
                                                 {item.activity}
                                             </Paragraph>
 
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <Paragraph size="tabletext" className="text-[#292929]">
                                                 {item.date}
                                             </Paragraph>
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <Paragraph size="tabletext" className="text-[##292929] ">
                                                 {item.timeAdded}
                                             </Paragraph>

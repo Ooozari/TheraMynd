@@ -75,11 +75,11 @@ function Journals({ id }) {
                             <div>
                                 <Link href={`/dashboard/providers/patient/${patient.id}`}>
                                     <div className='inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full 
-                                                                               w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] xl:w-[31px] xl:h-[31px] 2xl:w-[32px] 2xl:h-[32px] hover:cursor-pointer'>
-                                                                            <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
-                                                                                <NewBack />
-                                                                            </div>
-                                                                        </div>
+                                    w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] xl:w-[31px] xl:h-[31px] 2xl:w-[32px] 2xl:h-[32px] hover:cursor-pointer'>
+                                        <div className='w-[5px] h-[8px] sm:w-[5px] sm:h-[8px] md:w-[6px] md:h-[10px] lg:w-[7px] lg:h-[12px] xl:w-[8px] xl:h-[14px] 2xl:w-[10px] 2xl:h-[16px]'>
+                                            <NewBack />
+                                        </div>
+                                    </div>
                                 </Link>
                             </div>
                             <div className="">
@@ -100,7 +100,7 @@ function Journals({ id }) {
                 </div>
 
                 {/* Table and tabs */}
-                <div className="flex flex-col self-start gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
+                <div className="flex flex-col self-start gap-[22px] sm:gap-[24px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
 
                     {/* tabs */}
                     <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px]">
@@ -130,12 +130,12 @@ function Journals({ id }) {
                                     Sort by
                                 </Paragraph>
                             </Label>
-                            <Userinfotabs defaultValue="newest" className='w-fit shadow-[0px 1px 3px 0px #00000033]'>
-                                <TabsList className="flex whitespace-nowrap bg-White border-1 border-[#DEDFE3] rounded-[32px] " >
-                                    <TabsTrigger value="newest" className="flex-shrink-0">
+                            <Userinfotabs defaultValue="newest" className='w-fit'>
+                                <TabsList className="flex whitespace-nowrap bg-White border-1 border-[#DEDFE3] rounded-[32px] h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]  shadow-[0px_1px_3px_0px_#00000033] px-[4px]">
+                                    <TabsTrigger value="newest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
                                         <Paragraph size="xxs" className="whitespace-nowrap">Newest</Paragraph>
                                     </TabsTrigger>
-                                    <TabsTrigger value="oldest" className="flex-shrink-0">
+                                    <TabsTrigger value="oldest" className="h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
                                         <Paragraph size="xxs" className="whitespace-nowrap">Oldest</Paragraph>
                                     </TabsTrigger>
                                 </TabsList>
@@ -152,37 +152,37 @@ function Journals({ id }) {
                     </div>
 
                     {/* table */}
-                    <div className="w-full ">
-                        <Table className='w-full'>
+                    <div className="w-full overflow-x-auto">
+                        <Table>
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>Entry name</TableHead>
-                                    <TableHead>Date</TableHead>
-                                    <TableHead>Time added</TableHead>
-                                    <TableHead></TableHead>
+                                    <TableHead className='pl-[24px] md:pl-[34px] w-[25%]'>Entry name</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Date</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Time added</TableHead>
+                                    <TableHead className='w-[25%]'></TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {patient.journalsData.map((item, index) => (
                                     <TableRow key={index}>
-                                        <TableCell className="font-medium flex items-center gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[18px] xl:gap-[20px] 2xl:gap-[22px]">
+                                        <TableCell className="font-medium pl-[24px] md:pl-[34px] pr-2 md:pr-2">
                                             <Paragraph size="tabletext" className="text-[#292929]">
                                                 {item.entryName}
                                             </Paragraph>
 
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <Paragraph size="tabletext" className="text-[#292929]">
                                                 {item.date}
                                             </Paragraph>
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <Paragraph size="tabletext" className="text-[##292929] ">
                                                 {item.timeAdded}
                                             </Paragraph>
                                         </TableCell>
 
-                                        <TableCell className='text-right'>
+                                        <TableCell className='sticky right-0 bg-white z-5 text-right  pr-[32px]  md:pr-[42px]'>
                                             <button onClick={() => { setopenJournalsDialog(true) }}>
                                                 <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'
                                                 >

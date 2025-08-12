@@ -100,7 +100,7 @@ function Checkins({ id }) {
                 </div>
 
                 {/* Table and tabs */}
-                <div className="flex flex-col self-start gap-[32px] sm:gap-[34px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
+                <div className="flex flex-col self-start gap-[22px] sm:gap-[24px] md:gap-[36px] lg:gap-[39px] xl:gap-[40.5px] 2xl:gap-[42px] w-full">
 
                     {/* tabs */}
                     <div className="flex gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[29px] xl:gap-[30.5px] 2xl:gap-[32px]">
@@ -152,32 +152,32 @@ function Checkins({ id }) {
                     </div>
 
                     {/* table */}
-                    <div className="w-full ">
-                        <Table className='w-full'>
+                    <div className="w-full overflow-x-auto">
+                        <Table>
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>Entry name</TableHead>
-                                    <TableHead>Date</TableHead>
-                                    <TableHead>Emotion</TableHead>
-                                    <TableHead>Stressor</TableHead>
-                                    <TableHead></TableHead>
+                                    <TableHead className='pl-[24px] md:pl-[34px] w-[25%]'>Entry name</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Date</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Emotion</TableHead>
+                                    <TableHead className='w-[25%] px-2 md:px-2'>Stressor</TableHead>
+                                    <TableHead className='w-[25%]'></TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {patient.checkinData.map((item, index) => (
                                     <TableRow key={index}>
-                                        <TableCell className="font-medium flex items-center gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[18px] xl:gap-[20px] 2xl:gap-[22px]">
+                                        <TableCell className="font-medium pl-[24px] md:pl-[34px] pr-2 md:pr-2">
                                             <Paragraph size="tabletext" className="text-[#292929]">
                                                 {item.entryName}
                                             </Paragraph>
 
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <Paragraph size="tabletext" className="text-[#292929]">
                                                 {item.date}
                                             </Paragraph>
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <div className="flex gap-[7px] items-center">
                                                 <span className="w-[12px] h-[12px] sm:w-[14px] sm:h-[14px] md:w-[15px] md:h-[15px] lg:w-[16px] lg:h-[16px] xl:w-[17px] xl:h-[17px] 2xl:w-[18px] 2xl:h-[18px]">
                                                     <Sad />
@@ -188,13 +188,13 @@ function Checkins({ id }) {
                                             </div>
                                         </TableCell>
 
-                                        <TableCell>
+                                        <TableCell className='px-2 md:px-2'>
                                             <Paragraph size="tabletext" className="text-[##292929] ">
                                                 {item.stressor}
                                             </Paragraph>
                                         </TableCell>
 
-                                        <TableCell className='text-right'>
+                                        <TableCell className='sticky right-0 bg-white z-5 text-right  pr-[32px]  md:pr-[42px]'>
                                             <button onClick={() => { setopenDailyCheckInDialog(true) }}>
                                                 <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'
                                                 >
