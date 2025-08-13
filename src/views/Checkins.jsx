@@ -217,7 +217,7 @@ function Checkins({ id }) {
             </div>
 
             <Dialog open={openDailyCheckInDialog} onOpenChange={setopenDailyCheckInDialog}>
-                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] xs:w-[430x] sm:[550px] md:w-[600px] lg:w-[630px] xl:w-[690px] 2xl:w-[721px]">
+                <DialogContent className="p-[18px] sm:p-[20px] md:p-[21px] lg:p-[22px] xl:p-[23px] 2xl:p-[24px] gap-[5px] sm:gap-[6px] md:gap-[7px] lg:gap-[8px] xl:gap-[9px] 2xl:gap-[10px] xs:w-[430x] sm:[550px] md:w-[600px] lg:w-[721px] xl:w-[721px] 2xl:w-[721px]">
                     <DialogHeader>
                         <DialogTitle className='text-start'>
                             <Heading level='detailsheading' className='text-[#292929] font-[700]'>Daily Check-In</Heading>
