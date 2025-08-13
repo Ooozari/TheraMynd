@@ -121,10 +121,6 @@ export default function VerificationLogin() {
                                 <p className="text-red-500 text-xs text-center mt-2">All fields must contain exactly 1 digit</p>
                             )}
                         </div>
-
-
-
-
                         {/* CheckBox */}
                         <div className='flex gap-2 justify-center items-center'>
                             <div className='flex items-center'>
@@ -133,8 +129,6 @@ export default function VerificationLogin() {
                             <Paragraph size='md' className='text-Gray700 font-medium font-satoshi'>
                                 Remember device for 30 days</Paragraph>
                         </div>
-
-
                         {/* Button */}
                         <div className=''>
                             <Button variant="secondary" type='submit' className='w-full'>

@@ -51,10 +51,6 @@ function Checkins({ id }) {
     });
     const patientId = Number(id);
     const patient = tableData.find(p => p.id === patientId);
-    console.log(patient)
-    console.log(patientId)
-
-
     const [openDailyCheckInDialog, setopenDailyCheckInDialog] = useState(false)
 
     return (
