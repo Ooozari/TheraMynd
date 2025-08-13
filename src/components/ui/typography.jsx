@@ -62,7 +62,7 @@ const paragraphVariants = cva("", {
       // using updated
       sm: "text-xs sm:text-sm lg:text-base",
       btnText: "text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[17.5px] 2xl:text-[18px]",
-      smallBtntext: "text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15.25px] 2xl:text-[16.25px]",
+      smallBtntext: "text-[12px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[15.25px] 2xl:text-[16.25px]",
       xs: "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]",
       xxs: "text-[14px]",
       icontext: "text-[10px] sm:text-[11.5px] md:text-[13px] lg:text-[14.2px] xl:text-[15px] 2xl:text-[15.33px]",

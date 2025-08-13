@@ -38,15 +38,11 @@ function ResetPassword() {
 
                             {/* top */}
                             <div className='flex gap-3 items-center'>
-                                <div>
+                                <div className='my-auto'>
                                     <Link href='/login'>
-                                        <div className='inline-flex items-center justify-center text-center bg-Secondary rounded-full 
-                                        w-[15.65px] h-[15.65px] 
-                                        sm:w-[18.25px] sm:h-[18.25px] 
-                                        md:w-[21px] md:h-[21px] 
-                                        lg:w-[24px] lg:h-[24px] 
-                                        xl:w-[26.5px] xl:h-[26.5px] 2xl:w-[28.65px] 2xl:h-[28.65px] hover:cursor-pointer'>
-                                            <div className='w-[4px] h-[6px] sm:w-[4.5px] sm:h-[7.5px] md:w-[5px] md:h-[9px] lg:w-[5.5px] lg:h-[10.5px] xl:w-[5.8px] xl:h-[11.2px] 2xl:w-[6px] 2xl:h-[12px]'>
+                                        <div className='inline-flex items-center justify-center text-center bg-Secondary rounded-full  
+                                        w-[21.65px] h-[21.65px] sm:w-[22px] sm:h-[22px] md:w-[25px] md:h-[25px] lg:w-[27px] lg:h-[27px] xl:w-[28px] xl:h-[28px] 2xl:w-[28.65px] 2xl:h-[28.65px] hover:cursor-pointer'>
+                                            <div className='w-[12px] h-[8px] sm:w-[4.5px] sm:h-[7.5px] md:w-[5px] md:h-[9px] lg:w-[5.5px] lg:h-[10.5px] xl:w-[5.8px] xl:h-[11.2px] 2xl:w-[6px] 2xl:h-[12px]'>
                                                 <Back />
                                             </div>
 
@@ -68,7 +64,7 @@ function ResetPassword() {
 
 
                             {/* Form */}
-                            <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                            <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[22px] sm:gap-[24px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
                                 {/* Input Feilds */}
                                 <div>
                                     <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px]'>
@@ -94,17 +90,12 @@ function ResetPassword() {
 
 
                                 </div>
-
-
                                 {/* Button */}
-                                <div className=''>
-                                    <div className=''>
-                                        <Button variant="secondary" className='w-full' type='submit'>
-                                            <Paragraph size="btnText" className="text-White font-black font-satoshi">Reset Password
-                                            </Paragraph>
-                                        </Button>
-                                    </div>
-
+                                <div>
+                                    <Button variant="secondary" className='w-full' type='submit'>
+                                        <Paragraph size="btnText" className="text-White font-black font-satoshi">Reset Password
+                                        </Paragraph>
+                                    </Button>
                                 </div>
                             </form>
 
