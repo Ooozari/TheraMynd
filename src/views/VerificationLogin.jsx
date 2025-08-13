@@ -128,7 +128,7 @@ export default function VerificationLogin() {
                         {/* CheckBox */}
                         <div className='flex gap-2 justify-center items-center'>
                             <div className='flex items-center'>
-                                <Checkbox className='w-[14px] h-[14px] sm:w-[17px] sm:h-[17px] md:w-[19px] md:h-[19px] lg:w-[21px] lg:h-[21px] xl:w-[22px] xl:h-[22px] 2xl:w-[25px] 2xl:h-[25px]' />
+                                <Checkbox className='w-[18px] h-[18px] sm:w-[17px] sm:h-[17px] md:w-[19px] md:h-[19px] lg:w-[21px] lg:h-[21px] xl:w-[22px] xl:h-[22px] 2xl:w-[25px] 2xl:h-[25px]' />
                             </div>
                             <Paragraph size='md' className='text-Gray700 font-medium font-satoshi'>
                                 Remember device for 30 days</Paragraph>
