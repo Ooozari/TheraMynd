@@ -6,8 +6,7 @@ import { Heading, Paragraph } from "@/components/ui/typography";
 function Settings() {
     return (
         <>
-            <div className='flex flex-col gap-[20px] sm:gap-[24px] md:gap-[28px] lg:gap-[33px] xl:gap-[36px] 2xl:gap-[39px]
-'>
+            <div className='flex flex-col gap-[20px] sm:gap-[24px] md:gap-[28px] lg:gap-[33px] xl:gap-[36px] 2xl:gap-[39px]'>
                 <div>
                     <Heading level="cardmd" className="font-[800] text-[#292929] font-urbanist">
                         Settings

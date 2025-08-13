@@ -76,7 +76,7 @@ function Biling() {
                 (
                     <>
                         <form onSubmit={formik.handleSubmit}>
-                            <div className='bg-White shadow-[0px_17.32px_34.65px_0px_#1018280d] rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px]  flex flex-col
+                            <div className='bg-White shadow-[0px_17.32px_34.65px_0px_#1018280d] rounded-[15px] py-[12px] px-[13px] sm:py-[17px] sm:px-[18px] md:py-[22px] md:px-[23px] lg:py-[27px] lg:px-[28px] xl:py-[30px] xl:px-[31px] 2xl:py-[32px] 2xl:px-[33px]  flex flex-col 
                             gap-[28px] md:gap-[29px] xl:gap-[30px] 2xl:gap-[31px] max-w-[668px]'>
 
                                 {/* Header */}

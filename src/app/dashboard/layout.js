@@ -46,7 +46,7 @@ export default function DashboardLayout({ children }) {
         </div>
 
         {/* Scrollable Content */}
-        <div className="overflow-y-auto px-[10px] sm:px-[14px] md:px-[18px] lg:px-[20px] xl:px-[24px] 2xl:px-[29px] pt-[10px] md:pt-0 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px] min-h-[calc(100vh-{topBarHeight})]">
+        <div className="overflow-y-auto px-[10px] sm:px-[14px] md:px-[18px] lg:px-[20px] xl:px-[24px] 2xl:px-[29px] pt-[10px] md:pt-0 pb-[10px] sm:pb-[12px] md:pb-[14px] lg:pb-[16px] xl:pb-[18px] 2xl:pb-[20px] md:mb-0 mb-[100px] min-h-[calc(100vh-{topBarHeight})]">
           {children}
         </div>
       </div>
