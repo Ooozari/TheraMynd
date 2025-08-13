@@ -193,7 +193,6 @@ function PersonalInfo() {
                                 <Input
                                     id="email"
                                     name="email"
-                                    type="email"
                                     disabled={!isEditable}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.email}

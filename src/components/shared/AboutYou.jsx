@@ -121,7 +121,7 @@ function AboutYou({ setCurrentStep }) {
                                 <div className='relative'>
                                     <Input
                                         id="email"
-                                        type="email"
+                                        name="email"
                                         placeholder="Enter email"
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
