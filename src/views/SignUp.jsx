@@ -115,21 +115,18 @@ function SignUp() {
                                     </div>
 
                                     <div className='mt-[14px]'>
-                                        <Paragraph size="sm" className="text-Gray900 font-medium text-center">Have an account?<Link href='/login'><span className='text-[#5167F6] ml-[5px]'>Sign in</span></Link></Paragraph>
+                                        <Paragraph size="sm" className="text-Gray900 font-medium text-center">Have an account?<Link href='/'><span className='text-[#5167F6] ml-[5px]'>Sign in</span></Link></Paragraph>
                                     </div>
                                 </div>
 
                             </div>
 
                             {/* Button */}
-                            <div className=''>
-                                <div className=''>
-                                    <Button variant="secondary" className='w-full' type='submit'>
-                                        <Paragraph size="btnText" className="text-White font-black font-satoshi">Create account
-                                        </Paragraph>
-                                    </Button>
-                                </div>
-
+                            <div>
+                                <Button variant="secondary" className='w-full' type='submit'>
+                                    <Paragraph size="btnText" className="text-White font-black font-satoshi">Create account
+                                    </Paragraph>
+                                </Button>
                             </div>
                         </form>
                     </div>

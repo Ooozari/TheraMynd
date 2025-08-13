@@ -39,7 +39,7 @@ function ResetPassword() {
                             {/* top */}
                             <div className='flex gap-3 items-center'>
                                 <div className='my-auto'>
-                                    <Link href='/login'>
+                                    <Link href='/'>
                                         <div className='inline-flex items-center justify-center text-center bg-Secondary rounded-full  
                                         w-[21.65px] h-[21.65px] sm:w-[22px] sm:h-[22px] md:w-[25px] md:h-[25px] lg:w-[27px] lg:h-[27px] xl:w-[28px] xl:h-[28px] 2xl:w-[28.65px] 2xl:h-[28.65px] hover:cursor-pointer'>
                                             <div className='w-[12px] h-[8px] sm:w-[4.5px] sm:h-[7.5px] md:w-[5px] md:h-[9px] lg:w-[5.5px] lg:h-[10.5px] xl:w-[5.8px] xl:h-[11.2px] 2xl:w-[6px] 2xl:h-[12px]'>
@@ -123,7 +123,7 @@ function ResetPassword() {
                             {/* Button */}
                             <div className=''>
                                 <Button variant="secondary" className='w-full bg-MindfulBrown80' type='submit'>
-                                    <Link href='/login'>
+                                    <Link href='/'>
                                         <Paragraph size="btnText" className="text-White font-black font-satoshi">Back to log in
                                         </Paragraph>
                                     </Link>
