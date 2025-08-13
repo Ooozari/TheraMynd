@@ -184,7 +184,7 @@ function Journals({ id }) {
                                             </Paragraph>
                                         </TableCell>
 
-                                        <TableCell className='sticky right-0 bg-white z-5 text-right  pr-[32px]  md:pr-[42px]'>
+                                        <TableCell className='sticky right-0 bg-white z-5 text-right pr-[12px] md:pr-[42px]'>
                                             <button onClick={() => { setopenJournalsDialog(true) }}>
                                                 <div className='w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[21px] md:h-[21px] lg:w-[22px] lg:h-[22px] xl:w-[23px] xl:h-[23px] 2xl:w-[24px] 2xl:h-[24px] bg-[#00738A] flex justify-center items-center rounded-full cursor-pointer'
                                                 >
