@@ -72,17 +72,10 @@ function Payment({ setIsConfirmed }) {
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={1}
           onSlideChange={(swiper) => setCurrentSlideIndex(swiper.activeIndex)}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          navigation
         >
           {plans.map((plan, i) => (
             <SwiperSlide

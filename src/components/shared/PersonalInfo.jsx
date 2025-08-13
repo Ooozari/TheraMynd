@@ -18,7 +18,7 @@ import {
 const validationSchema = Yup.object({
     fname: Yup.string().required('First name is required'),
     lname: Yup.string().required('Last name is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
+    email: Yup.string().email('Invalid email address').required('Email is required'),
     phone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits')
         .required('Practice phone is required'),
     personalPhone: Yup.string().matches(/^\d{11}$/, 'Phone number must be exactly 11 digits')
