@@ -14,7 +14,7 @@ export default function CreateAccTab({ currentStep, children }) {
     <div className="w-full flex flex-col gap-[40px] sm:gap-[45px] md:gap-[50px] lg:gap-[55px] xl:gap-[60px] 2xl:gap-[65px]">
 
       {/* Stepper Header */}
-      <div className="flex items-center justify-center px-[35.5px] sm:px-[40px] md:px-[44.5px] lg:px-[48.5px] xl:px-[51px] 2xl:px-[52.5px]
+      <div className="flex items-center justify-center px-[12px] sm:px-[24px] md:px-[44.5px] lg:px-[48.5px] xl:px-[51px] 2xl:px-[52.5px]
       w-full relative">
         {steps.map((step, index) => {
           const isActive = step.id === currentStep;
