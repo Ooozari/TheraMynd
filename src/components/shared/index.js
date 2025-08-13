@@ -13,6 +13,8 @@ export { default as CustomAreaChart } from './AreaChart';
 export { default as JournalEntries } from './JournalEntries';
 export { default as CopingMechanisms } from './CopingMechanisms';
 export { default as AccountDetails } from './AccountDetails';
+export { default as TabLayout } from './TabLayout';
+export { default as UserInfoTabLayout } from './UserInfoTabLayout';
 
 
  
