@@ -10,8 +10,8 @@ const headingVariants = cva(
       level: {
         h1Large: "text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px]",
         // Form Heading 48px max
-        h1: "text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl",
-        Subh1: "text-[16px] sm:text-[22px] md:text-[28px] lg:text-[33px] xl:text-[37px] 2xl:text-[40px]",
+        h1: "text-[28px] sm:text-[30px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[48px]",
+        Subh1: "text-[24px] sm:text-[26px] md:text-[28px] lg:text-[33px] xl:text-[37px] 2xl:text-[40px]",
         // Component heading + Hero Section
         h2: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl",
         // Card Headings
