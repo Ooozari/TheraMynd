@@ -65,7 +65,7 @@ function JournalEntries({ id }) {
 
 
                         {/* 4 */}
-                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[8px] md:pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/journals`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -119,7 +119,7 @@ function JournalEntries({ id }) {
 
 
                         {/* 4 */}
-                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[8px] md:pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/journals`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -173,7 +173,7 @@ function JournalEntries({ id }) {
 
 
                         {/* 4 */}
-                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[8px] md:pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/journals`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -227,7 +227,7 @@ function JournalEntries({ id }) {
 
 
                         {/* 4 */}
-                        <td className="sticky right-0 bg-white z-5 text-right pr-[15px]">
+                        <td className="sticky right-0 bg-white z-5 text-right pr-[8px] md:pr-[15px]">
                             <Link href={`/dashboard/providers/patient/${patient.id}/journals`}>
                                 <div className="inline-flex items-center justify-center text-center bg-MindfulBrown80 rounded-full w-[23px] h-[23px] sm:w-[25px] sm:h-[25px] md:w-[27px] md:h-[27px] lg:w-[29px] lg:h-[29px] xl:w-[30px] xl:h-[30px] 2xl:w-[31px] 2xl:h-[31px] hover:cursor-pointer">
                                     <Forward />
@@ -235,8 +235,6 @@ function JournalEntries({ id }) {
                             </Link>
                         </td>
                     </tr>
-                    
-
                 </tbody>
             </table>
             </div>
