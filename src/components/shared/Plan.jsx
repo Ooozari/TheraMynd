@@ -67,11 +67,18 @@ function Plan({ type, userNo, status, price, specs, onSelect, isSelected }) {
 
                     {/* Button */}
                     <div >
-                        <Button variant={isSelected ? 'secondary' : 'secondaryOutline'} className='w-full' onClick={onSelect} type="button">
-                            <Paragraph size="normal" className="font-[900] font-satoshi">
+                        <Button
+                            variant="secondaryOutline"
+                            className={`w-full ${isSelected ? "bg-Secondary text-white" : ""
+                                }`}
+                            onClick={onSelect}
+                            type="button"
+                        >
+                            <Paragraph size="normal" className={`font-[900] font-satoshi ${isSelected ? "text-white" : ""}`}>
                                 Select
                             </Paragraph>
                         </Button>
+
                     </div>
                 </div>
             </div >

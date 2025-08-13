@@ -53,7 +53,7 @@ const paragraphVariants = cva("", {
   variants: {
     size: {
       subText: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]",
-      normal: "text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]",
+      normal: "text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]",
       tablecell: "text-[14px] lg:text-[16px] xl:text-[17px] 2xl:text-[18.88px]",
       cellsubTitle: "text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[16.18px]",
       normalmd:"text-[14px] md:text-[15px] 2xl:text-[16px]",
