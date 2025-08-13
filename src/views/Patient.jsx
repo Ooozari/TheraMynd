@@ -130,20 +130,17 @@ export default function Patient({ id }) {
                             <Userinfotabs defaultValue="stress" onValueChange={(value) => setMetricTab(value)}>
                                 {/* Tab Buttons */}
                                 <div className="w-full flex md:flex-row flex-col justify-start gap-[16px] md:gap-2">
-                                    <div className="flex justify-center md:justify-start w-full scrollbar-thin h-full">
+                                    <div className="flex justify-start md:justify-start w-full overflow-x-auto h-full whitespace-nowrap">
                                         <TabsList
                                             className="
                                             flex flex-nowrap
                                             px-[4.8px]
                                             h-[43px] sm:h-[44px] md:h-[45px] lg:h-[46px] xl:h-[47px] 2xl:h-[48px]
-                                            overflow-x-auto
-                                            w-fit
                                             whitespace-nowrap
                                             "
                                         >
                                             <TabsTrigger value="stress"
-                                                onClick={() => setMetricTab("stress")} className="max-w-fit px-[43px] md:px-[53px] 2xl:px-[63px] h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]
-">
+                                                onClick={() => setMetricTab("stress")} className="max-w-fit px-[43px] md:px-[53px] 2xl:px-[63px] h-[37px] sm:h-[38px] md:h-[39px] lg:h-[40px] xl:h-[41px] 2xl:h-[42px]">
                                                 <Paragraph size="xxs" className="whitespace-nowrap">Stress</Paragraph>
                                             </TabsTrigger>
 
@@ -227,15 +224,15 @@ export default function Patient({ id }) {
                         <Userinfotabs defaultValue="daily" onValueChange={(value) => setTab(value)}>
                             <div className="flex flex-col gap-4">
                                 {/* Tab Buttons */}
-                                <div className="flex items-center flex-col justify-between xl:flex-row w-full gap-[12px] md:px-[26px] pt-[12px] lg:px-[28px] xl:px-[30px] 2xl:px-[32px]">
-                                    <div className="flex w-full h-full">
+                                <div className="flex items-center flex-col justify-between xl:flex-row gap-[12px] md:px-[26px] pt-[12px] lg:px-[28px] xl:px-[30px] 2xl:px-[32px] w-full">
+                                    <div className="flex w-full overflow-x-auto h-full whitespace-nowrap">
                                         <TabsList
                                             className="
+                                            xl:mx-0
+                                            mx-auto
                                         h-[42px] sm:h-[44px] md:h-[46px] lg:h-[47px] xl:h-[48px] 2xl:h-[48.38px]
                                         px-[5px]
-                                        overflow-x-auto
-                                        flex
-                                        w-fit
+                                        flex flex-nowrap
                                         whitespace-nowrap">
                                             <TabsTrigger value="daily" className="h-[36px] sm:h-[38px] md:h-[40px] lg:h-[41px] xl:h-[42px] 2xl:h-[42.38px] max-w-fit whitespace-nowrap">
                                                 Daily Check-ins
