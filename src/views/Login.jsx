@@ -64,7 +64,7 @@ export default function Login() {
                                 <div className='relative'>
                                     <Input
                                         id="email"
-                                        type="email"
+                                        name="email"
                                         placeholder="Enter email"
                                         value={formik.values.email}
                                         onChange={formik.handleChange}
