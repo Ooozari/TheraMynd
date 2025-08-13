@@ -69,7 +69,6 @@ function SignUp() {
                                         <Input
                                             id="email"
                                             name="email"
-                                            type="email"
                                             value={formik.values.email}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}

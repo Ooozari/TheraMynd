@@ -92,13 +92,10 @@ export default function VerificationLogin() {
 
 
                     {/* Form */}
-                    <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[20px] sm:gap-[23px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
-
-
-
-                        <div>
-                            {/* Input Feilds */}
-                            <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px] flex justify-center'>
+                    <form onSubmit={formik.handleSubmit} className='flex flex-col gap-[24px] sm:gap-[25px] md:gap-[26px] lg:gap-[28px] xl:gap-[30px] 2xl:gap-[32px]'>
+                        {/* Input Feilds */}
+                        <div className='space-y-[16px] sm:space-y-[18px] md:space-y-[20px] lg:space-y-[22px] xl:space-y-[23px] 2xl:space-y-[24px] flex justify-center'>
+                            <div className='relative'>
                                 <div className="flex gap-2">
                                     {[...Array(6)].map((_, i) => (
                                         <Input
@@ -115,12 +112,12 @@ export default function VerificationLogin() {
                                         />
                                     ))}
                                 </div>
+                                {Object.keys(formik.errors).length > 0 && formik.submitCount > 0 && (
+                                    <p className="text-red-500 text-xs text-center absolute left-1/2 -translate-1/2 bottom-[-28px] whitespace-nowrap">All fields must contain exactly 1 digit</p>
+                                )}
                             </div>
-                            {/* Error below inputs if any */}
-                            {Object.keys(formik.errors).length > 0 && formik.submitCount > 0 && (
-                                <p className="text-red-500 text-xs text-center mt-2">All fields must contain exactly 1 digit</p>
-                            )}
                         </div>
+
                         {/* CheckBox */}
                         <div className='flex gap-2 justify-center items-center'>
                             <div className='flex items-center'>
