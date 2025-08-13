@@ -324,7 +324,8 @@ function Biling() {
 
                                 <div className='flex gap-[20px] sm:gap-[27px] md:gap-[34px] lg:gap-[41px] xl:gap-[46px] 2xl:gap-[50px]'>
                                     <Paragraph size="md" className="text-MindfulBrown60 font-[800] font-urbanist">
-                                        <Switch id="card" />
+
+                                        <Switch id="card"/>
                                     </Paragraph>
                                     <div className='flex gap-[10px] sm:gap-[12px] md:gap-[14px] lg:gap-[16px] xl:gap-[18px] 2xl:gap-[20px]'>
                                         <Paragraph size="md" className="text-MindfulBrown60 font-[600] font-urbanist cursor-pointer">
