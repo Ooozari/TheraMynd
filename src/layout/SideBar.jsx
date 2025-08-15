@@ -16,7 +16,7 @@ function SideBar() {
         { label: "Settings", icon: <Settings className='w-full h-full' />, href: "/dashboard/settings" },
     ];
     return (
-        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[27px] flex flex-col gap-[37px] h-screen">
+        <aside className="bg-white w-[248px] lg:w-[180px] xl:w-[218px] 2xl:w-[248px] px-4 pt-[38px] pb-[27px] flex flex-col gap-[37px] h-screen border-1 border-[#D9D9D9] shadow-[0px_1px_3px_0px_#00000033]">
 
             {/* Logo and Name */}
             <div className="sticky top-[38px] flex items-center justify-center gap-[6px] sm:gap-[7px] md:gap-[8px] lg:gap-[10px] xl:gap-[11px] 2xl:gap-[12px]">

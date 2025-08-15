@@ -90,7 +90,7 @@ function Checkins({ id }) {
                             mode="range"
                             selected={range}
                             onSelect={setRange}
-                            className="h-full w-full border-1 border-[#E1E1E1] shadow-[0px 1px 2px 0px #00000040] rounded-[10px]"
+                            className="h-full w-full border-1 border-[#E1E1E1] shadow-[0px_1px_2px_0px_#00000040] rounded-[10px]"
                         />
                     </div>
                 </div>
@@ -154,7 +154,7 @@ function Checkins({ id }) {
                     </div>
 
                     {/* table */}
-                    <div className="w-full overflow-x-auto">
+                    <div className="w-full overflow-x-auto border-1 border-[#F9F9F9]">
                         <Table>
                             <TableHeader>
                                 <TableRow>

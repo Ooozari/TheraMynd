@@ -117,7 +117,7 @@ export default function Patient({ id }) {
 
                 {/* Graph details */}
                 <div className="flex  md:flex-row flex-col bg-White rounded-[15px] 
-                shadow-[0px 17.32px 34.65px 0px #1018280D] p-[10px] gap-[20px]">
+                shadow-[0px_10px_20px_0px_#1018280D] sm:shadow-[0px_12px_24px_0px_#1018280D] md:shadow-[0px_14px_28px_0px_#1018280D] lg:shadow-[0px_16px_32px_0px_#1018280D] xl:shadow-[0px_17px_34px_0px_#1018280D] 2xl:shadow-[0px_17.32px_34.65px_0px_#1018280D] p-[10px] gap-[20px]">
                     {/* graph and tabs */}
                     <div className="min-w-0 flex-1">
                         {/* graph */}
@@ -215,7 +215,7 @@ export default function Patient({ id }) {
                 </div>
 
                 {/* Calender and tabel */}
-                <div className="flex md:flex-row flex-col bg-White rounded-[15px] shadow-[0px 12.13px 44.49px 0px #0000001A] pt-[16px] pb-[17px] px-[15px]">
+                <div className="flex md:flex-row flex-col bg-White rounded-[15px] shadow-[0px_12.13px_44.49px_0px_#0000001A] pt-[16px] pb-[17px] px-[15px]">
 
                     {/* Calender */}
                     <div className="w-full md:w-[300px] lg:w-[330.05px] xl:w-[380.05px] 2xl:w-[426.05px] md:flex hidden">
