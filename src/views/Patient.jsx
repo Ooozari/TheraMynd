@@ -202,7 +202,8 @@ export default function Patient({ id }) {
                                         {chartInfo.feedback}
                                     </Heading>
                                 ) : (
-                                    <div className="inline-flex drop-shadow-md w-[40px] h-[40px] sm:w-[44px] sm:h-[44px] md:w-[48px] md:h-[48px] lg:w-[52px] lg:h-[52px] xl:w-[55px] xl:h-[55px] 2xl:w-[60.32px] 2xl:h-[60.32px]">
+                                    <div className="inline-flex 
+                                        w-[40px] h-[40px] sm:w-[44px] sm:h-[44px] md:w-[48px] md:h-[48px] lg:w-[52px] lg:h-[52px] xl:w-[55px] xl:h-[55px] 2xl:w-[60.32px] 2xl:h-[60.32px]">
                                         {chartInfo.feedback}
                                     </div>
                                 )}
