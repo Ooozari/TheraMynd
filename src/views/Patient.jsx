@@ -116,7 +116,7 @@ export default function Patient({ id }) {
             <div className="flex flex-col gap-[18px] sm:gap-[19px] md:gap-[20px] lg:gap-[22px] xl:gap-[23px] 2xl:gap-[24px] mt-[28px]">
 
                 {/* Graph details */}
-                <div className="flex md:flex-row flex-col bg-White rounded-[15px] 
+                <div className="flex  md:flex-row flex-col bg-White rounded-[15px] 
                 shadow-[0px 17.32px 34.65px 0px #1018280D] p-[10px] gap-[20px]">
                     {/* graph and tabs */}
                     <div className="min-w-0 flex-1">
@@ -184,7 +184,7 @@ export default function Patient({ id }) {
                         </div>
                     </div>
                     {/* level */}
-                    <div className="flex flex-col justify-center gap-[14px] h-full">
+                    <div className="flex flex-col xs:flex-row md:flex-col justify-center gap-[14px] h-full">
                         <div className="shadow-[0_8px_16px_0_#1615130D] rounded-[20px] px-[12px] sm:px-[9px] md:px-[6px] lg:px-[8px] xl:px-[11.5px] 2xl:px-[12px] py-[39.42px] w-full h-full">
                             <div className="flex flex-col items-center justify-between gap-[14px] px-[13px] sm:px-[13px] md:px-[4px] lg:px-[6px] xl:px-[11.5px] 2xl:px-[13px] h-full">
                                 <Paragraph size="subhead" className='text-OptimisticGray60 font-[600] font-urbanist whitespace-nowrap'>{metricLabel}</Paragraph>
@@ -194,13 +194,19 @@ export default function Patient({ id }) {
                         <div className="shadow-[0_8px_16px_0_#1615130D] rounded-[20px] px-[12px] sm:px-[9px] md:px-[6px] lg:px-[8px] xl:px-[11.5px] 2xl:px-[12px] py-[39.42px] w-full h-full">
                             <div className="flex flex-col items-center justify-between gap-[14px] px-[13px] sm:px-[13px] md:px-[4px] lg:px-[6px] xl:px-[11.5px] 2xl:px-[13px] h-full">
                                 <Paragraph size="subhead" className='text-OptimisticGray60 font-[600] font-urbanist'>{metricFeedback}</Paragraph>
-                                <Heading level="cardmd2" className='text-MindfulBrown90 font-[800] font-urbanist'>
-                                    {typeof chartInfo.feedback === "string" ? (
-                                        chartInfo.feedback
-                                    ) : (
-                                        <span className="inline-flex drop-shadow-md w-[30px] h-[30px] sm:w-[31px] sm:h-[31px] md:w-[40px] md:h-[40px] lg:w-[45px] lg:h-[45px] xl:w-[50px] xl:h-[50px] 2xl:w-[60.32px] 2xl:h-[60.32px]">{chartInfo.feedback}</span>
-                                    )}
-                                </Heading>
+                                {typeof chartInfo.feedback === "string" ? (
+                                    <Heading
+                                        level="cardmd2"
+                                        className="text-MindfulBrown90 font-[800] font-urbanist"
+                                    >
+                                        {chartInfo.feedback}
+                                    </Heading>
+                                ) : (
+                                    <div className="inline-flex drop-shadow-md w-[40px] h-[40px] sm:w-[44px] sm:h-[44px] md:w-[48px] md:h-[48px] lg:w-[52px] lg:h-[52px] xl:w-[55px] xl:h-[55px] 2xl:w-[60.32px] 2xl:h-[60.32px]">
+                                        {chartInfo.feedback}
+                                    </div>
+                                )}
+
                             </div>
 
                         </div>
